@@ -1,0 +1,78 @@
+ADD_KIT ~RA_URa~
+    ~RA_URa 1 1 1 1 1 1 1 1~
+    ~RA_URa 2 2 1 2 2 2 2 1 2 2 2 5 5 2 2 2 2 2 2 5 2 2 2 1 1 1 1 1 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RA_URa 9 3 3 3 3 3~
+	~RA_URa 0 0 0 0 0 0~
+	~RA_URa 99 99 99 99 99 99~
+    ~RA_URa 99 99 99 99 99 99~
+	~RA_URa 1 1 1 1 1 1 1 1 0~
+	~RA_URa 0 0 0 0 0 0~
+	~IHateUndead\Tables\RA_URa.2da~
+	~K_F_H	K_F_D  K_F_HO~
+	~0x40000000 2~
+	~BB0~
+	~LEAT16 * HELM07 * RING09 RING29 CLCK05 BOOT04 AMUL25 BRAC10 * * * * * * * SW2H12 HALB09 *~
+	SAY @601
+	SAY @602
+	SAY @603
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RA_URa~
+		clascolr = ~6 4 8 242 2~
+		hpclass = ~HPBarb~
+END
+
+COPY "IHateUndead\Spl\RAURaFE.spl" override
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+	READ_ASCII	0x22 animation (2)
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+    PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D1") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D2") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D3") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D4") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C0") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C1") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C3") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C4") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C5") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C6") BEGIN
+	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RA_URa~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+	END
+	END
+  END
+BUT_ONLY
+
+//EoF

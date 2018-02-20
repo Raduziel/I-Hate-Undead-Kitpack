@@ -1,0 +1,174 @@
+ADD_KIT ~RAUR~
+    ~RAUR 0 0 1 1 0 1 0 0~
+    ~RAUR 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAUR 3 3 3 3 9 12~
+	~RAUR 0 0 0 0 0 0~
+	~RAUR 99 99 99 99 99 99~
+    ~RAUR 0 0 0 0 15 0~
+	~RAUR 1 1 0 0 0 0 0 0 0~
+	~RAUR 1 0 1 1 0 1~
+	~IHateUndead\Tables\RAUR.2da~
+	~K_C_H	K_C_D   K_C_G   K_C_E   K_C_HE   K_C_HL   K_C_HO~
+	~0x02000000 3~
+	~RAUR~
+	~PLAT12 SHLD25 HELM16 * RING22 RING31 CLCK05 BOOT04 AMUL27 BRAC10 * * * * * * * BLUN25 HAMM09 STAF10~
+	SAY @201
+	SAY @202
+	SAY @203
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAUR~		
+		clascolr = ~6 15 14 242 28~
+		clswpbon = ~0 0 3~
+END
+
+ACTION_INCLUDE ~IHateUndead/lib/fnp_compat.tpa~
+ACTION_INCLUDE ~IHateUndead/lib/remove_lines.tpa~
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+	COUNT_2DA_ROWS 1 rows
+	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
+BUT_ONLY
+
+LAF ~DEFINE_FNP_KIT_INFO~
+  INT_VAR
+	u_leather_armor 	= 1
+	u_chain_armor 		= 1
+	u_plate_armor 		= 1
+	u_club_staff	 	= 1
+	u_hammers	 		= 1
+	u_maces 	 		= 1
+	u_flails 			= 1
+	u_axes 				= 0
+	u_daggers 			= 0
+	u_short_swords		= 0
+	u_long_swords		= 0
+	u_scimitars 		= 0
+	u_katanas 			= 0
+	u_bastard_swords 	= 0
+	u_2hand_swords 		= 0
+	u_halberds 			= 0
+	u_spears 	 		= 0
+	u_darts 			= 0
+	u_slings	 		= 1
+	u_bows 				= 0
+	u_crossbows 		= 0
+  STR_VAR
+    clab_name 	    = ~RAUR~
+	class 			= ~cleric~	 
+	s_Life 			= ~minor~
+	s_Death 		= ~major~
+	s_Benediction 	= ~major~
+	s_Destruction 	= ~minor~
+	s_Protection 	= ~major~
+	s_War 			= ~major~
+	s_Exploration   = ~minor~
+	s_Knowledge 	= ~major~
+	s_Deception 	= ~x~
+	s_Thought 		= ~minor~
+	s_Dread 		= ~minor~	
+	s_Vigor 		= ~major~
+	s_Affliction 	= ~x~
+	s_Animal 		= ~x~
+	s_Plant 		= ~x~
+	s_Earth 		= ~minor~
+	s_Water 		= ~x~
+	s_Air 			= ~x~
+	s_Fire 			= ~major~
+	s_Light 		= ~major~
+	s_Shadow 		= ~minor~
+	s_Magic 		= ~minor~
+	s_Perdition     = ~x~
+END
+
+LAM ~READ_FNP_KIT_INFO~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
+  LAM apply_fnp_spheres
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
+  LAM apply_fnp_usability
+END
+
+COPY "IHateUndead\Tables\LURAUR.2DA" override
+
+COPY_EXISTING ~SPPR409.spl~ ~override\RAURFE.spl~
+LPM I_HATE_UNDEAD_FEATURES
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 323 target = 2 timing = 9 resist_dispel = 0 parameter1 = 3 parameter2 = 0             END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 101 target = 2 timing = 9 resist_dispel = 0 parameter1 = 0 parameter2 = 32            END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 178 target = 2 timing = 9 resist_dispel = 0 parameter1 = 4 parameter2 = 3 special = 3 END
+LPF ADD_SPELL_EFFECT    INT_VAR opcode = 179 target = 2 timing = 9 resist_dispel = 0 parameter1 = 4 parameter2 = 3 special = 3 END
+
+COPY "IHateUndead\Spl\RAURRS.spl" override
+
+COPY "IHateUndead\Spl\RAURRE.spl" override	SAY NAME1 @204	SAY UNIDENTIFIED_DESC @205
+
+ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+  // Raise Dead
+	COPY_EXISTING ~SCRL63.itm~ override
+      LPF ADD_ITEM_EQEFFECT
+        INT_VAR
+          opcode = 319
+          target = 1
+          parameter1 = (RAUR + 0x4000)
+          parameter2 = 9
+          timing = 2
+          special = RESOLVE_STR_REF (@202)
+      END
+	BUT_ONLY
+END
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  // Raise Dead - Rod of Resurrection
+  ACTION_FOR_EACH item_unusability IN ~SCRL63~ ~RODS03~ BEGIN
+	COPY_EXISTING ~%item_unusability%.itm~ override
+      LPF ADD_ITEM_EQEFFECT
+        INT_VAR
+          opcode = 319
+          target = 1
+          parameter1 = (RAUR + 0x4000)
+          parameter2 = 9
+          timing = 2
+          special = RESOLVE_STR_REF (@202)
+      END
+	BUT_ONLY
+  END
+END
+
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+  // Raise Dead - Resurrection - Staff of Moradin's Breath +2 - Belt of Bones - Staff of the Hanged Man's Glee +1
+  ACTION_FOR_EACH item_unusability IN ~SPPR504C~ ~SPPR712C~ ~MORADIN~ ~BELTBON~ ~XSTAFHMG~ BEGIN
+	COPY_EXISTING ~%item_unusability%.itm~ override
+      LPF ADD_ITEM_EQEFFECT
+        INT_VAR
+          opcode = 319
+          target = 1
+          parameter1 = (RAUR + 0x4000)
+          parameter2 = 9
+          timing = 2
+          special = RESOLVE_STR_REF (@202)
+      END
+	BUT_ONLY
+  END
+END
+
+COPY ~IHateUndead\Bam\SpiritRedeemer\RAURRE.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~IHateUndead\Bam\SpiritRedeemer\MOS%original_base_index%.pvrz~
+    END
+  END
+  
+//EoF

@@ -1,0 +1,57 @@
+ADD_KIT ~RAPM~
+    ~RAPM 1 1 1 1 1 0 0 0~
+    ~RAPM 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAPM 3 9 9 3 9 3~
+	~RAPM 0 0 0 0 0 0~
+	~RAPM 99 99 99 99 99 99~
+    ~RAPM 99 99 99 99 99 99~
+	~RAPM 0 1 0 0 0 0 0 0 0~
+	~RAPM 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAPM.2da~
+	~K_MN_H~
+	~0x00004000 20~
+	~MO0~
+	~* * * * RING29 RING39 CLCK05 BOOT04 AMUL27 BRAC16 BELT10 * * * * * * * * *~
+	SAY @901
+	SAY @902
+	SAY @903
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAPM~		
+		thiefscl = ~0 0 100 100 100 100 0 0~
+		clascolr = ~6 65 66 242 28~
+END
+
+COPY "IHateUndead\Spl\RAPMFE.spl" override
+
+COPY "IHateUndead\Spl\RAPMMM.spl" override	SAY NAME1 @904	SAY UNIDENTIFIED_DESC @905
+
+COPY "IHateUndead\Eff\Mask\RAPMMM.eff" override
+
+COPY "IHateUndead\Spl\RAPMEF.spl" override
+
+COPY_EXISTING ~SPWI313.spl~ ~override/RAPMST.spl~                                             //Skull Trap
+LPM SPELL_TO_INNATE
+
+COPY_EXISTING ~SPWI314.spl~ ~override/RAPMVT.spl~                                             //Vampiric Touch
+LPM SPELL_TO_INNATE
+
+COPY ~IHateUndead\Bam\PallidMask\RAPMDH.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~IHateUndead\Bam\PallidMask\MOS%original_base_index%.pvrz~
+    END
+  END
+  
+//EoF

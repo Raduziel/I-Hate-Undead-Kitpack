@@ -1,0 +1,42 @@
+ADD_KIT ~RABin~
+    ~RABin 0 1 0 0 1 0 0 1~
+    ~RABin 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RABin 3 3 3 9 3 9~
+	~RABin 0 0 0 0 0 0~
+	~RABin 99 99 99 99 99 99~
+    ~RABin 99 99 99 99 99 99~
+	~RABin 1 1 1 1 1 1 1 1 1~
+	~RABin 0 0 0 0 0 0~
+	~IHateUndead\Tables\RABin.2da~
+	~K_S_H  K_S_E  K_S_HE~
+	~0x00004000 19~
+	~So0~
+	~WAROBE2 * * * RING40 RING39 CLCK05 BOOT04 AMUL21 BRAC15 * * * * * * * * * STAF11~
+	SAY @1101
+	SAY @1102
+	SAY @1103
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RABin~
+		clascolr = ~220 118 119 164 220~
+END
+
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+	
+COPY "IHateUndead\Itm\LTOUCH.itm" override SAY NAME1 @1104	SAY NAME2 @1104
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Held%" END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_MoralFail%" END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 = EVAL "%RA_Paralyzed%" END
+
+COPY "IHateUndead\Spl\SPWI626.spl" override SAY NAME1 @1104	SAY UNIDENTIFIED_DESC @1105
+	
+END
+
+COPY_EXISTING ~SPPR413.spl~ ~override\RABinFe.spl~
+LPM I_HATE_UNDEAD_FEATURES
+
+COPY "IHateUndead\Bam\ImprisonedSoul" override
+
+//EoF

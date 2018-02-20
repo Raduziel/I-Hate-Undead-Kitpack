@@ -1,0 +1,71 @@
+ADD_KIT ~RAWI~
+    ~RAWI 0 1 1 1 1 0 1 1~
+    ~RAWI 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAWI 3 3 12 3 12 3~
+	~RAWI 0 0 0 0 0 0~
+	~RAWI 99 99 99 99 99 99~
+    ~RAWI 99 99 99 99 99 99~
+	~RAWI 0 0 0 0 0 1 0 0 0~
+	~RAWI 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAWI.2da~
+	~K_Sh_H     K_Sh_HE     K_Sh_HO~
+	~0x00004000 21~
+	~Sh0~
+	~LEAT21 * * * RING22 RING39 CLCK27 BOOT04 AMUL21 BRAC18 * * * * * * * DAGG12 BOW19 STAF10~
+	SAY @1001
+	SAY @1002
+	SAY @1003
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAWI~
+		hpclass = ~HPRAWi~
+		clascolr = ~220 7 41 164 220~
+END
+
+COPY "IHateUndead\Spl\RAWIFE.spl" override
+
+COPY "IHateUndead\Spl\RACUMI.spl" override	SAY NAME1 @1004	SAY UNIDENTIFIED_DESC @1004
+
+COPY "IHateUndead\Spl\RACUTE.spl" override	SAY NAME1 @1005	SAY UNIDENTIFIED_DESC @1005
+
+COPY "IHateUndead\Spl\RACURA.spl" override	SAY NAME1 @1006	SAY UNIDENTIFIED_DESC @1006
+
+COPY "IHateUndead\Spl\RACUMA.spl" override	SAY NAME1 @1007	SAY UNIDENTIFIED_DESC @1007
+
+COPY "IHateUndead\Spl\RACUVO.spl" override	SAY NAME1 @1008	SAY UNIDENTIFIED_DESC @1008
+
+COPY "IHateUndead\Spl\RACUAG.spl" override	SAY NAME1 @1009	SAY UNIDENTIFIED_DESC @1009
+
+PATCH_IF GAME_IS ~iwdee~ BEGIN
+	LPF ALTER_EFFECT INT_VAR match_parameter2 = 1 match_opcode = 142 parameter2 = 69 END
+END
+
+PATCH_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+	LPF ALTER_EFFECT INT_VAR match_parameter2 = 1 match_opcode = 142 parameter2 = 51 END
+END
+
+COPY "IHateUndead\Spl\RACUDE.spl" override	SAY NAME1 @1010	SAY UNIDENTIFIED_DESC @1010
+
+COPY "IHateUndead\Tables\HPRAWi.2da" override
+
+ACTION_FOR_EACH file IN ~RADWAG~ ~RADWDE~ ~RADWMA~ ~RADWMI~ ~RADWRA~ ~RADWTE~ ~RADWVO~ BEGIN
+  COPY ~IHateUndead\Bam\DreadfulWitch\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~IHateUndead\Bam\DreadfulWitch\MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF

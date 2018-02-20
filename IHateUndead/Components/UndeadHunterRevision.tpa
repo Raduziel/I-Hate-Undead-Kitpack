@@ -1,0 +1,49 @@
+ACTION_IF GAME_IS ~bgee~ THEN BEGIN
+  STRING_SET ~25365~ @401
+  STRING_SET ~24289~ @401
+END
+
+ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
+  STRING_SET ~25208~ @401
+END
+
+ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
+  STRING_SET ~37141~ @401
+  STRING_SET ~25208~ @401
+END
+
+COPY_EXISTING ~CLABPA04.2DA~ ~override~
+SET_2DA_ENTRY_LATER ~RACLABPA04~ 8 3  ~AP_RAUHNF~
+SET_2DA_ENTRY_LATER ~RACLABPA04~ 8 5  ~GA_RAUHHS~
+SET_2DA_ENTRIES_NOW ~RACLABPA04~ 1
+PRETTY_PRINT_2DA
+BUT_ONLY_IF_IT_CHANGES
+
+COPY "IHateUndead\Spl\RAUHNF.spl" override
+
+COPY "IHateUndead\Spl\RAUHHS.spl" override	SAY NAME1 @402	SAY UNIDENTIFIED_DESC @403
+	PATCH_IF GAME_IS ~iwdee~ THEN BEGIN
+		LPF ALTER_EFFECT INT_VAR match_opcode = 111 timing = 0 duration = 4500 END
+		LPF ALTER_EFFECT INT_VAR match_opcode = 174 timing = 4 duration = 4500 END
+	END
+
+COPY "IHateUndead\Itm\RAUHHS.itm" override	SAY NAME1 @402	SAY NAME2 @402
+
+COPY ~IHateUndead\Bam\UndeadHunter\RAUHHS.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~IHateUndead\Bam\UndeadHunter\MOS%original_base_index%.pvrz~
+    END
+  END
+  
+//EoF

@@ -1,0 +1,460 @@
+/* ===================== *
+ *    UNDEAD PREDATOR    *
+ * ===================== */
+@101 = ~undead predator~
+@102 = ~Undead Predator~
+@103 = ~UNDEAD PREDATOR: This ranger devotes <PRO_HISHER> life to hunting and destroying the undead and helping those who have fallen victim to them. They are nomads wandering through the darkest corners of the land fighting these profane creatures. Their hard training comes at a cost: they do not have the same affinity with nature as other rangers and rarely create bonds with the people around them.
+	
+Advantages:
+
+- +10% to Move Silently and Hide in Shadows.
+- +3 to Hit and Damage against undead.
+- -2 AC Bonus against undead.
+- Starts with a +1 bonus to <PRO_HISHER> save against Paralysis, Poison or Death Magic. Another one is given at levels 5, 10, 15 and 20.
+- Casts Cure Disease, Lesser Restoration, Negative Plane Protection, Remove Fear and Remove Paralysis. Gains a use for each spell at level 2 and another every 4 levels up to three uses at level 10.
+- At level 10 becomes immune to Disease.
+- At level 15 gains the Deceive Undead ability.
+- At level 20 gains the Bless of Recognition.
+
+DECEIVE UNDEAD:
+
+The Undead Predator is capable of turn himself undetectable by the undead. While this ability is active every undead will completely ignore the Predator no matter what <PRO_HESHE> does. The effect can be used once per day and lasts for 10 Rounds.
+
+BLESS OF RECOGNITION
+
+After a long, valiant and hard journey, the Predator gains the favor of the gods. From now on <PRO_HESHE> is permanently under the effect of Bless, Protection From Evil, Negative Plane Protection and Remove Fear.
+
+Disadvantages:
+
+- May only use the following weapons: Axes, Clubs, Crossbows, Warhammers, Longswords, Maces, Quarterstaff and Spears.
+- All spell-like abilities are single-target and require touch.
+- Alignment restricted to Neutral Good.
+- Requires at least 16 Wisdom.
+- Can't wear metal armor.
+- -2 Charisma penalty.
+- Cannot Dual Class.
+- No Charm Animal.
+- Can't cast spells.
+~
+@104 = ~Deceive Undead~
+@105 = ~Deceive Undead
+
+The Undead Predator is capable of turn himself undetectable by the undead. While this ability is active every undead will completely ignore the Predator no matter what <PRO_HESHE> does. The effect can be used once per day and lasts for 10 Rounds.~
+@106 = ~Lost Class: Undead Predator~
+@107 = ~fallen undead predator~
+@108 = ~Fallen Undead Predator~
+
+/* ===================== *
+ *    SPIRIT REDEEMER    *
+ * ===================== */
+@201 = ~spirit redeemer~
+@202 = ~Spirit Redeemer~
+@203 = ~SPIRIT REDEEMER: Being a Spirit Redeemer goes beyond being ordained by some church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Spirit Redeemer, but this hard path is more usual for priests of Kelemvor and Lathander. They are efficient soldiers against one of the more common weapon of profane clergy: the undead. Regardless of under which banner they fight, the Spirit Redeemer is a force to be feared by necromancers, unholy priests and, most of all, the undead.
+	
+Advantages:
+
+- May cast Redemption once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
+- Uses Turn Undead as a priest three levels higher.
+- Always under the effect of Death Ward.
+- +3 to Hit and Damage against Undead.
+
+REDEMPTION:
+
+The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, delivering 6d6 points magic damage. Undead creatures, besides the damage, need to make a save vs. spells with a -2 penalty or be destroyed.
+
+Disadvantages:
+
+- May not create undead, raise dead or resurrect and cast Gate.
+- Alignment restricted to Lawful Good or Lawful Neutral.
+- Requires at least 12 Charisma.
+- Can't be resurrected.
+~
+
+@204 = ~Redemption~
+@205 = ~Redemption
+
+The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, delivering 6d6 points magic damage. Undead creatures, besides the damage, need to make a save vs. spells with a -2 penalty or be destroyed.~
+
+/* =================== *
+ *    UNDEAD SLAYER    *
+ * =================== */
+@301 = ~undead slayer~
+@302 = ~Undead Slayer~
+@303 = ~UNDEAD SLAYER: The Undead Slayer is a necromancer that devotes <PRO_HISHER> life to the destruction of the undead, striving always to rid the living world of their abominable existence. By mastering the Forbidden Art, this wizard gains a greater understanding of these creatures which are neither fully living nor entirely dead. The Undead Slayer's militant opposition to all forms of undead frequently places <PRO_HIMHER> in direct conflict with other necromancers who delight in creating zombies, skeletons, ghouls and other undying monstrosities.
+
+Advantages:
+
+- At level 3 gains the ability Soul Sacrifice. Gains another use at levels 6, 9, 12 and 15.
+- Does not take a 15% penalty when scribing scrolls from other schools.
+- Immune to Death Magic and Level Drain.
+- Hit Die: d6.
+
+SOUL SACRIFICE:
+
+The Undead Slayer sacrifices <PRO_HISHER> own life force to enhance <PRO_HISHER> casting capability. Using this ability raises <PRO_HISHER> caster level by 3 and damages <PRO_HESHE> by one-quarter of <PRO_HISHER> maximum hit points. The effect lasts for 5 rounds and after it, the caster level returns to its natural value. If the damage taken is higher than the Undead Slayer's current hit points <PRO_HESHE> will be killed.
+
+Disadvantages:
+
+- Requires at least 16 Constitution (besides the minimal scores for a Necromancer).
+- As a Necromancer can't cast or learn spells from the Illusion school.
+- Does not gains a 15% bonus when scribing Necromancy scrolls.
+- Does not gain a save bonus against Necromancy spells.
+- Does not apply a save penalty for Necromancy spells.
+- Does not gain an extra spell slot per level.
+- Alignment restricted to Good.
+~
+
+@304 = ~Soul Sacrifice~
+@305 = ~Soul Sacrifice
+
+The Undead Slayer sacrifices <PRO_HISHER> own life force to enhance <PRO_HISHER> casting capability. Using this ability raises <PRO_HISHER> caster level by 3 and damages <PRO_HESHE> by one-quarter of <PRO_HISHER> maximum hit points. The effect lasts for 5 rounds and after it, the caster level returns to its natural value. If the damage taken is higher than the Undead Slayer's current hit points <PRO_HESHE> will be killed.~
+@306 = ~Spellcaster level increased by 3~
+@307 = ~Spellcaster level decreased by 3~
+
+/* =================== *
+ *    UNDEAD HUNTER    *
+ * =================== */
+@401 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
+
+Advantages:
+- May create a Holy Sword once per day for one hour (starting at level 5).
+- May Turn Undead as a priest of the same level (starting at level 3).
+- +3 bonus to hit and damage rolls against undead creatures.
+- Immune to hold and level drain.
+
+HOLY SWORD:
+
+Starting at level five, the Undead Hunter may materialize this holy weapon once per day during one hour. Despite its +3 bonus, this bastard sword is considered +5 for the purpose of determining what it can hit. The Undead Hunter always uses this blade as a specialist and while wields it <PRO_HESHE>'s under the effect of Bless.
+
+Disadvantages:
+- May not use Lay On Hands ability.
+~
+
+@402 = ~Undead Hunter's Holy Sword~
+@403 = ~Undead Hunter's Holy Sword
+
+Starting at level five, the Undead Hunter may materialize this holy weapon once per day during one hour. Despite its +3 bonus, this bastard sword is considered +5 for the purpose of determining what it can hit. The Undead Hunter always uses this blade as a specialist and while wields it <PRO_HESHE>'s under the effect of Bless.
+
+STATISTICS:
+
+Equipped abilities:
+- Bless
+
+Thac0: +3
+Damage: 2d4+3, +1 fire damage
+Damage Type: Slashing
+Speed Factor: 5
+Proficiency Type: Bastard Sword
+Type: One-handed
+Requires:
+9 Strength
+
+Weight: 0
+
+Only usable by:
+Undead Hunter
+~
+
+/* ==================== *
+ *     DEATH TRICKER    *
+ * ==================== */
+@501 = ~death tricker~
+@502 = ~Death Tricker~
+@503 = ~DEATH TRICKER: Sometimes called heroes, sometimes called crazies. These thieves make a living by entering places that most people would run away from. Often hired to retrieve artifacts and family heirlooms the Death Tricker is an expert in evading the undead and breaking into their lair having developed special techniques to do so.
+
+Advantages:
+
+- At level 3 gains the ability Evade Death. Gains another use at levels 10 and 17.
+- At level 2 gains the ability Holy Trap. Gains another use every six levels.
+- At level 1 gains the Trick ability.
+- +10% to Find Traps and Open Locks.
+
+TRICK:
+
+The Death Tricker knows how to outsmart <PRO_HISHER> opponents and takes advantage in a fight (or flee). Starting at level 1 <PRO_HESHE> receives a +1 bonus to AC, all saves, physical damage resistance, to hit, critical hit chance and damage delivered.
+
+EVADE DEATH:
+
+"When things go bad stay low and get out quick". That's the first commandment a Death Tricker will learn while being trained. When this ability is used <PRO_HESHE> gets under the effect of the spell Sanctuary and <PRO_HISHER> movement speed is doubled. The effects last for 5 rounds.
+
+HOLY TRAP:
+
+Mostly used to cover <PRO_HISHER> way out of a tomb or den, this trap is a mix of acid and holy water. Any enemy that triggers the trap receives 3d8 points of acid damage and undead receives further 3d8 points of magic damage due to the holy water (no save for both effects). It is said that this trap's name is a bad taste joke, but no Death Tricker ever confirmed or denied it.
+
+Disadvantages:
+
+- May only distribute 20 skill points per level among thieving skills.
+- Requires at least 12 Intelligence.
+- May not be of Evil alignment.
+- May not use Pick Pockets.
+- Can't wear armor.
+~
+
+@504 = ~Evade Death~
+@505 = ~"When things go bad stay low and get out quick". That's the first commandment a Death Tricker will learn while being trained. When this ability is used <PRO_HESHE> gets under the effect of the spell Sanctuary and <PRO_HISHER> movement speed is doubled. The effects last for 5 rounds.~
+@506 = ~Holy Trap~
+@507 = ~Mostly used to cover <PRO_HESHE> way out of a tomb or den, this trap is a mix of acid and holy water. Any enemy that triggers the trap receives 3d8 points of acid damage and undead receives further 3d8 points of magic damage due to the holy water (no save for both effects). It is said that this trap's name is a bad taste joke, but no Tricker ever confirmed or denied it.~
+
+/* ==================== *
+ *   BURIAL DEFENDER    *
+ * ==================== */
+@601 = ~burial defender~
+@602 = ~Burial Defender~
+@603 = ~BURIAL DEFENDER: The Burial Defender is a barbarian appointed by the shamans of <PRO_HISHER> tribe to watch the sacred graves of <PRO_HISHER> people. In rare occasions, however, <PRO_HESHE> may be designated by the elders to some journey - usually to face some evil non-living force that is foreseen to menace the tribe.
+
+Advantages:
+
+- May use the Barbarian Rage ability once per day. Gains one use at level 1 and an additional use every 4 levels thereafter.
+- May achieve Grandmastery in Two-Handed Swords, Halberds and Axes.
+- +5 bonus to hit and damage against undead.
+- Moves 2 points faster than other characters.
+- Immune to backstab.
+- Immune to disease.
+- Hit Die: d12.
+
+BARBARIAN RAGE: The enraged status lasts for 5 rounds and provides a +4 bonus to Strenght and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion and level drain spells.
+
+Disadvantages:
+
+- Cannot put any slot in Sword and Shield style.
+- Can only become proficient in ranged weapons.
+- Cannot wear metal armor.
+- Cannot be Chaotic Evil.
+- Cannot use shields.
+- Cannot Dual Class.~
+
+/* ==================== *
+ *     GRAVE MOURNER    *
+ * ==================== */
+@701 = ~grave mourner~
+@702 = ~Grave Mourner~
+@703 = ~GRAVE MOURNER: Where this bard appears a tragedy has occurred. It's <PRO_HISHER> responsibility organize the funeral and tell tales of the departed, as well as comfort the hearts of those who are in mourn. It is said that whenever a Grave Mourner attends an undead will never be raised. It is also known that these bards are often hired by wealthy families to return an inconvenient ancient relative to the grave before a scandal begins.
+
+Advantages:
+
+- At level 1 gains the Tale of Dreadful Deeds ability.
+- At level 6 gains the Remembrance Of The Beloved Ones ability.
+- At level 11 gains the Warning Of The God's Wrath ability.
+- At level 16 gains the Warm Memories Of A Friend ability.
+- At level 21 gains the Recall Of The Living Conscience ability.
+- Instead of the regular Bard Song gains the Requiem.
+
+TALES OF DREADFUL DEEDS:
+
+The Grave Mourner starts a narrative about heroes that overcame powerful undead in glorious fights. Any undead hearing this tale must make a save versus spell with a -2 penalty or become deaf for 5 rounds.
+
+REMEMBRANCE OF THE BELOVED ONES:
+
+The Grave Mourner mocks the undead by remembering it of the people that it will never see or touch again. Any undead hearing this mockery must make a save versus spell with a -2 penalty or become berserker for 5 rounds.
+
+WARNING OF THE GOD'S WRATH:
+
+The Grave Mourner exalts ancient tales of mighty gods vanquishing the undead. Any undead hearing this exaltation must make a save versus spell with a -2 penalty or become held for 5 rounds.
+
+WARM MEMORIES OF A FRIEND:
+
+The Grave Mourner pretends to be an old friend of the undead. Any undead hearing this act must make a save versus spell with a -2 penalty or become dominated for 5 rounds.
+
+RECALL OF THE LIVING CONSCIENCE:
+
+The Grave Mourner speechs firmly to the undead remembering that it is nothing but a rotting corpse and a piece of void. Any undead hearing this speech must make a save versus spell with a -2 penalty or become feebleminded.
+
+REQUIEM:
+
+This sad song breaks the spirit of the enemies, giving them a penalty of 1 to Luck. There is no save against this effect.
+
+Disadvantages:
+
+- Can't cast or learn Necromancy spells.
+- Bard Song doesn't improve with level.
+- Can't get the Enhanced Bard Song HLA.
+- Can't get the Use Any Item HLA.
+- Alignment restricted to non-Evil.
+- Requires at least 17 Charisma.
+~
+
+@704 = ~Tale Of Dreadful Deeds~
+@705 = ~Tale Of Dreadful Deeds
+
+The Grave Mourner starts a narrative about heroes that overcame powerful undead in glorious fights. An undead hearing this tale must make a save versus spell with a -2 penalty or become deaf for 5 rounds.~
+@706 = ~Remembrance Of The Beloved Ones~
+@707 = ~Remembrance Of The Beloved Ones
+
+The Grave Mourner mocks the undead by remembering it of the people that it will never see or hold again. Any undead hearing this mockery must make a save versus spell with a -2 penalty or become berserker for 5 rounds.~
+@708 = ~Warning Of The Gods' Wrath~
+@709 = ~Warning Of The Gods' Wrath
+
+The Grave Mourner exalts ancient tales of mighty gods vanquishing the undead. Any undead hearing this exaltation must make a save versus spell with a -2 penalty or become held for 5 rounds.~
+@710 = ~Warm Memories Of A Friend~
+@711 = ~Warm Memories Of A Friend
+	
+The Grave Mourner pretends to be an old friend of the undead. Any undead hearing this act must make a save versus spell with a -2 penalty or become dominated for 5 rounds.~
+@712 = ~Recall Of The Living Conscience~
+@713 = ~Recall Of The Living Conscience
+	
+The Grave Mourner speechs firmly to the undead remember that it is nothing but a rotting corpse and a piece of void. Any undead hearing this speech must make a save versus spell with a -2 penalty or become feebleminded.~
+@714 = ~Requiem~
+@715 = ~Dispirited~
+
+/* ===================== *
+ *    CIRCLE ENFORCER    *
+ * ===================== */
+@801 = ~circle enforcer~
+@802 = ~Circle Enforcer~
+@803 = ~CIRCLE ENFORCER: The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using the lightning and the fire: Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animal and other woodland beings for aid. As a keeper of the natural order, this druid is specially devoted to defeating unnatural beings having a special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
+
+Advantages:
+
+- At level 1 may cast the following spells: Burning Hands and Shocking Grasp.
+- At level 3 may cast the following spell: Flametongue.
+- At level 5 may cast the following spells: Fireball, Flame Arrow and Lightning Bolt.
+- At level 9 may cast the following spell: Sunfire.
+- At level 11 may cast the following spell: Chain Lightning.
+- +2 Thac0, AC and damage bonus versus constructs, fiends, giant humanoids, lycanthrope and undead.
+
+FLAMETONGUE:
+
+As the wizard spell "Aganazzar's Scorcher".
+
+Disadvantages:
+
+- May not cast the following spells: Animal Summoning (any), Call Woodland Being and Conjure Animal.
+- May not wear heavier armor than leather.
+- Cannot use shapeshift.
+- Cannot Dual Class.
+~
+
+@804 = ~CIRCLE ENFORCER: The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using the lightning and the fire: Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animal and other woodland beings for aid. As a keeper of the natural order, this druid is specially devoted to defeating undead and constructs having a special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
+
+Advantages:
+
+- At level 1 may cast the following spell: Shocking Grasp.
+- At level 5 may cast the following spells: Fireball and Lightning Bolt.
+- At level 9 may cast the following spell: Sunfire.
+- +2 Thac0, AC and damage bonus versus constructs, fiends, giant humanoids, lycanthrope and undead.
+
+Disadvantages:
+
+- May not cast the following spells: Animal Summoning (any), Call Woodland Being and Conjure Animal.
+- May not wear heavier armor than leather.
+- Cannot use shapeshift.
+- Cannot Dual Class.
+~
+
+@805 = ~Flametongue~
+@806 = ~Flametongue
+(Evocation)
+
+Level: 2
+Sphere: Elemental
+Range: 15 ft.
+Duration: 1 round
+Casting Time: 3
+Area of Effect: 2-ft. by 15-ft. jet
+Saving Throw: None
+
+Upon casting this spell, a jet of flame appears at the Enforcer's fingertips and bursts out toward one target of the Enforcer's choice. That target will be hit by this flame for 3d6 points of damage. The flame jet strikes a second time halfway through its duration and the caster may move while the spell is in effect. There is no Saving Throw against this spell, though anti-fire capabilities such as Fire Resistance will apply and may reduce or eliminate the damage.~
+
+/* ================= *
+ *    PALLID MASK    *
+ * ================= */
+@901 = ~pallid mask~
+@902 = ~Pallid Mask~
+@903 = ~PALLID MASK: The Order of the Pallid Mask is a group of monks at the service of Jergal who specialized in combating the undead whose existence are not sanctioned by the church or who has proven to be troublesome - as well as their creators. They also are the supervisors of the skeleton and zombie work crews that the church sometimes ran to profit itself.
+
+Advantages:
+
+- +3 Hit and Damage against undead.
+- May use the Disrupt Heretic ability. Starts at level 1 with one use and gains another every four levels up to five uses at level 19.
+- May use Skull Trap and Vampiric Touch as innate abilities. Starts at level 5 with one use for each and gains another every 5 levels up to five uses at level 25.
+
+DISRUPT HERETIC:
+
+During the next 5 rounds, every melee blow delivered by the Pallid Mask will give 1d8+5 points of damage and, unless a save versus Death is successfully made, a cumulative spell failure of 30% to the target. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image. The Pallid Mask have a +5 Thac0 bonus while using this ability.
+
+Disadvantages:
+
+- Alignment restricted to Lawful Neutral.
+- Cannot use Lay on Hands.
+- Cannot be resurrected.
+~
+@904 = ~Disrupt Heretic~
+@905 = ~During the next 5 rounds, every melee blow delivered by the Pallid Mask will give a cumulative spell failure of 30% to the target unless a save versus Death is successfully made. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image.~
+
+/* ================= *
+ *  DREADFUL WITCH   *
+ * ================= */
+@1001 = ~dreadful witch~
+@1002 = ~Dreadful Witch~
+@1003 = ~DREADFUL WITCH: Some women decide to live on her own terms and retreat into deep forests where they commune with Nature and learn the dark secrets that land upholds. The ones who choose to pursue this source of power end up learning dread ways to cast terrible curses upon other beings. The women who master this Dark Art are called Dreadful Witches by those who are lucky enough to survive an unfortunate meeting with one of them.
+
+Obviously, only females can be Dreadful Witches. Males who try to seize this kind of power tends to die very quickly.
+
+Advantages:
+
+- May use Curses instead of the Shamanic Dance. Gains new and more curses as shown below. 
+
+CURSES
+
+It is possible to stack different curses, but never two of the same curses over the same target. Every time a curse is cast the Dreadful Witch takes 1d4 point of magic damage. The target can make a save versus death with -1 penalty for every four levels of the Dreadful Witch to avoid the effects (maximum of -5 at level 20). All the effects last for 1 turn.
+
+The following curses can be cast:
+
+* Misfortune: Target takes a -2 penalty in Luck. Gains an use at levels: 1, 2, 5, 7 and 18.
+
+* Terror: Target flees in panic. Gains an use at levels: 3, 4, 6, 8 and 18.
+
+* Rage: Target goes berserker, attacking friend or foe alike. Gains an use at levels: 1, 2, 5, 7 and 18.
+
+* Madness: Target goes confuse, random walking, attacking or doing nothing. Gains an use at levels 7, 8, 9, 13 and 19.
+
+* Void: Target becomes feebleminded. Gains an use at levels 10, 11, 12 and 14.
+
+* Agony: Target feels an unbearable pain, taking 50% penalty to movement and attack rate and a -4 penalty in damage, Thac0 and Armor Class. Gains an use at levels 13, 15, 16 and 17.
+
+* Destruction: Target dies. Gains an use at levels 18, 19 and 20.
+
+Disadvantages:
+
+- May cast one fewer spell per level per day.
+- Alignment restricted to Neutral Evil.
+- Hit Die: d6.
+~
+@1004 = ~Curse of Misfortune~
+@1005 = ~Curse of Terror~
+@1006 = ~Curse of Rage~
+@1007 = ~Curse of Madness~
+@1008 = ~Curse of Void~
+@1009 = ~Curse of Agony~
+@1010 = ~Curse of Destruction~
+
+/* ================= *
+ *  IMPRISONED SOUL  *
+ * ================= */
+@1101 = ~imprisoned soul~
+@1102 = ~Imprisoned Soul~
+@1103 = ~IMPRISONED SOUL: Imprisoned Souls are someone that was supposed to be dead. At the moment of <PRO_HISHER> departure something went wrong, and <PRO_HISHER> spirit was called back into <PRO_HISHER> body. An Imprisoned Soul is neither dead, alive or undead, but something else: a hollow being that simply exists. Some call this state a blessing, others call it a curse. Either way, the existence of the Imprisoned Soul gives <PRO_HISHER> the ability to mimic some of the features of an undead, but in another hand, an Imprisoned Soul is especially vulnerable to Necromancy, due to <PRO_HISHER> nature.
+ 
+Advantages:
+ 
+- Immune to Level Drain.
+- Automatically receives the following spells: Chill Touch, Ghoul Touch, Vampiric Touch, Spirit Armor, Animate Dead, Lich Touch and Control Undead. 
+ 
+Disadvantages:
+ 
+- Suffers a -2 penalty on Saving Throws against Necromancy spells.
+- Has 100% vulnerability versus magical damage.~
+@1104 = ~Lich Touch~
+@1105 = ~Lich Touch
+(Necromancy)
+
+Level: 6
+Range: Touch
+Duration: 1 round/level
+Casting Time: 6
+Area of Effect: The caster
+Saving Throw: Special
+
+This spell confers the powers of a lich's touch and a lich's immunities upon the caster. The wizard gains immunity to paralysis and fear while the spell is in effect, and <PRO_HISHER> hands glow with an unearthly blue radiance that does 1d10 cold damage to a target and paralyzes them unless a Save vs. Paralysis is made. This spell has no effect on undead.~
+
+// EoF

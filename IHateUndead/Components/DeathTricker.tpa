@@ -1,0 +1,70 @@
+ADD_KIT ~RAUT~
+    ~RAUT 1 1 1 1 1 0 0 0~
+    ~RAUT 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 1 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAUT 3 9 3 12 3 3~
+	~RAUT 0 0 0 0 0 0~
+	~RAUT 99 99 99 99 99 99~
+    ~RAUT 0 17 0 12 0 0~
+	~RAUT 1 1 0 1 1 0 1 1 0~
+	~RAUT 1 1 1 0 0 0~
+	~IHateUndead\Tables\RAUT.2da~
+	~K_T_H	K_T_D   K_T_G   K_T_E   K_T_HE   K_T_HL   K_T_HO~
+	~0x00040000 4~
+	~Th0~
+	~LEAT19 * * * WA2RING RING39 CLCK03 BOOT07 AMUL27 BRAC16 * * * * * * * DAGG11 BOW15 STAF08~
+	SAY @501
+	SAY @502
+	SAY @503
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAUT~		
+		thiefskl = ~40 20~
+		clascolr = ~6 107 123 242 136~
+		clasiskl = ~0 10 10 0 0 0 0~
+		thiefscl = ~0 100 100 100 100 100 100 0~
+END
+		
+COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
+  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+    READ_BYTE 0x18 flags1
+    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+		READ_ASCII	0x22 animation (2)
+		PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
+			LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUT~) parameter2 = 9 special = RESOLVE_STR_REF (@502) END
+		END
+	END
+  END
+BUT_ONLY
+
+COPY "IHateUndead\Eff\Tricker" override
+
+COPY "IHateUndead\Spl\RAUTHTE1.spl" override
+
+COPY "IHateUndead\Spl\RAUTTR.spl" override
+    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 301 parameter3 = 0 END
+
+COPY "IHateUndead\Spl\RAUTED.spl" override	SAY NAME1 @504	SAY UNIDENTIFIED_DESC @505
+
+COPY "IHateUndead\Spl\RAUTHT.spl" override	SAY NAME1 @506	SAY UNIDENTIFIED_DESC @507
+
+ACTION_FOR_EACH file IN ~RAUTED~ ~RAUTHT~ BEGIN
+  COPY ~IHateUndead\Bam\DeathTricker\%file%.bam~ ~override~
+    LPF UPDATE_PVRZ_INDICES
+    RET
+      original_base_index
+      new_base_index
+    END
+
+  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
+    LAF INSTALL_PVRZ
+    INT_VAR
+      original_base_index
+      new_base_index
+    STR_VAR
+      source_file = EVAL ~IHateUndead\Bam\DeathTricker\MOS%original_base_index%.pvrz~
+    END
+  END
+END
+
+//EoF
