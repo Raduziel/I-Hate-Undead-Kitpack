@@ -79,8 +79,6 @@ LPM I_HATE_UNDEAD_FEATURES
 COPY_EXISTING ~SPPR413.spl~ ~override\RAUPBR4.spl~ 
 LPM I_HATE_UNDEAD_FEATURES
 
-COPY "IHateUndead\Spl\RAUPBR.spl" override
-
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
 	PATCH_MATCH proficiency WITH 
