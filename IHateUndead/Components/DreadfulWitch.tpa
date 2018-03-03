@@ -35,13 +35,11 @@ COPY "IHateUndead\Spl\RACUMA.spl" override	SAY NAME1 @1007	SAY UNIDENTIFIED_DESC
 
 COPY "IHateUndead\Spl\RACUVO.spl" override	SAY NAME1 @1008	SAY UNIDENTIFIED_DESC @1008
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1011) STR_VAR bam_file = HOPEIC RET icon END
 COPY "IHateUndead\Spl\RACUAG.bam" override
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
 
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1011) STR_VAR bam_file = RACUAG RET icon END
 COPY "IHateUndead\Spl\RACUAG.spl" override	SAY NAME1 @1009	SAY UNIDENTIFIED_DESC @1009
-
-
+LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
 
 COPY "IHateUndead\Spl\RACUDE.spl" override	SAY NAME1 @1010	SAY UNIDENTIFIED_DESC @1010
 
