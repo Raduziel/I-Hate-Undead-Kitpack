@@ -8,6 +8,7 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_Variables.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/spell_to_innate.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_KitFeatures.tpa~
+	INCLUDE ~%MOD_FOLDER%/Lib/CDNewIcon.tpa~
    
 END
 
