@@ -49,7 +49,7 @@ Une fois par jour, le prédateur peut se rendre indétectable par les morts-viva
  * ===================== */
 @201 = ~rédempteur d'esprits~
 @202 = ~Rédempteur d'esprits~
-@@203 = ~RÉDEMPTEUR D'ESPRITS : Il ne suffit pas d'être ordonné par une église pour devenir un Rédempteur d'esprits. Cela exige une vie de dévouement, de sacrifices et de courage. Des prêtres de nombreux clergés peuvent devenir rédempteurs, mais cette voie difficile est plus fréquemment choisie par des prêtres de Kelemvor et de Lathandre. Ce sont des combattants efficaces contre l'une des armes les plus communes utilisées par le clergé profane : les morts-vivants. Quelle que soit son allégeance, le rédempteur est une force crainte par les nécromanciens, les prêtres impies et, surtout, les morts-vivants.
+@203 = ~RÉDEMPTEUR D'ESPRITS : Il ne suffit pas d'être ordonné par une église pour devenir un Rédempteur d'esprits. Cela exige une vie de dévouement, de sacrifices et de courage. Des prêtres de nombreux clergés peuvent devenir rédempteurs, mais cette voie difficile est plus fréquemment choisie par des prêtres de Kelemvor et de Lathandre. Ce sont des combattants efficaces contre l'une des armes les plus communes utilisées par le clergé profane : les morts-vivants. Quelle que soit son allégeance, le rédempteur est une force crainte par les nécromanciens, les prêtres impies et, surtout, les morts-vivants.
 
 Avantages :
 
@@ -404,7 +404,6 @@ Désavantages :
 @1008 = ~Imprécation de vide~
 @1009 = ~Imprécation d'agonie~
 @1010 = ~Imprécation de destruction~
-@1011 = ~Douleur~
 
 /* ================= *
  *  IMPRISONED SOUL  *
