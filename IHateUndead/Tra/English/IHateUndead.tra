@@ -3,7 +3,7 @@
  * ===================== */
 @101 = ~undead predator~
 @102 = ~Undead Predator~
-@103 = ~UNDEAD PREDATOR: This ranger devotes <PRO_HISHER> life to hunting and destroying the undead and helping those who have fallen victim to them. They are nomads wandering through the darkest corners of the land fighting these profane creatures. Their hard training comes at a cost: they do not have the same affinity with nature as other rangers and rarely create bonds with the people around them.
+@103 = ~UNDEAD PREDATOR: This ranger devotes <PRO_HISHER> life to hunt and destroy the undead as well as help those who have fallen victim to them. They are nomads wandering through the darkest corners of the land fighting these profane creatures. Their hard training comes at a cost: they do not have the same affinity with nature that other rangers have and rarely create bonds with the people around them.
 	
 Advantages:
 
@@ -32,8 +32,8 @@ Disadvantages:
 - Requires at least 16 Wisdom.
 - Can't wear metal armor.
 - -2 Charisma penalty.
-- Cannot Dual Class.
-- No Charm Animal.
+- Can't Dual Class.
+- Can't Charm Animal.
 - Can't cast spells.
 ~
 @104 = ~Deceive Undead~
@@ -320,7 +320,7 @@ Disadvantages:
 
 - May not cast the following spells: Animal Summoning (any), Call Woodland Being and Conjure Animal.
 - May not wear heavier armor than leather.
-- Cannot use shapeshift.
+- Cannot Shapeshift.
 - Cannot Dual Class.
 ~
 
@@ -337,7 +337,7 @@ Disadvantages:
 
 - May not cast the following spells: Animal Summoning (any), Call Woodland Being and Conjure Animal.
 - May not wear heavier armor than leather.
-- Cannot use shapeshift.
+- Cannot Shapeshift.
 - Cannot Dual Class.
 ~
 
