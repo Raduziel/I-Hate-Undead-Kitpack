@@ -26,7 +26,7 @@ After a long, valiant and hard journey, the Predator gains the favor of the gods
 
 Disadvantages:
 
-- May only use the following weapons: Axes, Clubs, Crossbows, Warhammers, Longswords, Maces, Quarterstaff and Spears.
+- May only use the following weapons: Axes, Clubs, Crossbows, Warhammers, Longswords, Maces, Quarterstaff, and Spears.
 - All spell-like abilities are single-target and require touch.
 - Alignment restricted to Neutral Good.
 - Requires at least 16 Wisdom.
@@ -212,7 +212,7 @@ Advantages:
 - Immune to disease.
 - Hit Die: d12.
 
-BARBARIAN RAGE: The enraged status lasts for 5 rounds and provides a +4 bonus to Strenght and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion and level drain spells.
+BARBARIAN RAGE: The enraged status lasts for 5 rounds and provides a +4 bonus to Strength and Constitution, a -2 penalty to Armor Class and a +2 bonus to Saving Throws vs. Spell, as well as immunity to all charm, hold, fear, maze, stun, sleep, confusion and level drain spells.
 
 Disadvantages:
 
@@ -233,7 +233,7 @@ Disadvantages:
 Advantages:
 
 - At level 1 gains the Tale of Dreadful Deeds ability.
-- At level 6 gains the Remembrance Of The Beloved Ones ability.
+- At level 6 gains the Remembrance Of The Beloved One ability.
 - At level 11 gains the Warning Of The God's Wrath ability.
 - At level 16 gains the Warm Memories Of A Friend ability.
 - At level 21 gains the Recall Of The Living Conscience ability.
@@ -277,8 +277,8 @@ Disadvantages:
 @705 = ~Tale Of Dreadful Deeds
 
 The Grave Mourner starts a narrative about heroes that overcame powerful undead in glorious fights. An undead hearing this tale must make a save versus spell with a -2 penalty or become deaf for 5 rounds.~
-@706 = ~Remembrance Of The Beloved Ones~
-@707 = ~Remembrance Of The Beloved Ones
+@706 = ~Remembrance Of The Beloved One~
+@707 = ~Remembrance Of The Beloved One
 
 The Grave Mourner mocks the undead by remembering it of the people that it will never see or hold again. Any undead hearing this mockery must make a save versus spell with a -2 penalty or become berserker for 5 rounds.~
 @708 = ~Warning Of The Gods' Wrath~
@@ -292,7 +292,7 @@ The Grave Mourner pretends to be an old friend of the undead. Any undead hearing
 @712 = ~Recall Of The Living Conscience~
 @713 = ~Recall Of The Living Conscience
 	
-The Grave Mourner speechs firmly to the undead remember that it is nothing but a rotting corpse and a piece of void. Any undead hearing this speech must make a save versus spell with a -2 penalty or become feebleminded.~
+The Grave Mourner speaks firmly to the undead remember that it is nothing but a rotting shell condemned to entropy. Any undead hearing this speech must make a save versus spell with a -2 penalty or become feebleminded.~
 @714 = ~Requiem~
 @715 = ~Dispirited~
 
@@ -370,7 +370,7 @@ Advantages:
 
 DISRUPT HERETIC:
 
-During the next 5 rounds, every melee blow delivered by the Pallid Mask will give 1d8+5 points of damage and, unless a save versus Death is successfully made, a cumulative spell failure of 30% to the target. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image. The Pallid Mask have a +5 Thac0 bonus while using this ability.
+During the next 5 rounds, every melee attack delivered by the Pallid Mask will give 1d8+5 points of damage and, unless a save versus Death is successfully made, a cumulative spell failure of 30% to the target. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image. The Pallid Mask have a +5 Thac0 bonus while using this ability.
 
 Disadvantages:
 
@@ -379,7 +379,7 @@ Disadvantages:
 - Cannot be resurrected.
 ~
 @904 = ~Disrupt Heretic~
-@905 = ~During the next 5 rounds, every melee blow delivered by the Pallid Mask will give a cumulative spell failure of 30% to the target unless a save versus Death is successfully made. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image.~
+@905 = ~During the next 5 rounds, every melee attack delivered by the Pallid Mask will give a cumulative spell failure of 30% to the target unless a save versus Death is successfully made. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image.~
 
 /* ================= *
  *  DREADFUL WITCH   *
@@ -398,25 +398,25 @@ CURSES
 
 It is possible to stack different curses, but never two of the same curses over the same target. Every time a curse is cast the Dreadful Witch takes 1d4 point of magic damage. The target can make a save versus death with -1 penalty for every four levels of the Dreadful Witch to avoid the effects (maximum of -5 at level 20). All the effects last for 1 turn.
 
-The following curses can be cast:
+The following Curses can be cast:
 
-* Misfortune: Target takes a -2 penalty in Luck. Gains an use at levels: 1, 2, 5, 7 and 18.
+* Misfortune: Target takes a -2 penalty in Luck. Gains a use at levels: 1, 2, 5, 7, and 18.
 
-* Terror: Target flees in panic. Gains an use at levels: 3, 4, 6, 8 and 18.
+* Terror: Target flees in panic. Gains a use at levels: 3, 4, 6, 8, and 18.
 
-* Rage: Target goes berserker, attacking friend or foe alike. Gains an use at levels: 1, 2, 5, 7 and 18.
+* Rage: Target goes berserker, attacking friend or foe alike. Gains a use at levels: 1, 2, 5, 7, and 18.
 
-* Madness: Target goes confuse, random walking, attacking or doing nothing. Gains an use at levels 7, 8, 9, 13 and 19.
+* Madness: Target goes confuse, random walking, attacking or doing nothing. Gains a use at levels 7, 8, 9, 13, and 19.
 
-* Void: Target becomes feebleminded. Gains an use at levels 10, 11, 12 and 14.
+* Void: Target becomes feebleminded. Gains a use at levels 10, 11, 12, and 14.
 
-* Agony: Target feels an unbearable pain, taking 50% penalty to movement and attack rate and a -4 penalty in damage, Thac0 and Armor Class. Gains an use at levels 13, 15, 16 and 17.
+* Agony: Target feels an unbearable pain, taking 50% penalty to movement and attack rate and a -4 penalty in damage, Thac0 and Armor Class. Gains a use at levels 13, 15, 16, and 17.
 
-* Destruction: Target dies. Gains an use at levels 18, 19 and 20.
+* Destruction: Target dies. Gains a use at levels 18, 19, and 20.
 
 Disadvantages:
 
-- May cast one fewer spell per level per day.
+- May cast one less spell per level per day.
 - Alignment restricted to Neutral Evil.
 - Hit Die: d6.
 ~

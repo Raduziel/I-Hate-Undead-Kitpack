@@ -57,27 +57,27 @@ LAF ~DEFINE_FNP_KIT_INFO~
   STR_VAR
     clab_name 	    = ~RAUR~
 	class 			= ~cleric~	 
-	s_Life 			= ~minor~
-	s_Death 		= ~major~
+	s_Life 			= ~major~
+	s_Death 		= ~minor~
 	s_Benediction 	= ~major~
-	s_Destruction 	= ~minor~
+	s_Destruction 	= ~x~
 	s_Protection 	= ~major~
-	s_War 			= ~major~
-	s_Exploration   = ~minor~
-	s_Knowledge 	= ~major~
+	s_War 			= ~minor~
+	s_Exploration   = ~x~
+	s_Knowledge 	= ~x~
 	s_Deception 	= ~x~
-	s_Thought 		= ~minor~
+	s_Thought 		= ~x~
 	s_Dread 		= ~minor~	
 	s_Vigor 		= ~major~
 	s_Affliction 	= ~x~
 	s_Animal 		= ~x~
 	s_Plant 		= ~x~
-	s_Earth 		= ~minor~
+	s_Earth 		= ~x~
 	s_Water 		= ~x~
 	s_Air 			= ~x~
-	s_Fire 			= ~major~
+	s_Fire 			= ~x~
 	s_Light 		= ~major~
-	s_Shadow 		= ~minor~
+	s_Shadow 		= ~x~
 	s_Magic 		= ~minor~
 	s_Perdition     = ~x~
 END
