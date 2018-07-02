@@ -1,7 +1,6 @@
 1) Compatibility
 
 
-
 The I Hate Undead Kitpack should be compatible with any mods. Tome and Blood (TnB) requires a workaround that I explain at item 4 and Faiths and Powers (FnP) is still going through adjustments. If you observe some odd behavior, please, contact Raduziel at Beamdog's forums.
 
 This mod works for IWDEE, BGEE, BG2EE and EET. Anyone who wishes to convert this mod to vanilla feel free to do so, just keep the credits for the original work.
@@ -21,6 +20,8 @@ I Hate Undead Kitpack should be installed before any mod that alters the profici
 
 None
 
+
+
 4) Using the Undead Slayer with TnB's component "Revised Specialists"
 
 4.a) Enable the Console Commands;
@@ -34,7 +35,6 @@ None
 
 
 5) Credits
-
 
 
 Lots of people helped me through this journey but I want to especially thank Gwendolyne and Kjeron. I feel like this mod is theirs as much as mine. The French translation is also a Gwendolyne job.
