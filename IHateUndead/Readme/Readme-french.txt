@@ -1,6 +1,6 @@
-I. Compatibilité.
+﻿I. Compatibilité.
 
-Le pack de kits "I Hate Undead" ("Je hais les morts-vivants") est à priori compatible avec n'importe quel autre module. Cependant, sa cohabitation avec Tome and Blood (TnB) nécessite une procédure expliquée dans le chapitre IV. Quant au module Faiths and Powers (FnP) il est toujours en développement et "I Hate Undead" est régulièrement mis à jour pour conserver sa compatibilité.
+Le pack de kits "I Hate Undead" ("Je hais les morts-vivants") est à priori compatible avec n'importe quel autre module. Cependant, sa cohabitation avec Tome and Blood (TnB) nécessite une procédure expliquée dans le chapitre IV.
 
 Si vous constatez des dysfonctionnements, veuillez contacter Raduziel dans le forum de Beamdog, dans la langue de Shakespeare (of course !).
 
@@ -11,7 +11,7 @@ Que quiconque souhaite le convertir pour les jeux classiques se sente libre de l
 
 II. Ordre d'installation.
 
-Ce pack doit être installé après les modules introduisant ou modifiant les objets, Faiths and Powers et Spells Revision ; et avant ceux modifiant le système de compétences.
+Ce pack doit être installé après les modules introduisant ou modifiant les objets, Deities of Faerûn et Spells Revision ; et avant ceux modifiant le système de compétences.
 
 
 
@@ -27,7 +27,7 @@ IV. Utiliser le Tueur de morts-vivants avec le composant "Révision des Spécial
 
 4.c) Une fois le jeu lancé, sélectionnez votre nécromancien avec le curseur et, sans lâcher le curseur, appuyez sur Ctrl + espace.
 
-4.d) Tapez C:Eval('AddKit(RAUS)'), puis validez avec la touche Entrée. Amusez-vous bien.
+4.d) Tapez C:Eval('AddKit(RAHUUS)'), puis validez avec la touche Entrée. Amusez-vous bien.
 
 
 

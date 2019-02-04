@@ -1,7 +1,7 @@
 1) Compatibility
 
 
-The I Hate Undead Kitpack should be compatible with any mods. Tome and Blood (TnB) requires a workaround that I explain at item 4 and Faiths and Powers (FnP) is still going through adjustments. If you observe some odd behavior, please, contact Raduziel at Beamdog's forums.
+The I Hate Undead Kitpack should be compatible with any mods. Tome and Blood (TnB) requires a workaround that I explain at item 4. If you observe some odd behavior, please, contact Raduziel at Beamdog's forums.
 
 This mod works for IWDEE, BGEE, BG2EE and EET. Anyone who wishes to convert this mod to vanilla feel free to do so, just keep the credits for the original work.
 
@@ -10,7 +10,7 @@ This mod works for IWDEE, BGEE, BG2EE and EET. Anyone who wishes to convert this
 2) Installing Order
 
 
-I Hate Undead Kitpack should be installed after any items mods, Faiths and Powers and Spells Revision.
+I Hate Undead Kitpack should be installed after any items mods, Deities of Faerûn and Spells Revision.
 
 I Hate Undead Kitpack should be installed before any mod that alters the proficiency system.
 
@@ -30,7 +30,7 @@ None
 
 4.c) While in the game, select only the Necromancer, leave the cursor on it and hit Ctrl + Space;
 
-4.d) Type: C:Eval('AddKit(RAUS)') and hit Enter. Enjoy.
+4.d) Type: C:Eval('AddKit(RAHUUS)') and hit Enter. Enjoy.
 
 
 
