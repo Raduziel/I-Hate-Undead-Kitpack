@@ -1,6 +1,6 @@
 BACKUP ~IHateUndead/Backup~
 AUTHOR ~Raduziel~
-VERSION ~2.8~
+VERSION ~3.0~
 
 ALWAYS
 
@@ -9,6 +9,7 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/Lib/spell_to_innate.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_KitFeatures.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/CDNewIcon.tpa~
+	INCLUDE ~%MOD_FOLDER%/Lib/RA_SPHERE_COMPAT.tpa~
    
 END
 
