@@ -26,6 +26,18 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUCE~ clabfile = ~RAHUCE~ END
 
+COPY_EXISTING ~RAHUCE.2da~ ~override/RAHUCE.2da~
+SET_2DA_ENTRY  3 1  50 ~****     ~
+SET_2DA_ENTRY  4 1  50 ~****     ~
+SET_2DA_ENTRY  5 3  50 ~****     ~
+SET_2DA_ENTRY  6 5  50 ~****     ~
+SET_2DA_ENTRY  7 5  50 ~****     ~
+SET_2DA_ENTRY  8 5  50 ~****     ~
+SET_2DA_ENTRY  9 9  50 ~****     ~
+SET_2DA_ENTRY 10 11 50 ~****     ~
+
+PRETTY_PRINT_2DA	
+	
 END
 
 
