@@ -1,15 +1,15 @@
-ADD_KIT ~RAUP~
-    ~RAUP 1 1 1 1 1 1 1 1~
-    ~RAUP 0 0 0 0 0 0 0 0 0 2 0 2 0 0 0 0 2 2 2 0 0 2 2 2 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAUP 13 13 14 3 16 3~
-	~RAUP 0 0 0 0 0 -2~
-	~RAUP 99 99 99 99 99 99~
-    ~RAUP 15 17 0 0 15 0~
-	~RAUP 0 0 0 1 0 0 0 0 0~
-	~RAUP 0 0 0 0 0 0~
-	~IHateUndead\Tables\RAUP.2da~
+ADD_KIT ~RAHUUP~
+    ~RAHUUP 1 1 1 1 1 1 1 1~
+    ~RAHUUP 0 0 0 0 0 0 0 0 0 2 0 2 0 0 0 0 2 2 2 0 0 2 2 2 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUUP 13 13 14 3 16 3~
+	~RAHUUP 0 0 0 0 0 -2~
+	~RAHUUP 99 99 99 99 99 99~
+    ~RAHUUP 15 17 0 0 15 0~
+	~RAHUUP 0 0 0 1 0 0 0 0 0~
+	~RAHUUP 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAHUUP.2da~
 	~K_R_H	K_R_D   K_R_G   K_R_E   K_R_HE   K_R_HL   K_R_HO~
-	~0x00010000 12~
+	~0x00000000 12~
 	~Ra0~
 	~LEAT19 BLUN25 HELM16 * RING27 RING31 CLCK02 BOOT01 AMUL27 BRAC10 * * * * * * * SW1H31 AX1H10 STAF08~
 	SAY @101
@@ -20,7 +20,7 @@ LAF fl#add_kit_ee
 	INT_VAR										
 		fallen_notice = RESOLVE_STR_REF (@106)
 	STR_VAR
-		kit_name = ~RAUP~		
+		kit_name = ~RAHUUP~		
 		clascolr = ~6 160 164 242 163~
 END
 
@@ -87,7 +87,7 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			INT_VAR
 			  opcode = 319
 			  target = 1
-			  parameter1 = (RAUP + 0x4000)
+			  parameter1 = (RAHUUP + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 			  special = RESOLVE_STR_REF (@102)
@@ -103,10 +103,10 @@ COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 		READ_ASCII	0x22 animation (2)
 		PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-		  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUP~) parameter2 = 9 special = RESOLVE_STR_REF (@102) END
+		  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUUP~) parameter2 = 9 special = RESOLVE_STR_REF (@102) END
 		END
 		PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-		  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAUP~) parameter2 = 9 special = RESOLVE_STR_REF (@102) END
+		  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUUP~) parameter2 = 9 special = RESOLVE_STR_REF (@102) END
 		END
 		END
 	END
@@ -117,7 +117,7 @@ BUT_ONLY
 ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
 	ACTION_CLEAR_ARRAY GW_Fallen_Kits
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY GW_Fallen_Kits BEGIN
-	107,	108	=> RAUP
+	107,	108	=> RAHUUP
 	END
 	ACTION_PHP_EACH GW_Fallen_Kits AS GW_kits => GW_kit_name BEGIN
 		COPY_EXISTING - ~clastext.2da~ ~override~

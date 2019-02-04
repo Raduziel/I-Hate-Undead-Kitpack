@@ -1,13 +1,13 @@
-ADD_KIT ~RAWI~
-    ~RAWI 0 1 1 1 1 0 1 1~
-    ~RAWI 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAWI 3 3 12 3 12 3~
-	~RAWI 0 0 0 0 0 0~
-	~RAWI 99 99 99 99 99 99~
-    ~RAWI 99 99 99 99 99 99~
-	~RAWI 0 0 0 0 0 1 0 0 0~
-	~RAWI 0 0 0 0 0 0~
-	~IHateUndead\Tables\RAWI.2da~
+ADD_KIT ~RAHUDW~
+    ~RAHUDW 0 1 1 1 1 0 1 1~
+    ~RAHUDW 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUDW 3 3 12 3 12 3~
+	~RAHUDW 0 0 0 0 0 0~
+	~RAHUDW 99 99 99 99 99 99~
+    ~RAHUDW 99 99 99 99 99 99~
+	~RAHUDW 0 0 0 0 0 1 0 0 0~
+	~RAHUDW 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAHUDW.2da~
 	~K_Sh_H     K_Sh_HE     K_Sh_HO~
 	~0x00004000 21~
 	~Sh0~
@@ -18,78 +18,15 @@ ADD_KIT ~RAWI~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAWI~
-		hpclass = ~HPRAWi~
+		kit_name = ~RAHUDW~
+		hpclass = ~HPRAHUDW~
 		clascolr = ~220 7 41 164 220~
 END
 
-ACTION_INCLUDE ~IHateUndead/lib/fnp_compat.tpa~
-ACTION_INCLUDE ~IHateUndead/lib/remove_lines.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
-COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_ROWS 1 rows
-	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
-BUT_ONLY
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUDW~ clabfile = ~RAHUDW~ END
 
-LAF ~DEFINE_FNP_KIT_INFO~
-  INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 0
-	u_plate_armor 		= 0
-	u_club_staff	 	= 1
-	u_hammers	 		= 0
-	u_maces 	 		= 0
-	u_flails 			= 0
-	u_axes 				= 1
-	u_daggers 			= 1
-	u_short_swords		= 0
-	u_long_swords		= 0
-	u_scimitars 		= 0
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 1
-	u_darts 			= 1
-	u_slings	 		= 1
-	u_bows 				= 1
-	u_crossbows 		= 0
-  STR_VAR
-    clab_name 	    = ~RAWI~
-	class 			= ~shaman~	 
-	s_Life 			= ~minor~
-	s_Death 		= ~x~
-	s_Benediction 	= ~x~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~x~
-	s_War 			= ~x~
-	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
-	s_Deception 	= ~x~
-	s_Thought 		= ~x~
-	s_Dread 		= ~major~
-	s_Vigor 		= ~x~
-	s_Affliction 	= ~major~
-	s_Animal 		= ~minor~
-	s_Plant 		= ~minor~
-	s_Earth 		= ~major~
-	s_Water 		= ~minor~
-	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~x~
-	s_Shadow 		= ~major~
-	s_Magic 		= ~x~
-	s_Perdition     = ~major~
-END
-
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
 END
 
 COPY "IHateUndead\Spl\RAWIFE.spl" override
@@ -112,7 +49,7 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = ic
 
 COPY "IHateUndead\Spl\RACUDE.spl" override	SAY NAME1 @1010	SAY UNIDENTIFIED_DESC @1010
 
-COPY "IHateUndead\Tables\HPRAWi.2da" override
+COPY "IHateUndead\Tables\HPRAHUDW.2da" override
 
 ACTION_FOR_EACH file IN ~RADWAG~ ~RADWDE~ ~RADWMA~ ~RADWMI~ ~RADWRA~ ~RADWTE~ ~RADWVO~ BEGIN
   COPY ~IHateUndead\Bam\DreadfulWitch\%file%.bam~ ~override~

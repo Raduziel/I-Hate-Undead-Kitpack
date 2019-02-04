@@ -1,16 +1,16 @@
-	ADD_KIT ~RACE~
-    ~RACE 1 0 1 1 0 0 0 1~
-    ~RACE 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RACE 3 3 3 3 12 15~
-	~RACE 0 0 0 0 0 0~
-	~RACE 99 99 99 99 99 99~
-    ~RACE 18 18 18 18 18 18~
-	~RACE 0 0 0 0 1 0 0 0 0~
-	~RACE 0 0 0 0 0 0~
-	~IHateUndead\Tables\RACE.2da~
+	ADD_KIT ~RAHUCE~
+    ~RAHUCE 1 0 1 1 0 0 0 1~
+    ~RAHUCE 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUCE 3 3 3 3 12 15~
+	~RAHUCE 0 0 0 0 0 0~
+	~RAHUCE 99 99 99 99 99 99~
+    ~RAHUCE 18 18 18 18 18 18~
+	~RAHUCE 0 0 0 0 1 0 0 0 0~
+	~RAHUCE 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAHUCE.2da~
 	~K_D_H	K_D_D   K_D_G   K_D_E   K_D_HE   K_D_HL   K_D_HO~
-	~0x20000000 11~
-	~RACE~
+	~0x00000000 11~
+	~RAHUCE~
 	~LEAT19 * * * RING28 RING29 CLCK05 BOOT04 AMUL27 BRAC07 * * * * * * * WASTAFF WASLING *~
 	SAY @801
 	SAY @802
@@ -18,80 +18,16 @@
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RACE~		
+		kit_name = ~RAHUCE~		
 		clascolr = ~6 42 54 242 236~
 END
 
-ACTION_INCLUDE ~IHateUndead/lib/fnp_compat.tpa~
-ACTION_INCLUDE ~IHateUndead/lib/remove_lines.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
-COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_ROWS 1 rows
-	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
-BUT_ONLY
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUCE~ clabfile = ~RAHUCE~ END
 
-LAF ~DEFINE_FNP_KIT_INFO~
-  INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 0
-	u_plate_armor 		= 0
-	u_club_staff	 	= 1
-	u_hammers	 		= 0
-	u_maces 	 		= 0
-	u_flails 			= 0
-	u_axes 				= 0
-	u_daggers 			= 1
-	u_short_swords		= 0
-	u_long_swords		= 0
-	u_scimitars 		= 1
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 1
-	u_darts 			= 1
-	u_slings	 		= 1
-	u_bows 				= 0
-	u_crossbows 		= 0
-  STR_VAR
-    clab_name 	    = ~RACE~
-	class 			= ~druid~	 
-	s_Life 			= ~minor~
-	s_Death 		= ~x~
-	s_Benediction 	= ~x~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~x~
-	s_War 			= ~x~
-	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
-	s_Deception 	= ~x~
-	s_Thought 		= ~x~
-	s_Dread 		= ~x~
-	s_Vigor 		= ~major~
-	s_Affliction 	= ~minor~
-	s_Animal 		= ~major~
-	s_Plant 		= ~major~
-	s_Earth 		= ~major~
-	s_Water 		= ~major~
-	s_Air 			= ~major~
-	s_Fire 			= ~major~
-	s_Light 		= ~minor~
-	s_Shadow 		= ~x~
-	s_Magic 		= ~x~
-	s_Perdition     = ~x~
 END
 
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
-END
-
-ACTION_IF NOT FILE_EXISTS ~override/d5_spheres.d5~ BEGIN
 
 	COPY_EXISTING ~SPWI217.spl~ ~override\RACEAS.spl~	SAY NAME1 @805	SAY UNIDENTIFIED_DESC @806   //Agannazar's Scorcher
 	WRITE_SHORT 0x1C 2
@@ -105,8 +41,6 @@ ACTION_IF NOT FILE_EXISTS ~override/d5_spheres.d5~ BEGIN
 	COPY_EXISTING ~SPWI303.spl~ ~override\RACEFA.spl~                                                //Flame Arrow
 	WRITE_SHORT 0x1C 2
 	
-END
-
 	COPY_EXISTING ~SPWI308.spl~ ~override\RACELB.spl~                                                //Lightning Bolt
 	WRITE_SHORT 0x1C 2
 
@@ -139,54 +73,6 @@ COPY "IHateUndead\Spl\RACE3.spl" override
 
 END
 
-COPY "IHateUndead\Tables\LURACE.2DA" override
+COPY "IHateUndead\Tables\LURAHUCE.2DA" override
 
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-
-  ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
-    COPY_EXISTING ~clastext.2da~ ~override~
-        COUNT_2DA_COLS cols
-        READ_2DA_ENTRIES_NOW rows cols 
-        FOR (row = 1; row < rows; ++row) BEGIN
-            READ_2DA_ENTRY_FORMER rows row 0 ~kit_name~
-            PATCH_IF ~%kit_name%~ STRING_EQUAL_CASE ~RACE~ BEGIN
-                SET patch_row = %row%
-            END
-        END
-        SET_2DA_ENTRY %patch_row% 3 cols RESOLVE_STR_REF (@801)
-        SET_2DA_ENTRY %patch_row% 4 cols RESOLVE_STR_REF (@804)
-        SET_2DA_ENTRY %patch_row% 5 cols RESOLVE_STR_REF (@802)
-    BUT_ONLY
-  END
-  ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
-    COPY_EXISTING ~sodcltxt.2da~ ~override~
-        COUNT_2DA_COLS cols
-        READ_2DA_ENTRIES_NOW rows cols  
-        FOR (row = 1; row < rows; ++row) BEGIN
-            READ_2DA_ENTRY_FORMER rows row 0 ~kit_name~
-            PATCH_IF ~%kit_name%~ STRING_EQUAL_CASE ~RACE~ BEGIN
-                SET patch_row = %row%
-            END
-        END
-        SET_2DA_ENTRY %patch_row% 3 cols RESOLVE_STR_REF (@801)
-        SET_2DA_ENTRY %patch_row% 4 cols RESOLVE_STR_REF (@804)
-        SET_2DA_ENTRY %patch_row% 5 cols RESOLVE_STR_REF (@802)
-    BUT_ONLY
-  END
-  ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
-    COPY_EXISTING ~kitlist.2da~ ~override~
-        COUNT_2DA_COLS cols
-        READ_2DA_ENTRIES_NOW rows cols 
-        FOR (row = 1; row < rows; ++row) BEGIN
-            READ_2DA_ENTRY_FORMER rows row 1 ~kit_name~
-            PATCH_IF ~%kit_name%~ STRING_EQUAL_CASE ~RACE~ BEGIN
-                SET patch_row = %row%
-            END
-        END
-        SET_2DA_ENTRY %patch_row% 2 cols RESOLVE_STR_REF (@801)
-        SET_2DA_ENTRY %patch_row% 3 cols RESOLVE_STR_REF (@802)
-        SET_2DA_ENTRY %patch_row% 4 cols RESOLVE_STR_REF (@804)
-    BUT_ONLY
-  END
-
-END
+//EoF

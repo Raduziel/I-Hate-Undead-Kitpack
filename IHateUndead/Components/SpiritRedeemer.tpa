@@ -1,16 +1,16 @@
-ADD_KIT ~RAUR~
-    ~RAUR 0 0 1 1 0 1 0 0~
-    ~RAUR 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAUR 3 3 3 3 9 12~
-	~RAUR 0 0 0 0 0 0~
-	~RAUR 99 99 99 99 99 99~
-    ~RAUR 0 0 0 0 15 0~
-	~RAUR 1 1 0 0 0 0 0 0 0~
-	~RAUR 1 0 1 1 0 1~
-	~IHateUndead\Tables\RAUR.2da~
+ADD_KIT ~RAHUSR~
+    ~RAHUSR 0 0 1 1 0 1 0 0~
+    ~RAHUSR 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUSR 3 3 3 3 9 12~
+	~RAHUSR 0 0 0 0 0 0~
+	~RAHUSR 99 99 99 99 99 99~
+    ~RAHUSR 0 0 0 0 15 0~
+	~RAHUSR 1 1 0 0 0 0 0 0 0~
+	~RAHUSR 1 0 1 1 0 1~
+	~IHateUndead\Tables\RAHUSR.2da~
 	~K_C_H	K_C_D   K_C_G   K_C_E   K_C_HE   K_C_HL   K_C_HO~
-	~0x02000000 3~
-	~RAUR~
+	~0x00000000 3~
+	~RAHUSR~
 	~PLAT12 SHLD25 HELM16 * RING22 RING31 CLCK05 BOOT04 AMUL27 BRAC10 * * * * * * * BLUN25 HAMM09 STAF10~
 	SAY @201
 	SAY @202
@@ -18,81 +18,18 @@ ADD_KIT ~RAUR~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAUR~		
+		kit_name = ~RAHUSR~		
 		clascolr = ~6 15 14 242 28~
 		clswpbon = ~0 0 3~
 END
 
-ACTION_INCLUDE ~IHateUndead/lib/fnp_compat.tpa~
-ACTION_INCLUDE ~IHateUndead/lib/remove_lines.tpa~
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
-COPY_EXISTING ~kitlist.2da~ ~override~
-	COUNT_2DA_ROWS 1 rows
-	READ_2DA_ENTRY (%rows% - 1) 5 1 mod_clab
-BUT_ONLY
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUSR~ clabfile = ~RAHUSR~ END
 
-LAF ~DEFINE_FNP_KIT_INFO~
-  INT_VAR
-	u_leather_armor 	= 1
-	u_chain_armor 		= 1
-	u_plate_armor 		= 1
-	u_club_staff	 	= 1
-	u_hammers	 		= 1
-	u_maces 	 		= 1
-	u_flails 			= 1
-	u_axes 				= 0
-	u_daggers 			= 0
-	u_short_swords		= 0
-	u_long_swords		= 0
-	u_scimitars 		= 0
-	u_katanas 			= 0
-	u_bastard_swords 	= 0
-	u_2hand_swords 		= 0
-	u_halberds 			= 0
-	u_spears 	 		= 0
-	u_darts 			= 0
-	u_slings	 		= 1
-	u_bows 				= 0
-	u_crossbows 		= 0
-  STR_VAR
-    clab_name 	    = ~RAUR~
-	class 			= ~cleric~	 
-	s_Life 			= ~major~
-	s_Death 		= ~minor~
-	s_Benediction 	= ~major~
-	s_Destruction 	= ~x~
-	s_Protection 	= ~major~
-	s_War 			= ~minor~
-	s_Exploration   = ~x~
-	s_Knowledge 	= ~x~
-	s_Deception 	= ~x~
-	s_Thought 		= ~x~
-	s_Dread 		= ~minor~	
-	s_Vigor 		= ~major~
-	s_Affliction 	= ~x~
-	s_Animal 		= ~x~
-	s_Plant 		= ~x~
-	s_Earth 		= ~x~
-	s_Water 		= ~x~
-	s_Air 			= ~x~
-	s_Fire 			= ~x~
-	s_Light 		= ~major~
-	s_Shadow 		= ~x~
-	s_Magic 		= ~minor~
-	s_Perdition     = ~x~
 END
 
-LAM ~READ_FNP_KIT_INFO~
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_spheres.d5~ BEGIN
-  LAM apply_fnp_spheres
-END
-
-ACTION_IF FILE_EXISTS_IN_GAME ~d5_fnp_usability.d5~ BEGIN
-  LAM apply_fnp_usability
-END
-
-COPY "IHateUndead\Tables\LURAUR.2DA" override
+COPY "IHateUndead\Tables\LURAHUSR.2DA" override
 
 COPY_EXISTING ~SPPR409.spl~ ~override\RAURFE.spl~
 LPM I_HATE_UNDEAD_FEATURES
@@ -112,7 +49,7 @@ ACTION_IF GAME_IS ~bgee~ THEN BEGIN
         INT_VAR
           opcode = 319
           target = 1
-          parameter1 = (RAUR + 0x4000)
+          parameter1 = (RAHUSR + 0x4000)
           parameter2 = 9
           timing = 2
           special = RESOLVE_STR_REF (@202)
@@ -128,7 +65,7 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
         INT_VAR
           opcode = 319
           target = 1
-          parameter1 = (RAUR + 0x4000)
+          parameter1 = (RAHUSR + 0x4000)
           parameter2 = 9
           timing = 2
           special = RESOLVE_STR_REF (@202)
@@ -145,7 +82,7 @@ ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
         INT_VAR
           opcode = 319
           target = 1
-          parameter1 = (RAUR + 0x4000)
+          parameter1 = (RAHUSR + 0x4000)
           parameter2 = 9
           timing = 2
           special = RESOLVE_STR_REF (@202)

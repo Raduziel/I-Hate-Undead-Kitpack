@@ -1,15 +1,15 @@
-ADD_KIT ~RAUS~
-    ~RAUS 1 0 1 1 0 0 0 0~
-    ~RAUS 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAUS 3 3 16 9 16 3~
-	~RAUS 0 0 0 0 0 0~
-	~RAUS 99 99 99 99 99 99~
-    ~RAUS 0 0 16 15 16 0~
-	~RAUS 1 0 0 1 0 0 1 0 0~
-	~RAUS 1 1 0 1 0 0~
-	~IHateUndead\Tables\RAUS.2da~
+ADD_KIT ~RAHUUS~
+    ~RAHUUS 1 0 1 1 0 0 0 0~
+    ~RAHUUS 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUUS 3 3 16 9 16 3~
+	~RAHUUS 0 0 0 0 0 0~
+	~RAHUUS 99 99 99 99 99 99~
+    ~RAHUUS 0 0 16 15 16 0~
+	~RAHUUS 1 0 0 1 0 0 1 0 0~
+	~RAHUUS 1 1 0 1 0 0~
+	~IHateUndead\Tables\RAHUUS.2da~
 	~K_M_H~
-	~0x00001000 1~
+	~0x00000000 1~
 	~Ma0~
 	~CLCK12 * * * RING09 RING39 CLCK02 BOOT01 AMUL21 BRAC03 * * * * * * * * * STAF11~
 	SAY @301
@@ -18,9 +18,9 @@ ADD_KIT ~RAUS~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAUS~		
+		kit_name = ~RAHUUS~		
 		clascolr = ~6 47 66 242 65~
-		hpclass = ~HPRAUS~
+		hpclass = ~HPRAHUUS~
 END
 
 COPY "IHateUndead\Spl\RAUSFE.spl" override
@@ -35,7 +35,7 @@ COPY "IHateUndead\Spl\RAUSSS.spl" override	SAY NAME1 @304	SAY UNIDENTIFIED_DESC 
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@306) END
     LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@307) END
 	
-COPY "IHateUndead\Tables\HPRAUS.2da" override
+COPY "IHateUndead\Tables\HPRAHUUS.2da" override
 
 COPY ~IHateUndead\Bam\UndeadSlayer\RAUSSS.bam~ ~override~
     LPF UPDATE_PVRZ_INDICES

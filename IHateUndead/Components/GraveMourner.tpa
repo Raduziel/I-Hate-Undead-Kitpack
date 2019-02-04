@@ -1,16 +1,16 @@
-ADD_KIT ~RAUM~
-    ~RAUM 1 1 1 1 1 1 1 1~
-    ~RAUM 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAUM 3 12 3 13 3 17~
-	~RAUM 0 0 0 0 0 0~
-	~RAUM 99 99 99 99 99 99~
-    ~RAUM 18 18 18 18 18 18~
-	~RAUM 0 1 0 1 1 0 0 1 0~
-	~RAUM 0 0 0 0 0 0~
-	~IHateUndead\Tables\RAUM.2da~
+ADD_KIT ~RAHUGM~
+    ~RAHUGM 1 1 1 1 1 1 1 1~
+    ~RAHUGM 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUGM 3 12 3 13 3 17~
+	~RAHUGM 0 0 0 0 0 0~
+	~RAHUGM 99 99 99 99 99 99~
+    ~RAHUGM 18 18 18 18 18 18~
+	~RAHUGM 0 1 0 1 1 0 0 1 0~
+	~RAHUGM 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAHUGM.2da~
 	~K_B_H	K_B_D   K_B_G   K_B_E   K_B_HE   K_B_HL   K_B_HO~
-	~0x00000400 5~
-	~RAUM~
+	~0x00000000 5~
+	~RAHUGM~
 	~CHAIN13 * * * RING05 RING34 CLCK26 BOOT04 AMUL25 BRAC17 * * * * * * * SW1H31 BOW15 *~
 	SAY @701
 	SAY @702
@@ -18,7 +18,7 @@ ADD_KIT ~RAUM~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAUM~
+		kit_name = ~RAHUGM~
 		clascolr = ~6 220 169 242 236~
 END
 
@@ -46,7 +46,7 @@ COPY ~IHateUndead\Eff\Mourner\RASO4EF3.eff~ ~override~
 COPY ~IHateUndead\Eff\Mourner\RASO5EF3.eff~ ~override~
 	WRITE_LONG 0x1c %RA_Feebleminded%
 	
-COPY "IHateUndead\Tables\LURAUM.2DA" override
+COPY "IHateUndead\Tables\LURAHUGM.2DA" override
 
 COPY "IHateUndead\Spl\RAUMFE.spl" override
 

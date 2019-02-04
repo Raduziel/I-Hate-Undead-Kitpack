@@ -1,15 +1,15 @@
-ADD_KIT ~RABin~
-    ~RABin 0 1 0 0 1 0 0 1~
-    ~RABin 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RABin 3 3 3 9 3 9~
-	~RABin 0 0 0 0 0 0~
-	~RABin 99 99 99 99 99 99~
-    ~RABin 99 99 99 99 99 99~
-	~RABin 1 1 1 1 1 1 1 1 1~
-	~RABin 0 0 0 0 0 0~
-	~IHateUndead\Tables\RABin.2da~
+ADD_KIT ~RAHUIS~
+    ~RAHUIS 0 1 0 0 1 0 0 1~
+    ~RAHUIS 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUIS 3 3 3 9 3 9~
+	~RAHUIS 0 0 0 0 0 0~
+	~RAHUIS 99 99 99 99 99 99~
+    ~RAHUIS 99 99 99 99 99 99~
+	~RAHUIS 1 1 1 1 1 1 1 1 1~
+	~RAHUIS 0 0 0 0 0 0~
+	~IHateUndead\Tables\RAHUIS.2da~
 	~K_S_H  K_S_E  K_S_HE~
-	~0x00004000 19~
+	~0x00000000 19~
 	~So0~
 	~WAROBE2 * * * RING40 RING39 CLCK05 BOOT04 AMUL21 BRAC15 * * * * * * * * * STAF11~
 	SAY @1101
@@ -18,25 +18,35 @@ ADD_KIT ~RABin~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RABin~
+		kit_name = ~RAHUIS~
 		clascolr = ~220 118 119 164 220~
 END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
-	
-COPY "IHateUndead\Itm\LTOUCH.itm" override SAY NAME1 @1104	SAY NAME2 @1104
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Held%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_Panic%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 3 match_opcode = 267 parameter1 = EVAL "%RA_MoralFail%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 4 match_opcode = 267 parameter1 = EVAL "%RA_Paralyzed%" END
+//Lich Touch
 
-COPY "IHateUndead\Spl\SPWI626.spl" override SAY NAME1 @1104	SAY UNIDENTIFIED_DESC @1105
-	
+ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_LICH_TOUCH[ %TAB%%WNL%$]~) BEGIN
+
+ADD_SPELL ~IHateUndead/Spl/SPWI626.SPL~ 2 6 WIZARD_LICH_TOUCH
+SAY NAME1 @1104 SAY NAME2 @1104 SAY UNIDENTIFIED_DESC @1105 SAY DESC @1105
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
+
+COPY ~IHateUndead/Spl/SPWI626B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead/Spl/SPWI626C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~IHateUndead/Itm/ILTOUCH.BAM~	~override~
+COPY ~IHateUndead/Itm/LTOUCH.ITM~	~override~
+SAY NAME1 @1104 SAY NAME2 @1104
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%" END
+
 END
 
-COPY_EXISTING ~SPPR413.spl~ ~override\RABinFe.spl~
+COPY_EXISTING ~SPPR413.spl~ ~override\RABinFE.spl~
 LPM I_HATE_UNDEAD_FEATURES
-
-COPY "IHateUndead\Bam\ImprisonedSoul" override
 
 //EoF
