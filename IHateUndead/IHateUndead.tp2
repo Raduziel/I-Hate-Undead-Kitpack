@@ -1,6 +1,6 @@
 BACKUP ~IHateUndead/Backup~
 AUTHOR ~Raduziel~
-VERSION ~2.9~
+VERSION ~2.9.5~
 
 ALWAYS
 
@@ -19,12 +19,16 @@ README ~IHateUndead/readme/readme-%LANGUAGE%.txt~ ~IHateUndead/readme/readme.txt
 
 LANGUAGE ~English~
 		 ~IHateUndead/Tra/English~
-		 ~IHateUndead/Tra/English/setup.tra~
+		 ~IHateUndead/Tra/English/Setup.tra~
 		 ~IHateUndead/Tra/English/IHateUndead.tra~
 LANGUAGE ~Francais (traduction : Gwendolyne)~
          ~French~
-		 ~IHateUndead/Tra/French/setup.tra~
+		 ~IHateUndead/Tra/French/Setup.tra~
 		 ~IHateUndead/Tra/French/IHateUndead.tra~
+LANGUAGE ~Russkiy (Perevod: Saigon1983)~
+         ~Russian~
+		 ~IHateUndead/Tra/Russian/Setup.tra~
+		 ~IHateUndead/Tra/Russian/IHateUndead.tra~
 
 //__________________________________________________________________________________
 //__________________________________________________________________________________
