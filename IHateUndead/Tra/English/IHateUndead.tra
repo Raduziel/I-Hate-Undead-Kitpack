@@ -4,6 +4,11 @@
 @101 = ~undead predator~
 @102 = ~Undead Predator~
 @103 = ~UNDEAD PREDATOR: This ranger devotes <PRO_HISHER> life to hunt and destroy the undead as well as help those who have fallen victim to them. They are nomads wandering through the darkest corners of the land fighting these profane creatures. Their hard training comes at a cost: they lose their tune with nature and rarely create bonds with the people around them.
+
+Pre-Requisites: STR 13, DEX 13, CON 14, WIS 16
+Alignment: Neutral Good.
+Weapons: Axes, Clubs, Crossbows, Warhammers, Longswords, Maces, Quarterstaff, and Spears.
+Armors: All up to and including studded leather armor.
 	
 Advantages:
 
@@ -16,59 +21,81 @@ BLESSINGS:
 
 Instead of gaining spells, the Undead Predator may cast a special form of divine spells known as blessings. Scholars haven't figured out yet if those are granted by Lathander or Kelemvor.
 
-Level 1 - Bless, Detect Evil, Protection From Evil, Remove Fear.
+Level 1 (Minor)  - Bless, Detect Evil, Protection From Evil, Remove Fear.
 
-Level 2 - Cure Disease, Remove Paralysis, Slow Poison.
+Level 2 (Modest) - Cure Disease, Remove Paralysis, Slow Poison.
 
-Level 3 - Death Ward, Negative Plane Protection.
+Level 3 (Major)  - Death Ward, Negative Plane Protection.
 
 Disadvantages:
 
-- May only use the following weapons: Axes, Clubs, Crossbows, Warhammers, Longswords, Maces, Quarterstaff, and Spears.
 - Can't Dual Class or Multiclass.
-- Can't wear metal armor.
 - -2 Charisma penalty.
 - Can't Charm Animal.~
 @104 = ~Lost Class: Undead Predator~
 @105 = ~fallen undead predator~
 @106 = ~Fallen Undead Predator~
-@107 = ~Level 1 Blessings~
-@108 = ~Bless, Detect Evil, Protection From Evil, Remove Fear.~
-@109 = ~Level 2 Blessings~
-@110 = ~Draw Upon Holy Might, Cure Disease, Remove Paralysis.~
-@111 = ~Level 3 Blessings~
-@112 = ~Death Ward, Negative Plane Protection.~
+@107 = ~Minor Blessings~
+@108 = ~- Bless
+
+- Detect Evil
+
+- Protection From Evil
+
+- Remove Fear~
+@109 = ~Modest Blessings~
+@110 = ~- Draw Upon Holy Might
+
+- Cure Disease 
+
+- Remove Paralysis~
+@111 = ~Major Blessings~
+@112 = ~- Death Ward
+
+- Negative Plane Protection~
 
 /* ===================== *
  *    SPIRIT REDEEMER    *
  * ===================== */
 @201 = ~spirit redeemer~
 @202 = ~Spirit Redeemer~
-@203 = ~SPIRIT REDEEMER: Being a Spirit Redeemer goes beyond being ordained by some church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Spirit Redeemer, but this hard path is more usual for priests of Kelemvor and Lathander. They are efficient soldiers against one of the more common weapon of profane clergy: the undead. Regardless of under which banner they fight, the Spirit Redeemer is a force to be feared by necromancers, unholy priests and, most of all, the undead.
+@203 = ~SPIRIT REDEEMER: Being a Spirit Redeemer goes beyond being ordained by some church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Spirit Redeemer, but this hard path is more usual for priests of Kelemvor and Lathander. They are efficient soldiers against the more common weapon of profane clergy: undead, demons and devils. Regardless of under which banner they fight, the Spirit Redeemer is a force to be feared by necromancers and unholy priests.
+
+Pre-Requisites: WIS 9, CHA 12
+Alignment: Lawful Good or Lawful Neutral.
+Weapons: Bludgeoning only.
+Armors: Any.
 	
 Advantages:
 
-- May cast Redemption once per day. Gains one use at level 1 and an additional use every 10 levels thereafter.
-- Uses Turn Undead as a priest three levels higher.
-- Always under the effect of Death Ward.
-- +3 to Hit and Damage against Undead.
+- May cast Redemption once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
+- +3 to Hit and Damage against undead, demons and devils.
+- Uses Turn Undead as a priest two levels higher.
 
-REDEMPTION:
+REDEEM:
 
-The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, delivering 6d6 points magic damage. Undead creatures, besides the damage, need to make a save vs. spells with a -2 penalty or be destroyed.
+The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the effects are as follow:
+
+- Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or is destroyed.
+
+- Demons and Devils: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or is banned for 1 round/level.
+
+- Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.
 
 Disadvantages:
 
-- May not create undead, raise dead or resurrect and cast Gate.
-- Alignment restricted to Lawful Good or Lawful Neutral.
-- Requires at least 12 Charisma.
-- Can't be resurrected.
-~
+- May not create undead, resurrect the fallen and evoke demons or devils.
+- Can't be resurrected.~
+@204 = ~Redeem~
+@205 = ~Redeem
 
-@204 = ~Redemption~
-@205 = ~Redemption
+The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the effects are as follow:
 
-The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, delivering 6d6 points magic damage. Undead creatures, besides the damage, need to make a save vs. spells with a -2 penalty or be destroyed.~
+- Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or destroyed.
+
+- Demons and Devils: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or banned for 1 round/level.
+
+- Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.~
 
 /* =================== *
  *    UNDEAD SLAYER    *
