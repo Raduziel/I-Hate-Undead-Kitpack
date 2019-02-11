@@ -59,7 +59,7 @@ Disadvantages:
  * ===================== */
 @201 = ~holy redeemer~
 @202 = ~Holy Redeemer~
-@203 = ~HOLY REDEEMER: Being a Holy Redeemer goes beyond being ordained by some Church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Holy Redeemer, but this hard path is more usual within the clergy of Torm. They are efficient soldiers against the more common weapons of profane clergy: undead, demons and devils. Regardless of under which banner they fight, the Holy Redeemer is a force to be feared by necromancers and unholy priests.
+@203 = ~HOLY REDEEMER: Being a Holy Redeemer goes beyond being ordained by some Church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Holy Redeemer, but this hard path is more usual within the clergy of Torm. They are efficient soldiers against the more common weapons of profane clergy: undead and fiends. Regardless of under which banner they fight, the Holy Redeemer is a force to be feared by necromancers and unholy priests.
 
 Pre-Requisites: WIS 9, CHA 12
 Alignment: Lawful Good or Lawful Neutral.
@@ -69,7 +69,7 @@ Armors: Any.
 Advantages:
 
 - May cast Redeem once per day. Gains one use at level 1 and an additional use every 5 levels thereafter.
-- +3 to Hit and Damage against undead, demons and devils.
+- +3 to Hit and Damage against undead and fiends.
 - Uses Turn Undead as a priest two levels higher.
 
 REDEEM:
@@ -78,13 +78,13 @@ The Holy Redeemer pleads to <PRO_HISHER> deity and touches a creature. The effec
 
 - Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or is destroyed.
 
-- Demons and Devils: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or is banned for 1 round/level.
+- Fiends: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or is banned for 1 round/level.
 
 - Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.
 
 Disadvantages:
 
-- May not create undead, resurrect the fallen or summon demons or devils.
+- May not create undead, resurrect the fallen or summon fiends.
 - Can't be resurrected.~
 @204 = ~Redeem~
 @205 = ~Redeem
