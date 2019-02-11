@@ -3,46 +3,41 @@
  * ===================== */
 @101 = ~undead predator~
 @102 = ~Undead Predator~
-@103 = ~UNDEAD PREDATOR: This ranger devotes <PRO_HISHER> life to hunt and destroy the undead as well as help those who have fallen victim to them. They are nomads wandering through the darkest corners of the land fighting these profane creatures. Their hard training comes at a cost: they do not have the same affinity with nature that other rangers have and rarely create bonds with the people around them.
+@103 = ~UNDEAD PREDATOR: This ranger devotes <PRO_HISHER> life to hunt and destroy the undead as well as help those who have fallen victim to them. They are nomads wandering through the darkest corners of the land fighting these profane creatures. Their hard training comes at a cost: they lose their tune with nature and rarely create bonds with the people around them.
 	
 Advantages:
 
-- +10% to Move Silently and Hide in Shadows.
-- +3 to Hit and Damage against undead.
-- -2 AC Bonus against undead.
+- +2 bonus to Hit, Damage and AC against undead.
+- May evoke special blessings instead of casting spells.
 - Starts with a +1 bonus to <PRO_HISHER> save against Paralysis, Poison or Death Magic. Another one is given at levels 5, 10, 15 and 20.
-- Casts Cure Disease, Lesser Restoration, Negative Plane Protection, Remove Fear and Remove Paralysis. Gains a use for each spell at level 2 and another every 4 levels up to three uses at level 10.
-- At level 10 becomes immune to Disease.
-- At level 15 gains the Deceive Undead ability.
-- At level 20 gains the Bless of Recognition.
+- At level 20 gains becomes immune to fear, disease, level drain and paralysis.
 
-DECEIVE UNDEAD:
+BLESSINGS:
 
-The Undead Predator is capable of turn himself undetectable by the undead. While this ability is active every undead will completely ignore the Predator no matter what <PRO_HESHE> does. The effect can be used once per day and lasts for 10 Rounds.
+Instead of gaining spells, the Undead Predator may cast a special form of divine spells known as blessings. Scholars haven't figured out yet if those are granted by Lathander or Kelemvor.
 
-BLESS OF RECOGNITION
+Level 1 - Bless, Detect Evil, Protection From Evil, Remove Fear.
 
-After a long, valiant and hard journey, the Predator gains the favor of the gods. From now on <PRO_HESHE> is permanently under the effect of Bless, Protection From Evil, Negative Plane Protection and Remove Fear.
+Level 2 - Cure Disease, Remove Paralysis, Slow Poison.
+
+Level 3 - Death Ward, Negative Plane Protection.
 
 Disadvantages:
 
 - May only use the following weapons: Axes, Clubs, Crossbows, Warhammers, Longswords, Maces, Quarterstaff, and Spears.
-- All spell-like abilities are single-target and require touch.
-- Alignment restricted to Neutral Good.
-- Requires at least 16 Wisdom.
+- Can't Dual Class or Multiclass.
 - Can't wear metal armor.
 - -2 Charisma penalty.
-- Can't Dual Class.
-- Can't Charm Animal.
-- Can't cast spells.
-~
-@104 = ~Deceive Undead~
-@105 = ~Deceive Undead
-
-The Undead Predator is capable of turn himself undetectable by the undead. While this ability is active every undead will completely ignore the Predator no matter what <PRO_HESHE> does. The effect can be used once per day and lasts for 10 Rounds.~
-@106 = ~Lost Class: Undead Predator~
-@107 = ~fallen undead predator~
-@108 = ~Fallen Undead Predator~
+- Can't Charm Animal.~
+@104 = ~Lost Class: Undead Predator~
+@105 = ~fallen undead predator~
+@106 = ~Fallen Undead Predator~
+@107 = ~Level 1 Blessings~
+@108 = ~Bless, Detect Evil, Protection From Evil, Remove Fear.~
+@109 = ~Level 2 Blessings~
+@110 = ~Draw Upon Holy Might, Cure Disease, Remove Paralysis.~
+@111 = ~Level 3 Blessings~
+@112 = ~Death Ward, Negative Plane Protection.~
 
 /* ===================== *
  *    SPIRIT REDEEMER    *

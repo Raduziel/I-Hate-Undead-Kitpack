@@ -1,14 +1,12 @@
 BACKUP ~IHateUndead/Backup~
 AUTHOR ~Raduziel~
-VERSION ~2.9.5~
+VERSION ~3.0~
 
 ALWAYS
 
 	INCLUDE ~%MOD_FOLDER%/Lib/fl#add_kit_ee.tpa~
-	INCLUDE ~%MOD_FOLDER%/Lib/RA_Variables.tpa~
-	INCLUDE ~%MOD_FOLDER%/Lib/spell_to_innate.tpa~
-	INCLUDE ~%MOD_FOLDER%/Lib/RA_KitFeatures.tpa~
-	INCLUDE ~%MOD_FOLDER%/Lib/CDNewIcon.tpa~
+	INCLUDE ~%MOD_FOLDER%/Lib/RA_VariablesIHU.tpa~
+	INCLUDE ~%MOD_FOLDER%/Lib/Macros.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_SPHERE_COMPAT.tpa~
    
 END
