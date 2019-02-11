@@ -3,8 +3,8 @@ ADD_KIT ~RAHUUP~
     ~RAHUUP 0 0 0 0 0 0 0 0 0 2 0 2 0 0 0 0 2 2 2 0 0 2 2 2 0 0 0 0 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAHUUP 13 13 14 3 16 3~
 	~RAHUUP 0 0 0 0 0 -2~
-	~RAHUUP 99 99 99 99 99 99~
-    ~RAHUUP 15 17 0 0 15 0~
+	~RAHUUP 13 13 14 3 16 3~
+    ~RAHUUP 13 13 14 3 16 3~
 	~RAHUUP 0 0 0 1 0 0 0 0 0~
 	~RAHUUP 0 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUUP.2da~
@@ -18,69 +18,120 @@ ADD_KIT ~RAHUUP~
 
 LAF fl#add_kit_ee
 	INT_VAR										
-		fallen_notice = RESOLVE_STR_REF (@106)
+		fallen_notice = RESOLVE_STR_REF (@104)
 	STR_VAR
 		kit_name = ~RAHUUP~		
 		clascolr = ~6 160 164 242 163~
 END
 
-DEFINE_PATCH_MACRO ~PREDATOR_SPELL_TO_INNATE~ BEGIN                  //The original macro is from CamDawg, I just made some adjustments for this kit.
+COPY "IHateUndead\Spl\RAUPF.spl"  override
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  1 match_opcode = 267 parameter1 = EVAL "%RA_Panic%"       END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  2 match_opcode = 267 parameter1 = EVAL "%RA_MoralFail%"   END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  3 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%"    END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  4 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  5 match_opcode = 267 parameter1 = EVAL "%RA_Drain1%"      END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  6 match_opcode = 267 parameter1 = EVAL "%RA_Drain2%" 	   END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  7 match_opcode = 267 parameter1 = EVAL "%RA_Drain3%" 	   END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  8 match_opcode = 267 parameter1 = EVAL "%RA_Drain4%" 	   END
+LPF ALTER_EFFECT INT_VAR match_parameter1 =  9 match_opcode = 267 parameter1 = EVAL "%RA_Drain5%" 	   END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 10 match_opcode = 267 parameter1 = EVAL "%RA_Held%" 	   END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 11 match_opcode = 267 parameter1 = EVAL "%RA_Paralyzed%"   END
 
-  READ_LONG  0x64 abil_off ELSE 0
-  READ_SHORT 0x68 abil_num ELSE 0
-  READ_ASCII (abil_off + 0x04) bam (8)                               // reads the bam filename from ability
-  WRITE_SHORT 0x1C 4                                                 // sets spell type to innate (4)
-  WRITE_LONG  0x34 1                                                 // sets spell level to 1 to avoid scripting issues
-  WRITE_ASCIIE 0x3A "%bam%" #8                                       // writes the bam filename from abilities to spell icon
-  FOR (index = 0 ; index < abil_num ; ++index) BEGIN
-    WRITE_SHORT (abil_off + 0x02 + (0x28 * index)) 4                 // changes ability icon location to innate (4)
-	WRITE_SHORT (abil_off + 0x0C + (0x28 * index)) 1                 // changes ability target to creature (1)
-	WRITE_LONG  (abil_off + 0x0E + (0x28 * index)) 1                 // changes ability range to touch (1)
-    READ_SHORT  (abil_off + 0x12 + (0x28 * index)) speed             // reads casting speed
-    PATCH_IF (speed > 3) BEGIN
-      WRITE_SHORT  (abil_off + 0x12 + (0x28 * index)) (speed - 2)    // reduces casting speed
-    END ELSE BEGIN
-      WRITE_SHORT  (abil_off + 0x12 + (0x28 * index)) 0              // makes instant
-    END
-  END
+COPY "IHateUndead\Spl\RAUP1.spl"  override SAY NAME1 @107	SAY UNIDENTIFIED_DESC @108
+
+COPY "IHateUndead\Spl\RAUP1.bam"  override
+
+COPY "IHateUndead\Spl\RAUP.2da"   "override/RAUP1.2da"
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~	RET	spell_res	END
+
+APPEND ~RAUP1.2da~ ~BLESS %spell_res% 3~
 
 END
 
-COPY "IHateUndead\Spl\RAUPFE.spl" override
-	LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
-	LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DETECT_EVIL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DETECT_EVIL~	RET	spell_res	END
 
-COPY_EXISTING ~SPPR108.spl~ ~override/RAUPRF.spl~
-LPM PREDATOR_SPELL_TO_INNATE
+APPEND ~RAUP1.2da~ ~DETECT_EVIL %spell_res% 3~
 
-COPY_EXISTING ~SPPR308.spl~ ~override/RAUPRP.spl~
-LPM PREDATOR_SPELL_TO_INNATE
+END
 
-COPY_EXISTING ~SPPR317.spl~ ~override/RAUPCD.spl~
-LPM PREDATOR_SPELL_TO_INNATE
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_PROTECT_FROM_EVIL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_PROTECT_FROM_EVIL~	RET	spell_res	END
 
-COPY_EXISTING ~SPPR413.spl~ ~override/RAUPNP.spl~
-LPM PREDATOR_SPELL_TO_INNATE
+APPEND ~RAUP1.2da~ ~PROTECTION_FROM_EVIL %spell_res% 3~
 
-COPY_EXISTING ~SPPR417.spl~ ~override/RAUPLR.spl~
-LPM PREDATOR_SPELL_TO_INNATE
+END
 
-COPY "IHateUndead\Spl\RAUPDU.spl" override	SAY NAME1 @104	SAY UNIDENTIFIED_DESC @105
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REMOVE_FEAR[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_FEAR~	RET	spell_res	END
 
-COPY_EXISTING ~SPPR101.spl~ ~override\RAUPBR1.spl~
-LPM I_HATE_UNDEAD_FEATURES
-		
-COPY_EXISTING ~SPPR107.spl~ ~override\RAUPBR2.spl~
-LPM I_HATE_UNDEAD_FEATURES
+APPEND ~RAUP1.2da~ ~REMOVE_FEAR %spell_res% 3~
 
-COPY_EXISTING ~SPPR108.spl~ ~override\RAUPBR3.spl~
-LPM I_HATE_UNDEAD_FEATURES
+END
 
-COPY_EXISTING ~SPPR413.spl~ ~override\RAUPBR4.spl~ 
-LPM I_HATE_UNDEAD_FEATURES
+COPY_EXISTING ~RAUP1.2da~ override
+PRETTY_PRINT_2DA
+
+COPY "IHateUndead\Spl\RAUP2.spl"  override SAY NAME1 @109	SAY UNIDENTIFIED_DESC @110
+
+COPY "IHateUndead\Spl\RAUP2.bam"  override
+
+COPY "IHateUndead\Spl\RAUP.2da"   "override/RAUP2.2da"
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CURE_DISEASE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_DISEASE~	RET	spell_res	END
+
+APPEND ~RAUP2.2da~ ~CURE_DISEASE %spell_res% 3~
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REMOVE_PARALYSIS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REMOVE_PARALYSIS~	RET	spell_res	END
+
+APPEND ~RAUP2.2da~ ~REMOVE_PARALYSIS %spell_res% 3~
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SLOW_POISON[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SLOW_POISON~	RET	spell_res	END
+
+APPEND ~RAUP2.2da~ ~SLOW_POISON %spell_res% 3~
+
+END
+
+COPY_EXISTING ~RAUP2.2da~ override
+PRETTY_PRINT_2DA
+
+COPY "IHateUndead\Spl\RAUP3.spl"  override SAY NAME1 @111	SAY UNIDENTIFIED_DESC @112
+
+COPY "IHateUndead\Spl\RAUP3.bam"  override
+
+COPY "IHateUndead\Spl\RAUP.2da"   "override/RAUP3.2da"
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DEATH_WARD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEATH_WARD~	RET	spell_res	END
+
+APPEND ~RAUP3.2da~ ~DEATH_WARD %spell_res% 3~
+
+END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_NEGATIVE_PLANE_PROTECTION[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_NEGATIVE_PLANE_PROTECTION~	RET	spell_res	END
+
+APPEND ~RAUP3.2da~ ~NEGATIVE_PLANE_PROTECTION %spell_res% 3~
+
+END
+
+COPY_EXISTING ~RAUP3.2da~ override
+PRETTY_PRINT_2DA
+
+//Restrictions
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
+	SET match = 0
 	PATCH_MATCH proficiency WITH 
 		89 91 93 94 95 96 99 100 104 105 106 107  BEGIN
 		  LPF ADD_ITEM_EQEFFECT
@@ -90,24 +141,22 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  parameter1 = (RAHUUP + 0x4000)
 			  parameter2 = 9
 			  timing = 2
-			  special = RESOLVE_STR_REF (@102)
-		  END
+		END
+	SET match = 1
 		END
 		DEFAULT
-	END
-BUT_ONLY
-
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-	PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+		END
+	PATCH_IF (SOURCE_SIZE > 0x71) AND (match = 0) BEGIN
 		READ_BYTE 0x18 flags1
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-		READ_ASCII	0x22 animation (2)
-		PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-		  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUUP~) parameter2 = 9 special = RESOLVE_STR_REF (@102) END
-		END
-		PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-		  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUUP~) parameter2 = 9 special = RESOLVE_STR_REF (@102) END
-		END
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+				"4A" "3A" BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUUP~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
 		END
 	END
 BUT_ONLY
@@ -117,7 +166,7 @@ BUT_ONLY
 ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
 	ACTION_CLEAR_ARRAY GW_Fallen_Kits
 	ACTION_DEFINE_ASSOCIATIVE_ARRAY GW_Fallen_Kits BEGIN
-	107,	108	=> RAHUUP
+	105,	106	=> RAHUUP
 	END
 	ACTION_PHP_EACH GW_Fallen_Kits AS GW_kits => GW_kit_name BEGIN
 		COPY_EXISTING - ~clastext.2da~ ~override~
@@ -143,22 +192,5 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
 	END
 	ACTION_CLEAR_ARRAY GW_Fallen_Kits
 END
-
-COPY ~IHateUndead\Bam\UndeadPredator\RAUPDU.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
-
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~IHateUndead\Bam\UndeadPredator\MOS%original_base_index%.pvrz~
-    END
-  END
 
 //EoF
