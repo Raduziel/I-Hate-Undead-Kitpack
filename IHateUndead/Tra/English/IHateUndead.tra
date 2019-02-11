@@ -55,11 +55,11 @@ Disadvantages:
 - Negative Plane Protection~
 
 /* ===================== *
- *    SPIRIT REDEEMER    *
+ *     HOLY REDEEMER     *
  * ===================== */
-@201 = ~spirit redeemer~
-@202 = ~Spirit Redeemer~
-@203 = ~SPIRIT REDEEMER: Being a Spirit Redeemer goes beyond being ordained by some church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Spirit Redeemer, but this hard path is more usual for priests of Kelemvor and Lathander. They are efficient soldiers against the more common weapon of profane clergy: undead, demons and devils. Regardless of under which banner they fight, the Spirit Redeemer is a force to be feared by necromancers and unholy priests.
+@201 = ~holy redeemer~
+@202 = ~Holy Redeemer~
+@203 = ~HOLY REDEEMER: Being a Holy Redeemer goes beyond being ordained by some church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Holy Redeemer, but this hard path is more usual within the clergy of Torm. They are efficient soldiers against the more common weapon of profane clergy: undead, demons and devils. Regardless of under which banner they fight, the Holy Redeemer is a force to be feared by necromancers and unholy priests.
 
 Pre-Requisites: WIS 9, CHA 12
 Alignment: Lawful Good or Lawful Neutral.
@@ -74,7 +74,7 @@ Advantages:
 
 REDEEM:
 
-The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the effects are as follow:
+The Holy Redeemer pleads to <PRO_HISHER> deity and touches a creature, the effects are as follow:
 
 - Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or is destroyed.
 
@@ -84,7 +84,7 @@ The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the eff
 
 Disadvantages:
 
-- May not create undead, resurrect the fallen and evoke demons or devils.
+- May not create undead, resurrect the fallen and summon demons or devils.
 - Can't be resurrected.~
 @204 = ~Redeem~
 @205 = ~Redeem
