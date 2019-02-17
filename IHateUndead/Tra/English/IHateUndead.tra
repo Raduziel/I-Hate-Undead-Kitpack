@@ -183,8 +183,8 @@ Armors: Any.
 
 Advantages:
 
-- May create a Holy Sword once per day for one hour (starting at level 5).
-- May Turn Undead as a priest of the same level (starting at level 3).
+- May create a Holy Sword once per day for one hour, starting at level 5.
+- May Turn Undead as a priest of the same level, starting at level 3.
 - +3 bonus to hit and damage rolls against undead creatures.
 - Immune to hold and level drain.
 
@@ -210,7 +210,7 @@ Thac0: +3 (+5 vs. Evil)
 Damage: 2d4+3 (+5 vs. Evil), +1d3 fire
 Damage Type: Slashing
 Speed Factor: 5
-Proficiency Type: Bastard Sword
+Proficiency Type: -
 Type: One-handed
 Requires:
 9 Strength
@@ -372,7 +372,7 @@ The Grave Mourner speeches firmly to the undead remembering that it is nothing b
  * ===================== */
 @801 = ~circle enforcer~
 @802 = ~Circle Enforcer~
-@803 = ~CIRCLE ENFORCER: The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using the Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animals for aid. As a keeper of the natural order, this druid is specially devoted to defeating unnatural beings having special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
+@803 = ~CIRCLE ENFORCER: The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animals for aid. As a keeper of the natural order, this druid is specially devoted to defeating unnatural beings having special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
 
 Pre-Requisites: WIS 12, CHA 15.
 Dual-Class: Fighter.
@@ -493,26 +493,36 @@ This spell creates a small whirlwind within the caster's sight. The whirlwind wi
  * ================= */
 @901 = ~pallid mask~
 @902 = ~Pallid Mask~
-@903 = ~PALLID MASK: The Order of the Pallid Mask is a group of monks at the service of Jergal who specialized in combating the undead whose existence are not sanctioned by the church or who has proven to be troublesome - as well as their creators. They also are the supervisors of the skeleton and zombie work crews that the church sometimes ran to profit itself.
+@903 = ~PALLID MASK: The Order of the Pallid Mask is a group of monks at the service of Jergal who specialized in combating the undead whose existence are not sanctioned by the Church or who has proven to be troublesome - as well as their creators. They also are the supervisors of the skeleton and zombie work crews that the Church sometimes ran to profit itself.
+
+Pre-Requisites: DEX 9, CON 11, WIS 9.
+Dual-Class: None.
+Alignment: Lawful Neutral.
+Weapons: As a regular monk.
+Armors: As a regular monk.
 
 Advantages:
 
-- +3 Hit and Damage against undead.
-- May use the Disrupt Heretic ability. Starts at level 1 with one use and gains another every four levels up to five uses at level 19.
-- May use Skull Trap and Vampiric Touch as innate abilities. Starts at level 5 with one use for each and gains another every 5 levels up to five uses at level 25.
+- May invest points into the Detect Illusion ability (starts with 5%).
+- +2 bonus to hit and damage rolls against wizards, priests and undead creatures.
+- May cast Hold Undead as a special ability, starting at level 5.
+- May cast Repulse Undead as a special ability, starting at level 11.
+- May cast Control Undead as a special ability, starting at level 15.
+- May use Disrupt Heretic once per day as a special ability, starting at level 7. Gains an additional use at levels 9 and 13.
 
 DISRUPT HERETIC:
 
-During the next 5 rounds, every melee attack delivered by the Pallid Mask will give 1d8+5 points of damage and, unless a save versus Death is successfully made, a cumulative spell failure of 30% to the target. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image. The Pallid Mask have a +5 Thac0 bonus while using this ability.
+During the next turn, every melee attack delivered by the Pallid Mask lowers the target's chance to successfully cast spells by 10% for 5 rounds (cumulatively). On top of that, undead creatures must succeed in a Saving Throw vs. Death or be destroyed.
 
 Disadvantages:
 
-- Alignment restricted to Lawful Neutral.
-- Cannot use Lay on Hands.
-- Cannot be resurrected.
-~
+- Gains an additional use of Stunning Blow every six levels (instead of four).
+- May not use the Quivering Palm ability.
+- May not use the Lay on Hands ability.
+- May not use the Find Traps ability.
+- Can't be resurrected.~
 @904 = ~Disrupt Heretic~
-@905 = ~During the next 5 rounds, every melee attack delivered by the Pallid Mask will give a cumulative spell failure of 30% to the target unless a save versus Death is successfully made. The effect lasts for 3 rounds and does not bypass either Magic Resistance or Mirror Image.~
+@905 = ~During the next turn, every melee attack delivered by the Pallid Mask lowers the target's chance to successfully cast spells by 10% for 5 rounds (cumulatively). On top of that, undead creatures must succeed in a Saving Throw vs. Death or be destroyed.~
 
 /* ================= *
  *  DREADFUL WITCH   *
