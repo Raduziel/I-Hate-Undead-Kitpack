@@ -1,10 +1,10 @@
 ADD_KIT ~RAHUPM~
     ~RAHUPM 1 1 1 1 1 0 0 0~
     ~RAHUPM 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAHUPM 3 9 9 3 9 3~
+	~RAHUPM 3 9 11 3 9 3~
 	~RAHUPM 0 0 0 0 0 0~
-	~RAHUPM 99 99 99 99 99 99~
-    ~RAHUPM 99 99 99 99 99 99~
+	~RAHUPM 3 9 11 3 9 3~
+    ~RAHUPM 3 9 11 3 9 3~
 	~RAHUPM 0 1 0 0 0 0 0 0 0~
 	~RAHUPM 0 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUPM.2da~
@@ -16,42 +16,63 @@ ADD_KIT ~RAHUPM~
 	SAY @902
 	SAY @903
 
-LAF fl#add_kit_ee
+LAF fl#add_kit_ee 
 	STR_VAR
 		kit_name = ~RAHUPM~	
-		thiefscl = ~0 0 100 100 100 100 0 0~
-		clascolr = ~6 65 66 242 28~
+		clascolr = ~6 110 186 185 187~
+		clasiskl = ~0 0 0 0 0 5 0~
+		thiefscl = ~0 0 0 100 100 100 0 0~
 END
 
-COPY "IHateUndead\Spl\RAPMFE.spl" override
+CREATE spl ~RAPMF~
 
-COPY "IHateUndead\Spl\RAPMMM.spl" override	SAY NAME1 @904	SAY UNIDENTIFIED_DESC @905
+COPY_EXISTING ~RAPMF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 2 STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 2 STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 202  parameter2 = 5  special = 2 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 202  parameter2 = 5  special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                   parameter2 = 32             STR_VAR insert_point = 6 END
 
-COPY "IHateUndead\Eff\Mask\RAPMMM.eff" override
+//Hold Undead
 
-COPY "IHateUndead\Spl\RAPMEF.spl" override
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_HOLD_UNDEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_HOLD_UNDEAD~	RET	spell_res	END
 
-COPY_EXISTING ~SPWI313.spl~ ~override/RAPMST.spl~                                             //Skull Trap
-LPM SPELL_TO_INNATE
+COPY_EXISTING	~%spell_res%.spl~	~override/RAPM1.spl~
+LPM ~SPELL_TO_INNATE~
 
-COPY_EXISTING ~SPWI314.spl~ ~override/RAPMVT.spl~                                             //Vampiric Touch
-LPM SPELL_TO_INNATE
+END
 
-COPY ~IHateUndead\Bam\PallidMask\RAPMDH.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
+//Repulse Undead
 
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~IHateUndead\Bam\PallidMask\MOS%original_base_index%.pvrz~
-    END
-  END
-  
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_REPULSE_UNDEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_REPULSE_UNDEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAPM2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Control Undead
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONTROL_UNDEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONTROL_UNDEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RAPM3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+COPY ~IHateUndead\Spl\RAPM4.spl~  override
+SAY NAME1 @904 SAY NAME2 @904 SAY UNIDENTIFIED_DESC @905 SAY DESC @905
+
+COPY ~IHateUndead\Spl\RAPM4.bam~  override
+
+COPY ~IHateUndead\Spl\RAPM41.spl~ override
+
+COPY ~IHateUndead\Spl\RAPM41.eff~ override
+
 //EoF
