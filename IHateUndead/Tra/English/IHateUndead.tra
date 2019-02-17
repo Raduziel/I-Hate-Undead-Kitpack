@@ -493,7 +493,7 @@ This spell creates a small whirlwind within the caster's sight. The whirlwind wi
  * ================= */
 @901 = ~pallid mask~
 @902 = ~Pallid Mask~
-@903 = ~PALLID MASK: The Order of the Pallid Mask is a group of monks at the service of Jergal who specialized in combating the undead whose existence are not sanctioned by the Church or who has proven to be troublesome - as well as their creators. They also are the supervisors of the skeleton and zombie work crews that the Church sometimes ran to profit itself.
+@903 = ~PALLID MASK: The Order of the Pallid Mask is a group of monks at the service of Jergal who specialized in combating the undead whose existence is not sanctioned by the Church or who have proven to be troublesome - as well as their creators. They also are the supervisors of the skeleton and zombie work crews that the Church sometimes ran to profit itself.
 
 Pre-Requisites: DEX 9, CON 11, WIS 9.
 Dual-Class: None.
