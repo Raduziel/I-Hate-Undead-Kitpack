@@ -1,11 +1,11 @@
 ADD_KIT ~RAHUBD~
     ~RAHUBD 1 1 1 1 1 1 1 1~
-    ~RAHUBD 2 2 1 2 2 2 2 1 2 2 2 5 5 2 2 2 2 2 2 5 2 2 2 1 1 1 1 1 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAHUBD 9 3 3 3 3 3~
+    ~RAHUBD 2 2 1 2 2 2 2 1 2 2 2 3 3 2 2 2 2 2 2 3 2 2 2 1 1 1 1 1 2 0 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUBD 12 3 12 3 12 3~
 	~RAHUBD 0 0 0 0 0 0~
-	~RAHUBD 99 99 99 99 99 99~
-    ~RAHUBD 99 99 99 99 99 99~
-	~RAHUBD 1 1 1 1 1 1 1 1 0~
+	~RAHUBD 12 3 12 3 12 3~
+    ~RAHUBD 12 3 12 3 12 3~
+	~RAHUBD 1 0 0 1 1 0 0 0 0~
 	~RAHUBD 0 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUBD.2da~
 	~K_F_H	K_F_D  K_F_HO~
@@ -23,56 +23,49 @@ LAF fl#add_kit_ee
 		hpclass = ~HPBarb~
 END
 
-COPY "IHateUndead\Spl\RAURaFE.spl" override
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%" END
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 2 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
+CREATE spl ~RABDF~
+
+COPY_EXISTING ~RABDF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 23             STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 24             STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 78             STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 106            STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                parameter2 = 7              STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                parameter2 = 36             STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 176 target = 2 timing = 9 parameter1 = 2 parameter2 = 0              STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 5 STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 5 STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 190 target = 2 timing = 9 parameter1 = 2                             STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Panic%~             STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_MoralFail%~         STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~          STR_VAR insert_point = 12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~       STR_VAR insert_point = 13 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 296 target = 2 timing = 9                                            STR_VAR insert_point = 14 resource = ~CDHORROR~ END
+
+COPY ~IHateUndead\Spl\RABD1.spl~  override SAY NAME1 @604	SAY UNIDENTIFIED_DESC @605
+
+COPY ~IHateUndead\Spl\RABD11.spl~ override
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@606) END
+
+COPY ~IHateUndead\Spl\RABD1.bam~  override
+
+//Restrictions
 
 COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    READ_BYTE 0x18 flags1
-    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-	READ_ASCII	0x22 animation (2)
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "4A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
+PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
+		READ_BYTE 0x18 flags1
+		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
+			READ_ASCII	0x22 animation (2)
+			TO_UPPER animation
+			PATCH_MATCH	"%animation%" WITH
+			"4A" "3A" "D1" "D2" "D3" "D4" "C0" "C1" "C2" "C3" "C4" "C5" "C6"  BEGIN
+					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUDT~) parameter2 = 9 END
+				END
+				DEFAULT
+			END
+		END
 	END
-    PATCH_IF ("%animation%" STRING_EQUAL_CASE "3A") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D1") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D3") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "D4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C0") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C1") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C2") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C3") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C4") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C5") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	PATCH_IF ("%animation%" STRING_EQUAL_CASE "C6") BEGIN
-	  LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUBD~) parameter2 = 9 special = RESOLVE_STR_REF (@602) END
-	END
-	END
-  END
 BUT_ONLY
 
 //EoF

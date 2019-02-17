@@ -8,7 +8,7 @@ ADD_KIT ~RAHUUP~
 	~RAHUUP 0 0 0 1 0 0 0 0 0~
 	~RAHUUP 0 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUUP.2da~
-	~K_R_H	K_R_D   K_R_G   K_R_E   K_R_HE   K_R_HL   K_R_HO~
+	~K_R_H	K_R_D  K_R_G  K_R_E  K_R_HE  K_R_HL  K_R_HO~
 	~0x00000000 12~
 	~Ra0~
 	~LEAT19 BLUN25 HELM16 * RING27 RING31 CLCK02 BOOT01 AMUL27 BRAC10 * * * * * * * SW1H31 AX1H10 STAF08~
@@ -21,27 +21,60 @@ LAF fl#add_kit_ee
 		fallen_notice = RESOLVE_STR_REF (@104)
 	STR_VAR
 		kit_name = ~RAHUUP~		
-		clascolr = ~6 160 164 242 163~
+		clascolr = ~1 42 43 39 91~
 END
 
-COPY "IHateUndead\Spl\RAUPF.spl"  override
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  1 match_opcode = 267 parameter1 = EVAL "%RA_Panic%"       END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  2 match_opcode = 267 parameter1 = EVAL "%RA_MoralFail%"   END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  3 match_opcode = 267 parameter1 = EVAL "%RA_Diseased%"    END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  4 match_opcode = 267 parameter1 = EVAL "%RA_FoulDisease%" END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  5 match_opcode = 267 parameter1 = EVAL "%RA_Drain1%"      END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  6 match_opcode = 267 parameter1 = EVAL "%RA_Drain2%" 	   END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  7 match_opcode = 267 parameter1 = EVAL "%RA_Drain3%" 	   END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  8 match_opcode = 267 parameter1 = EVAL "%RA_Drain4%" 	   END
-LPF ALTER_EFFECT INT_VAR match_parameter1 =  9 match_opcode = 267 parameter1 = EVAL "%RA_Drain5%" 	   END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 10 match_opcode = 267 parameter1 = EVAL "%RA_Held%" 	   END
-LPF ALTER_EFFECT INT_VAR match_parameter1 = 11 match_opcode = 267 parameter1 = EVAL "%RA_Paralyzed%"   END
+CREATE spl ~RAUPF~
 
-COPY "IHateUndead\Spl\RAUP1.spl"  override SAY NAME1 @107	SAY UNIDENTIFIED_DESC @108
+COPY_EXISTING ~RAUPF.spl~ override
+LPF ADD_ABILITIES	   INT_VAR abil = 5 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 5  END
+LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 10 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 15 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 296 target = 2 timing = 9                                             STR_VAR insert_point = 1 resource = ~SPMINDAT~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 23              STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 24              STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 78              STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 106             STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 109             STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 175             STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 185             STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 216             STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 19              STR_VAR insert_point = 10  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 37              STR_VAR insert_point = 11  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 90              STR_VAR insert_point = 12 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 7               STR_VAR insert_point = 13  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 13              STR_VAR insert_point = 14  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 36              STR_VAR insert_point = 15  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 53              STR_VAR insert_point = 16  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 126             STR_VAR insert_point = 17  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Panic%~              STR_VAR insert_point = 18  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_MoralFail%~          STR_VAR insert_point = 19  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~           STR_VAR insert_point = 20  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~        STR_VAR insert_point = 21  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain1%~             STR_VAR insert_point = 22  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain2%~ 	         STR_VAR insert_point = 23  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain3%~ 	         STR_VAR insert_point = 24  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain4%~ 	         STR_VAR insert_point = 25  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain5%~ 	         STR_VAR insert_point = 26  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Held%~ 	             STR_VAR insert_point = 27  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Paralyzed%~          STR_VAR insert_point = 28  END
 
-COPY "IHateUndead\Spl\RAUP1.bam"  override
+COPY ~IHateUndead\Spl\RAUP1.spl~  override SAY NAME1 @107	SAY UNIDENTIFIED_DESC @108
 
-COPY "IHateUndead\Spl\RAUP.2da"   "override/RAUP1.2da"
+COPY ~IHateUndead\Spl\RAUP1.bam~  override
+
+COPY ~IHateUndead\Spl\RAUP.2da~   ~override\RAUP1.2da~
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_BLESS[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_BLESS~	RET	spell_res	END
@@ -74,11 +107,11 @@ END
 COPY_EXISTING ~RAUP1.2da~ override
 PRETTY_PRINT_2DA
 
-COPY "IHateUndead\Spl\RAUP2.spl"  override SAY NAME1 @109	SAY UNIDENTIFIED_DESC @110
+COPY ~IHateUndead\Spl\RAUP2.spl~  override SAY NAME1 @109	SAY UNIDENTIFIED_DESC @110
 
-COPY "IHateUndead\Spl\RAUP2.bam"  override
+COPY ~IHateUndead\Spl\RAUP2.bam~  override
 
-COPY "IHateUndead\Spl\RAUP.2da"   "override/RAUP2.2da"
+COPY ~IHateUndead\Spl\RAUP.2da~   ~override\RAUP2.2da~
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_CURE_DISEASE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_CURE_DISEASE~	RET	spell_res	END
@@ -104,11 +137,11 @@ END
 COPY_EXISTING ~RAUP2.2da~ override
 PRETTY_PRINT_2DA
 
-COPY "IHateUndead\Spl\RAUP3.spl"  override SAY NAME1 @111	SAY UNIDENTIFIED_DESC @112
+COPY ~IHateUndead\Spl\RAUP3.spl~  override SAY NAME1 @111	SAY UNIDENTIFIED_DESC @112
 
-COPY "IHateUndead\Spl\RAUP3.bam"  override
+COPY ~IHateUndead\Spl\RAUP3.bam~  override
 
-COPY "IHateUndead\Spl\RAUP.2da"   "override/RAUP3.2da"
+COPY ~IHateUndead\Spl\RAUP.2da~   ~override\RAUP3.2da~
 
 ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_DEATH_WARD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
 LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_DEATH_WARD~	RET	spell_res	END
@@ -151,8 +184,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
 			READ_ASCII	0x22 animation (2)
 			TO_UPPER animation
-			PATCH_MATCH	"%animation%" WITH
-				"4A" "3A" BEGIN
+			PATCH_MATCH	~%animation%~ WITH
+				~4A~ ~3A~ BEGIN
 					LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUUP~) parameter2 = 9 END
 				END
 				DEFAULT
@@ -183,10 +216,10 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
 					SET patch_lower = RESOLVE_STR_REF ((AT %GW_kits_0%))
 					SET patch_mixed = RESOLVE_STR_REF ((AT %GW_kits_1%))
 					SET patch_fallen = 1
-					SET patch_fallen_notice = "-1"
-					SPRINT patch_clastext "FALLEN_%GW_kit_name% %kit_classid% %kit_kitid% %patch_lower% %kit_desc% %patch_mixed% %kit_bio% %patch_fallen% %kit_briefdesc% %patch_fallen_notice%"
+					SET patch_fallen_notice = ~-1~
+					SPRINT patch_clastext ~FALLEN_%GW_kit_name% %kit_classid% %kit_kitid% %patch_lower% %kit_desc% %patch_mixed% %kit_bio% %patch_fallen% %kit_briefdesc% %patch_fallen_notice%~
 					i = kittable
-					INNER_ACTION BEGIN APPEND clastext.2da "%patch_clastext%" UNLESS "FALLEN_%GW_kit_name%" END
+					INNER_ACTION BEGIN APPEND clastext.2da ~%patch_clastext%~ UNLESS ~FALLEN_%GW_kit_name%~ END
 				END
 			END
 	END

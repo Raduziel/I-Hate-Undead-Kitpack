@@ -1,0 +1,456 @@
+ADD_KIT ~RAHUHR~
+    ~RAHUHR 0 0 1 1 0 1 0 0~
+    ~RAHUHR 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUHR 3 3 3 3 9 12~
+	~RAHUHR 0 0 0 0 0 0~
+	~RAHUHR 3 3 3 3 9 12~
+    ~RAHUHR 3 3 3 3 9 12~
+	~RAHUHR 1 1 0 0 0 0 0 0 0~
+	~RAHUHR 1 0 0 0 0 0~
+	~IHateUndead\Tables\RAHUHR.2da~
+	~K_C_H  K_C_D  K_C_G  K_C_E  K_C_HE  K_C_HL  K_C_HO~
+	~0x00000000 3~
+	~RAHUHR~
+	~PLAT12 SHLD25 HELM16 * RING22 RING31 CLCK05 BOOT04 AMUL27 BRAC10 * * * * * * * BLUN25 HAMM09 STAF10~
+	SAY @201
+	SAY @202
+	SAY @203
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHUHR~		
+		clascolr = ~14 28 0 30 6~
+		clswpbon = ~0 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUHR~ clabfile = ~RAHUHR~ END
+
+END
+
+COPY_EXISTING ~LUCl0.2da~ ~override\LURAHUHR.2da~
+SET_2DA_ENTRY 8 1 9 ~*         ~
+SET_2DA_ENTRY 8 4 9 ~*         ~
+SET_2DA_ENTRY 8 5 9 ~*         ~
+SET_2DA_ENTRY 8 6 9 ~*         ~
+PRETTY_PRINT_2DA
+
+CREATE spl ~RAHRF~
+
+COPY_EXISTING ~RAHRF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 9                                              STR_VAR insert_point = 0 resource = EVAL ~RAHRF~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 323 target = 2 timing = 9 parameter1 = 2                               STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4   parameter2 = 3  special = 3 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 121 parameter2 = 4  special = 3 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 139 parameter2 = 4  special = 3 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 141 parameter2 = 4  special = 3 STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 3 STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 3 STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 3 STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 175 parameter2 = 4  special = 3 STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4   parameter2 = 3  special = 3 STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 121 parameter2 = 4  special = 3 STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 139 parameter2 = 4  special = 3 STR_VAR insert_point = 12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 141 parameter2 = 4  special = 3 STR_VAR insert_point = 13 END 
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 3 STR_VAR insert_point = 14 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 3 STR_VAR insert_point = 15 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 3 STR_VAR insert_point = 16 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 175 parameter2 = 4  special = 3 STR_VAR insert_point = 17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                  parameter2 = 32             STR_VAR insert_point = 18 END
+
+COPY ~IHateUndead\Spl\RAHR1.spl~  override	SAY NAME1 @204	SAY UNIDENTIFIED_DESC @205
+
+COPY ~IHateUndead\Spl\RAHR1.bam~  override
+
+COPY ~IHateUndead\Spl\RAHR11.spl~ override
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_opcode = 12  match_dicenumber = 1 dicenumber = (1+((1 * i)/3)) END
+	END
+
+COPY ~IHateUndead\Spl\RAHR12.spl~ override
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_opcode = 12  match_dicenumber = 1 dicenumber = (1+((1 * i)/3)) END
+	END
+
+COPY ~IHateUndead\Spl\RAHR13.spl~ override
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+		FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_duration = 6 duration = (6 * i) END
+		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_opcode = 12  match_dicenumber = 1 dicenumber = (1+((1 * i)/3)) END
+	END
+
+//Restriction
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAHUHR + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+
+//No use of resurrection, undead creation or demon/devil summoning (by Kjeron).
+
+COPY_EXISTING_REGEXP ~^.+\.cre$~ override	// CRE files first
+		TO_UPPER  SOURCE_RES
+		READ_BYTE 0x271  general
+		PATCH_MATCH general WITH 4 BEGIN
+			SET $ra_redeemer_ban_cre(~%SOURCE_RES%~) = 1
+			END
+			DEFAULT
+		END
+		READ_BYTE 0x272  race
+		PATCH_MATCH race WITH 121 139 141 157 159 BEGIN
+			SET $ra_redeemer_ban_cre(~%SOURCE_RES%~) = 1
+			END	
+			DEFAULT
+		END
+	BUT_ONLY
+DEFINE_ACTION_FUNCTION RA_REDEEMER_2DA_BAN STR_VAR file = ~~ RET_ARRAY ra_redeemer_ban_2da BEGIN
+	OUTER_SET $ra_redeemer_ban_2da(~?~) = 0  // dummy entry, to insure returned array is not empty
+	COPY_EXISTING ~%file%.2da~ override
+		TO_UPPER  SOURCE_RES
+		COUNT_2DA_COLS cols
+		READ_2DA_ENTRIES_NOW ~READ~ cols
+		FOR (i = 0; i < READ; ++i) BEGIN
+			READ_2DA_ENTRY_FORMER ~READ~ i 1 cre	TO_UPPER cre
+			PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_cre(~%cre%~) BEGIN
+				SET $ra_redeemer_ban_2da(~%SOURCE_RES%~) = 1
+				SET i = READ
+			END
+		END
+	BUT_ONLY IF_EXISTS
+END
+ACTION_FOR_EACH file IN ~MONSUM01~ ~MONSUM02~ ~MONSUM03~ ~ANISUM01~ ~ANISUM02~ BEGIN
+	LAF RA_REDEEMER_2DA_BAN STR_VAR file RET_ARRAY ra_redeemer_ban_2da END // default 2da files next
+END
+COPY_EXISTING ~SMTABLES.2DA~	override	//	op331 2da files
+	COUNT_2DA_COLS cols
+	READ_2DA_ENTRIES_NOW ~READOP331~ cols
+	FOR (i = 1; i < READOP331; ++i) BEGIN
+		READ_2DA_ENTRY_FORMER ~READOP331~ i 1 file	TO_UPPER file
+		TEXT_SPRINT $READOP331(~%i%~ ~1~) ~%file%~
+		INNER_ACTION	BEGIN
+			LAF RA_REDEEMER_2DA_BAN STR_VAR file RET_ARRAY ra_redeemer_ban_2da END // default 2da files next
+		END
+	END
+BUT_ONLY IF_EXISTS
+	
+COPY_EXISTING_REGEXP ~^.+\.eff$~ override	// EFF files next
+	TO_UPPER  SOURCE_RES
+	READ_LONG 0x10 opcode
+	READ_ASCII 0x30 resource TO_UPPER resource
+	PATCH_MATCH opcode WITH
+		32 BEGIN
+			SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+		END
+		67 WHEN VARIABLE_IS_SET $ra_redeemer_ban_cre(~%resource%~) BEGIN // Uses specified cre file
+			SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+		END
+		127 331 WHEN FILE_EXISTS_IN_GAME ~%resource%.2da~ BEGIN // Uses specified 2da file
+			PATCH_IF !VARIABLE_IS_SET $ra_redeemer_ban_2da(~%resource%~) BEGIN
+				INNER_ACTION BEGIN
+					LAF RA_REDEEMER_2DA_BAN STR_VAR file RET_ARRAY ra_redeemer_ban_2da END
+				END
+			END
+			PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_2da(~%resource%~) BEGIN
+				SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+			END
+		END
+		127 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+			READ_LONG 0x20 param2
+			PATCH_MATCH param2 WITH
+				0 5 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM01~) BEGIN
+					SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				1 6 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM02~) BEGIN
+					SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				2 7 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM03~) BEGIN
+					SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				3 8 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~ANISUM01~) BEGIN
+					SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				4 9 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~ANISUM02~) BEGIN
+					SET $ra_redeemer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				DEFAULT
+			END
+		END
+		DEFAULT
+	END
+BUT_ONLY // Scan through EFFs for offending effect
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override // SPL files next
+	TO_UPPER  SOURCE_RES
+	SET	ab_size = 0x28
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
+			PATCH_MATCH opcode WITH
+				177 WHEN VARIABLE_IS_SET $ra_redeemer_ban_eff(~%resource%~) BEGIN
+					SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				32 BEGIN
+					SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				67 WHEN VARIABLE_IS_SET $ra_redeemer_ban_cre(~%resource%~) BEGIN // Uses specified cre file
+					SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				127 331 WHEN FILE_EXISTS_IN_GAME ~%resource%.2da~ BEGIN // Uses specified 2da file
+					PATCH_IF !VARIABLE_IS_SET $ra_redeemer_ban_2da(~%resource%~) BEGIN
+						INNER_ACTION BEGIN
+							LAF RA_REDEEMER_2DA_BAN STR_VAR file RET_ARRAY ra_redeemer_ban_2da END
+						END
+					END
+					PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_2da(~%resource%~) BEGIN
+						SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				127 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2
+					PATCH_MATCH param2 WITH
+						0 5 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM01~) BEGIN
+							SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						1 6 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM02~) BEGIN
+							SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						2 7 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM03~) BEGIN
+							SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						3 8 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~ANISUM01~) BEGIN
+							SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						4 9 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~ANISUM02~) BEGIN
+							SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						DEFAULT
+					END
+				END
+				331 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op331
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2 ++param2
+// The value in the array is 1 higher than used in the effect because the 2da table has a header row that get's counted.
+					TEXT_SPRINT file $READOP331(~%param2%~ ~1~)
+					PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_2da(~%file%~)	BEGIN
+						SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY  // Scan through spells for offending opcodes and EFF references
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	TO_UPPER  SOURCE_RES
+	SET	ab_size = 0x28
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
+			PATCH_MATCH opcode WITH
+				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_redeemer_ban_spl(~%resource%~) BEGIN
+					SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				DEFAULT
+			END
+		END
+	END
+	PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_spl(~%SOURCE_RES%~) BEGIN
+		PATCH_IF	(BYTE_AT 0x1c = 1) OR	(BYTE_AT 0x1c = 2) BEGIN // wizard or priest spell
+			PATCH_IF	BYTE_AT 0x34 > 0 AND BYTE_AT 0x34 < 10 BEGIN // valid spell level
+				PATCH_IF LONG_AT NAME1 > 0 AND LONG_AT NAME1 < NEXT_STRREF BEGIN // valid name
+					PATCH_IF LONG_AT UNIDENTIFIED_DESC > 0 AND LONG_AT UNIDENTIFIED_DESC < NEXT_STRREF BEGIN // valid description
+						TEXT_SPRINT resource ~%SOURCE_RES%~
+						READ_STRREF NAME1 name
+						PATCH_PRINT ~%SOURCE_RES% : %name%~
+						INNER_ACTION	BEGIN
+							COPY_EXISTING ~RAHRF.spl~ override
+								LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 timing = 4 duration = 1 STR_VAR resource	END
+							BUT_ONLY
+						END
+					END
+				END
+			END
+		END
+	END
+BUT_ONLY  // One more pass to catch spells casting offending spells, and add spells to removal spell.
+COPY_EXISTING_REGEXP ~^.+\.itm$~ override // ITM files last
+	TO_UPPER  SOURCE_RES
+	SET	ab_size = 0x38
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
+			PATCH_MATCH opcode WITH
+				177 WHEN VARIABLE_IS_SET $ra_redeemer_ban_eff(~%resource%~) BEGIN
+					SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_redeemer_ban_spl(~%resource%~) BEGIN
+					SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				32 BEGIN
+					SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				67 WHEN VARIABLE_IS_SET $ra_redeemer_ban_cre(~%resource%~) BEGIN // Uses specified cre file
+					SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				127 331 WHEN FILE_EXISTS_IN_GAME ~%resource%.2da~ BEGIN // Uses specified 2da file
+					PATCH_IF !VARIABLE_IS_SET $ra_redeemer_ban_2da(~%resource%~) BEGIN
+						INNER_ACTION BEGIN
+							LAF RA_REDEEMER_2DA_BAN STR_VAR file RET_ARRAY ra_redeemer_ban_2da END
+						END
+					END
+					PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_2da(~%resource%~) BEGIN
+						SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				127 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2
+					PATCH_MATCH param2 WITH
+						0 5 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM01~) BEGIN
+							SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						1 6 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM02~) BEGIN
+							SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						2 7 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~MONSUM03~) BEGIN
+							SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						3 8 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~ANISUM01~) BEGIN
+							SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						4 9 WHEN VARIABLE_IS_SET $ra_redeemer_ban_2da(~ANISUM02~) BEGIN
+							SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						DEFAULT
+					END
+				END
+				331 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2 ++param2
+// The value in the array is 1 higher than used in the effect because the 2da table has a header row that get's counted.
+					TEXT_SPRINT file $READOP331(~%param2%~ ~1~)
+					PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_2da(~%file%~)	BEGIN
+						SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				DEFAULT
+			END
+		END
+	END
+	PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) BEGIN
+		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 9 parameter1 = (RAHUHR + 0x4000) END
+		READ_STRREF NAME1 name
+		READ_STRREF NAME2 name2
+		PATCH_PRINT ~%SOURCE_RES% : %name% : %name2%~
+	END
+BUT_ONLY  // Scan through items for offending opcodes, EFF, and SPL references 
+
+//EoF

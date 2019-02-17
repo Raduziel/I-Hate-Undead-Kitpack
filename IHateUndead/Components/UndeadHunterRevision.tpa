@@ -8,42 +8,30 @@ ACTION_IF GAME_IS ~bg2ee eet~ THEN BEGIN
 END
 
 ACTION_IF GAME_IS ~iwdee~ THEN BEGIN
-  STRING_SET ~37141~ @401
-  STRING_SET ~25208~ @401
+  STRING_SET ~37141~ @402
+  STRING_SET ~25208~ @402
 END
 
 COPY_EXISTING ~CLABPA04.2DA~ ~override~
-SET_2DA_ENTRY_LATER ~RACLABPA04~ 8 3  ~AP_RAUHNF~
-SET_2DA_ENTRY_LATER ~RACLABPA04~ 8 5  ~GA_RAUHHS~
-SET_2DA_ENTRIES_NOW ~RACLABPA04~ 1
+SET_2DA_ENTRY 6 1 40 ~AP_RAUHF~
+SET_2DA_ENTRY 6 3 40 ~AP_RAUHF~
+SET_2DA_ENTRY 4 5 40 ~GA_RAUH1~
 PRETTY_PRINT_2DA
-BUT_ONLY_IF_IT_CHANGES
+BUT_ONLY
 
-COPY "IHateUndead\Spl\RAUHNF.spl" override
+CREATE spl ~RAHRF~
 
-COPY "IHateUndead\Spl\RAUHHS.spl" override	SAY NAME1 @402	SAY UNIDENTIFIED_DESC @403
-	PATCH_IF GAME_IS ~iwdee~ THEN BEGIN
-		LPF ALTER_EFFECT INT_VAR match_opcode = 111 timing = 0 duration = 4500 END
-		LPF ALTER_EFFECT INT_VAR match_opcode = 174 timing = 4 duration = 4500 END
-	END
+COPY_EXISTING ~RAHRF.spl~ override
+LPF ADD_ABILITIES	   INT_VAR abil = 2 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 323 target = 2 timing = 9 parameter1 = 2                             STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 3 STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 3 STR_VAR insert_point = 1  END
 
-COPY "IHateUndead\Itm\RAUHHS.itm" override	SAY NAME1 @402	SAY NAME2 @402
+COPY ~IHateUndead\Spl\RAUH1.spl~ override SAY NAME1 @403	SAY UNIDENTIFIED_DESC @404
 
-COPY ~IHateUndead\Bam\UndeadHunter\RAUHHS.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
+COPY ~IHateUndead\Spl\RAUH1.itm~ override SAY NAME1 @403	SAY NAME2 @403
 
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~IHateUndead\Bam\UndeadHunter\MOS%original_base_index%.pvrz~
-    END
-  END
-  
+COPY ~IHateUndead\Spl\RAUH1.bam~ override
+    
 //EoF

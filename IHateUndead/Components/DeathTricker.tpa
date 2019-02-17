@@ -3,12 +3,12 @@ ADD_KIT ~RAHUDT~
     ~RAHUDT 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 1 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAHUDT 3 9 3 12 3 3~
 	~RAHUDT 0 0 0 0 0 0~
-	~RAHUDT 99 99 99 99 99 99~
-    ~RAHUDT 0 17 0 12 0 0~
-	~RAHUDT 1 1 0 1 1 0 1 1 0~
+	~RAHUDT 3 9 3 12 3 3~
+    ~RAHUDT 3 9 3 12 3 3~
+	~RAHUDT 0 1 0 1 1 0 1 1 0~
 	~RAHUDT 1 1 1 0 0 0~
 	~IHateUndead\Tables\RAHUDT.2da~
-	~K_T_H	K_T_D   K_T_G   K_T_E   K_T_HE   K_T_HL   K_T_HO~
+	~K_T_H	K_T_D  K_T_G  K_T_E  K_T_HE  K_T_HL  K_T_HO~
 	~0x00000000 4~
 	~Th0~
 	~LEAT19 * * * WA2RING RING39 CLCK03 BOOT07 AMUL27 BRAC16 * * * * * * * DAGG11 BOW15 STAF08~
@@ -18,53 +18,44 @@ ADD_KIT ~RAHUDT~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAHUDT~		
+		kit_name = ~RAHUDT~
+		clsrcreq = ~1 1 1 1 1 1 1~
 		thiefskl = ~40 20~
-		clascolr = ~6 107 123 242 136~
-		clasiskl = ~0 10 10 0 0 0 0~
+		clascolr = ~6 107 113 242 135~
+		clasiskl = ~0 0 10 10 0 0 0~
 		thiefscl = ~0 100 100 100 100 100 100 0~
 END
-		
-COPY_EXISTING_REGEXP GLOB ~^.+\.itm$~ ~override~
-  PATCH_IF (SOURCE_SIZE > 0x71) BEGIN
-    READ_BYTE 0x18 flags1
-    PATCH_IF ((flags1 & BIT3) = BIT3) BEGIN
-		READ_ASCII	0x22 animation (2)
-		PATCH_IF ("%animation%" STRING_EQUAL_CASE "2A") BEGIN
-			LPF ~ADD_ITEM_EQEFFECT~ INT_VAR opcode = 319 target = 1 timing = 2 parameter1 = IDS_OF_SYMBOL (~Kit~ ~RAHUDT~) parameter2 = 9 special = RESOLVE_STR_REF (@502) END
-		END
-	END
-  END
-BUT_ONLY
 
-COPY "IHateUndead\Eff\Tricker" override
+CREATE spl ~RADTF~
 
-COPY "IHateUndead\Spl\RAUTHTE1.spl" override
+CREATE spl ~RADTF1~
 
-COPY "IHateUndead\Spl\RAUTTR.spl" override
-    LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 301 parameter3 = 0 END
+COPY_EXISTING ~RADTF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 340 target = 2 timing = 9 STR_VAR insert_point = 0 resource = ~RADTF1~ END
 
-COPY "IHateUndead\Spl\RAUTED.spl" override	SAY NAME1 @504	SAY UNIDENTIFIED_DESC @505
+COPY_EXISTING ~RADTF1.spl~ override
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1   target = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 324 target = 2 timing = 9                              parameter2 = 2                                    STR_VAR insert_point = 0 resource = ~RADTF1~   END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 321 target = 2 timing = 1                                               savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 1 resource = ~RADTF1~   END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 337 target = 2            duration = 1 parameter1 = 45 parameter2 = 101 savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 2                       END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 139 target = 2 timing = 1              parameter1 = EVAL ~%RA_Stunned%~ savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 3                       END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 142 target = 2            duration = 6                 parameter2 = 55  savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 4                       END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 215 target = 2 timing = 1                              parameter2 = 1   savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 5 resource = ~SPFLSRIN~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 45  target = 2            duration = 6                                  savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 6                       END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 101 target = 2 timing = 1                              parameter2 = 45  savingthrow = 4 savebonus = ~-2~ STR_VAR insert_point = 7                       END
 
-COPY "IHateUndead\Spl\RAUTHT.spl" override	SAY NAME1 @506	SAY UNIDENTIFIED_DESC @507
+COPY ~IHateUndead\Spl\RADT1.spl~  override SAY NAME1 @504	SAY UNIDENTIFIED_DESC @505
 
-ACTION_FOR_EACH file IN ~RAUTED~ ~RAUTHT~ BEGIN
-  COPY ~IHateUndead\Bam\DeathTricker\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
+COPY ~IHateUndead\Spl\RADT1.bam~  override
 
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~IHateUndead\Bam\DeathTricker\MOS%original_base_index%.pvrz~
-    END
-  END
-END
+COPY ~IHateUndead\Spl\RADT2.spl~  override SAY NAME1 @506	SAY UNIDENTIFIED_DESC @507
 
+COPY ~IHateUndead\Spl\RADT2.bam~  override
+
+COPY ~IHateUndead\Spl\RADT2.eff~  override
+
+COPY ~IHateUndead\Spl\RADT21.spl~ override
+	
 //EoF
