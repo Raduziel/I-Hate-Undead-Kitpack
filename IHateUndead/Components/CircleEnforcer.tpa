@@ -1,12 +1,12 @@
-	ADD_KIT ~RAHUCE~
+ADD_KIT ~RAHUCE~
     ~RAHUCE 1 0 1 1 0 0 0 1~
     ~RAHUCE 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAHUCE 3 3 3 3 12 15~
 	~RAHUCE 0 0 0 0 0 0~
-	~RAHUCE 99 99 99 99 99 99~
-    ~RAHUCE 18 18 18 18 18 18~
+	~RAHUCE 3 3 3 3 12 15~
+    ~RAHUCE 3 3 3 3 12 15~
 	~RAHUCE 0 0 0 0 1 0 0 0 0~
-	~RAHUCE 0 0 0 0 0 0~
+	~RAHUCE 1 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUCE.2da~
 	~K_D_H	K_D_D   K_D_G   K_D_E   K_D_HE   K_D_HL   K_D_HO~
 	~0x00000000 11~
@@ -19,72 +19,659 @@
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUCE~		
-		clascolr = ~6 42 54 242 236~
+		clascolr = ~15 20 146 162 7~
+		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUCE~ clabfile = ~RAHUCE~ END
 
-COPY_EXISTING ~RAHUCE.2da~ ~override/RAHUCE.2da~
-SET_2DA_ENTRY  3 1  50 ~****     ~
-SET_2DA_ENTRY  4 1  50 ~****     ~
-SET_2DA_ENTRY  5 3  50 ~****     ~
-SET_2DA_ENTRY  6 5  50 ~****     ~
-SET_2DA_ENTRY  7 5  50 ~****     ~
-SET_2DA_ENTRY  8 5  50 ~****     ~
-SET_2DA_ENTRY  9 9  50 ~****     ~
-SET_2DA_ENTRY 10 11 50 ~****     ~
-
-PRETTY_PRINT_2DA	
-	
 END
 
+COPY_EXISTING ~LUDr0.2da~ ~override\LURAHUCE.2da~
+SET_2DA_ENTRY 11 1 9 ~*         ~
+SET_2DA_ENTRY 11 4 9 ~*         ~
+SET_2DA_ENTRY 11 5 9 ~*         ~
+SET_2DA_ENTRY 11 6 9 ~*         ~
+SET_2DA_ENTRY 12 1 9 ~*         ~
+SET_2DA_ENTRY 12 4 9 ~*         ~
+SET_2DA_ENTRY 12 5 9 ~*         ~
+SET_2DA_ENTRY 12 6 9 ~*         ~
+PRETTY_PRINT_2DA
 
-	COPY_EXISTING ~SPWI217.spl~ ~override\RACEAS.spl~	SAY NAME1 @805	SAY UNIDENTIFIED_DESC @806   //Agannazar's Scorcher
-	WRITE_SHORT 0x1C 2
-	
-	COPY_EXISTING ~SPWI103.spl~ ~override\RACEBH.spl~                                                //Burning Hands
-	WRITE_SHORT 0x1C 2
-	
-	COPY_EXISTING ~SPWI615.spl~ ~override\RACECL.spl~                                                //Chain Lightning
-	WRITE_SHORT 0x1C 2
-	
-	COPY_EXISTING ~SPWI303.spl~ ~override\RACEFA.spl~                                                //Flame Arrow
-	WRITE_SHORT 0x1C 2
-	
-	COPY_EXISTING ~SPWI308.spl~ ~override\RACELB.spl~                                                //Lightning Bolt
-	WRITE_SHORT 0x1C 2
+CREATE spl ~RACEF~
 
-	COPY_EXISTING ~SPWI523.spl~ ~override\RACESF.spl~                                                //Sunfire 
-	WRITE_SHORT 0x1C 2
+CREATE spl ~RACEF2~
 
-	COPY_EXISTING ~SPWI115.spl~ ~override\RACESG.spl~                                                //Shocking Grasp
-	WRITE_SHORT 0x1C 2
+COPY_EXISTING ~RACEF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 9                                              STR_VAR insert_point = 0 resource = ~RACEF~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4   parameter2 = 3  special = 2 STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 121 parameter2 = 4  special = 2 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 122 parameter2 = 4  special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 139 parameter2 = 4  special = 2 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 141 parameter2 = 4  special = 2 STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 144 parameter2 = 4  special = 2 STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 2 STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 2 STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 2 STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4   parameter2 = 3  special = 2 STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 121 parameter2 = 4  special = 2 STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 122 parameter2 = 4  special = 2 STR_VAR insert_point = 12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 139 parameter2 = 4  special = 2 STR_VAR insert_point = 13 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 141 parameter2 = 4  special = 2 STR_VAR insert_point = 14 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 144 parameter2 = 4  special = 2 STR_VAR insert_point = 15 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 2 STR_VAR insert_point = 16 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 2 STR_VAR insert_point = 17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 2 STR_VAR insert_point = 18 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 4   parameter2 = 3              STR_VAR insert_point = 19 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 121 parameter2 = 4              STR_VAR insert_point = 20 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 122 parameter2 = 4              STR_VAR insert_point = 21 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 139 parameter2 = 4              STR_VAR insert_point = 22 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 141 parameter2 = 4              STR_VAR insert_point = 23 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 144 parameter2 = 4              STR_VAR insert_point = 24 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 153 parameter2 = 4              STR_VAR insert_point = 25 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 157 parameter2 = 4              STR_VAR insert_point = 26 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 159 parameter2 = 4              STR_VAR insert_point = 27 END
 
-	COPY_EXISTING ~SPWI304.spl~ ~override\RACEFB.spl~                                                //Fireball
-	WRITE_SHORT 0x1C 2
+ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
-COPY "IHateUndead\Spl\RACEFE.spl" override
-
-COPY "IHateUndead\Spl\RACERS.spl" override
+COPY_EXISTING ~RACEF2.spl~ override
+LPF ADD_ABILITIES	   INT_VAR abil = 4 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1 min_level = 15 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 18 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 21 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 24 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 11  target = 2 timing = 9                                       STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 101 target = 2 timing = 9                parameter2 = 25        STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 142 target = 2 timing = 9                parameter2 = 30        STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 173 target = 2 timing = 9   parameter1 = 100                    STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poison%~     STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poisoned%~   STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Bleeding%~   STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 27  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 28  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 29  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 30  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 84  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 85  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 27  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 28  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 29  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 30  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 84  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 85  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 27  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 28  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 29  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 30  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 84  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 85  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 5  END
+END
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
-COPY "IHateUndead\Spl\RACEIW.spl" override
-COPY "IHateUndead\Spl\RACEIF.spl" override
+COPY_EXISTING ~RACEF2.spl~ override
+LPF ADD_ABILITIES	   INT_VAR abil = 2 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1   min_level = 9  END
+LPF ALTER_SPELL_HEADER INT_VAR header = 2   min_level = 15 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 11  target = 2 timing = 9                                       STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 101 target = 2 timing = 9                parameter2 = 25        STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 139 target = 2 timing = 1   parameter1 = 40027                  STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 142 target = 2 timing = 9                parameter2 = 30        STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 173 target = 2 timing = 9   parameter1 = 100                    STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poison%~     STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poisoned%~   STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Bleeding%~   STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode =  93 target = 2 timing = 9                parameter2 = 1         STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 101 target = 2 timing = 9                parameter2 = 93        STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 139 target = 2 timing = 1   parameter1 = 40026                  STR_VAR insert_point = 2  END
+
+COPY_EXISTING ~RAHUCE.2da~ override
+SET_2DA_ENTRY 2  9 50 ~AP_RACEF2~
+SET_2DA_ENTRY 2 18 50 ~****     ~
+SET_2DA_ENTRY 2 21 50 ~****     ~
+SET_2DA_ENTRY 2 24 50 ~****     ~
+PRETTY_PRINT_2DA
 
 END
 
-ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+COPY ~IHateUndead\Spl\RACE1.spl~  override SAY NAME1 @815	SAY UNIDENTIFIED_DESC @816
 
-COPY "IHateUndead\Spl\RACEBG.spl" override
-COPY "IHateUndead\Spl\RACE1.spl" override
-COPY "IHateUndead\Spl\RACE2.spl" override
-COPY "IHateUndead\Spl\RACE3.spl" override
+COPY ~IHateUndead\Spl\RACE1.bam~  override
+
+COPY ~IHateUndead\Spl\RACE.2da~   ~override\RACE1.2da~
+
+
+//Fireball
+
+	ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FIREBALL[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+	LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FIREBALL~	RET	spell_res	END
+
+	APPEND ~RACE1.2da~ ~FIREBALL %spell_res% 3~
+
+	END
+
+//Icelance
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ICELANCE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ICELANCE~	RET	spell_res	END
+
+APPEND ~RACE1.2da~ ~ICELANCE %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~IHateUndead\Spl\Icelance\IDPRO251.PRO~
+
+ADD_SPELL ~IHateUndead\Spl\Icelance\SPWI327.spl~ 2 3 WIZARD_ICELANCE
+SAY NAME1 @804 SAY NAME2 @804 SAY UNIDENTIFIED_DESC @805 SAY DESC @805
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	$res_of_label(~WIZARD_ICELANCE~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO251% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~SPPR321~	      resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568      parameter1 = EVAL "%RA_Stunned%" END
+
+COPY ~IHateUndead\Spl\Icelance\SPWI327B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead\Spl\Icelance\SPWI327C.BAM~	~override\%spell_res%C.BAM~
+
+APPEND ~RACE1.2da~ ~ICELANCE %spell_res% 3~
 
 END
 
-COPY "IHateUndead\Tables\LURAHUCE.2DA" override
+//Lightning Bolt
+
+	ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LIGHTNING_BOLT[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+	LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LIGHTNING_BOLT~	RET	spell_res	END
+
+	APPEND ~RACE1.2da~ ~LIGHTNING_BOLT %spell_res% 3~
+
+	END
+
+COPY_EXISTING ~RACE1.2da~ override
+PRETTY_PRINT_2DA
+
+COPY ~IHateUndead\Spl\RACE2.spl~  override SAY NAME1 @817	SAY UNIDENTIFIED_DESC @818
+
+COPY ~IHateUndead\Spl\RACE2.bam~  override
+
+COPY ~IHateUndead\Spl\RACE.2da~   ~override\RACE2.2da~
+
+
+//Ice Storm
+
+	ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ICE_STORM[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+	LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ICE_STORM~	RET	spell_res	END
+
+	APPEND ~RACE2.2da~ ~ICE_STORM %spell_res% 3~
+
+	END
+
+//Static Charge
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_STATIC_CHARGE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_STATIC_CHARGE~	RET	spell_res	END
+
+APPEND ~RACE2.2da~ ~STATIC_CHARGE %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~IHateUndead\Spl\StaticCharge\IDSTATIC.PRO~
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@806) STR_VAR bam_file = RASTATIC RET iconstat = icon END
+ADD_SPELL ~IHateUndead\Spl\StaticCharge\SPPR420.spl~ 1 4 CLERIC_STATIC_CHARGE
+SAY NAME1 @806 SAY NAME2 @806 SAY UNIDENTIFIED_DESC @807 SAY DESC @807
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_STATIC_CHARGE~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 142 match_parameter2 = 42   parameter2 = iconstat END
+
+COPY ~IHateUndead\Spl\StaticCharge\SPPR420B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead\Spl\StaticCharge\SPPR420C.BAM~	~override\%spell_res%C.BAM~
+
+COPY ~IHateUndead\Spl\StaticCharge\SPPR420B.spl~	~override\%spell_res%B.spl~
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDSTATIC% END
+LPF	ALTER_EFFECT	   STR_VAR match_resource = EVAL ~%SOURCE_RES%~   resource = EVAL ~%spell_res%B~	END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~SPPR420~	      resource = EVAL ~%spell_res%~	    END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1         match_resource = EVAL ~%SOURCE_RES%~    resource = EVAL ~%spell_res%B~	END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 40255 parameter1 = RESOLVE_STR_REF (@808) END
+
+APPEND ~RACE2.2da~ ~STATIC_CHARGE %spell_res% 3~
+
+END
+
+//Smashing Wave
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SMASHING_WAVE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SMASHING_WAVE~	RET	spell_res	END
+
+APPEND ~RACE2.2da~ ~SMASHING_WAVE %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~IHateUndead\Spl\SmashingWave\SWAVE.PRO~
+
+ADD_SPELL ~IHateUndead\Spl\SmashingWave\SPPR426.spl~ 1 4 CLERIC_SMASHING_WAVE
+SAY NAME1 @809 SAY NAME2 @809 SAY UNIDENTIFIED_DESC @810 SAY DESC @810
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_SMASHING_WAVE~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %SWAVE% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"      END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 37340 parameter1 = EVAL "%RA_Unconscious%"  END
+
+COPY ~IHateUndead\Spl\SmashingWave\SPPR426B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead\Spl\SmashingWave\SPPR426C.BAM~	~override\%spell_res%C.BAM~
+
+APPEND ~RACE2.2da~ ~SMASHING_WAVE %spell_res% 3~
+
+END
+
+COPY_EXISTING ~RACE2.2da~ override
+PRETTY_PRINT_2DA
+
+COPY ~IHateUndead\Spl\RACE3.spl~  override SAY NAME1 @819	SAY UNIDENTIFIED_DESC @820
+
+COPY ~IHateUndead\Spl\RACE3.bam~  override
+
+COPY ~IHateUndead\Spl\RACE.2da~   ~override\RACE3.2da~
+
+
+//Cone of Cold
+
+	ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CONE_OF_COLD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+	LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CONE_OF_COLD~	RET	spell_res	END
+
+	APPEND ~RACE3.2da~ ~CONE_OF_COLD %spell_res% 3~
+
+	END
+
+//Spike Stones
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_SPIKE_STONES[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIKE_STONES~	RET	spell_res	END
+
+APPEND ~RACE3.2da~ ~SPIKE_STONES %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~IHateUndead\Spl\SpikeStones\IDPRO213.PRO~
+
+ADD_SPELL ~IHateUndead\Spl\SpikeStones\SPPR519.spl~ 1 5 CLERIC_SPIKE_STONES
+SAY NAME1 @811 SAY NAME2 @811 SAY UNIDENTIFIED_DESC @812 SAY DESC @812
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_SPIKE_STONES~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %IDPRO213% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	resource = EVAL ~%spell_res%~ END
+
+COPY ~IHateUndead\Spl\SpikeStones\SPPR519B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead\Spl\SpikeStones\SPPR519C.BAM~	~override\%spell_res%C.BAM~
+
+APPEND ~RACE3.2da~ ~SPIKE_STONES %spell_res% 3~
+
+END
+
+//Sunfire
+
+	ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_SUN_FIRE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+	LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_SUN_FIRE~	RET	spell_res	END
+
+	APPEND ~RACE3.2da~ ~SUNFIRE %spell_res% 3~
+
+	END
+
+COPY_EXISTING ~RACE3.2da~ override
+PRETTY_PRINT_2DA
+
+COPY ~IHateUndead\Spl\RACE4.spl~  override SAY NAME1 @821	SAY UNIDENTIFIED_DESC @822
+
+COPY ~IHateUndead\Spl\RACE4.bam~  override
+
+COPY ~IHateUndead\Spl\RACE.2da~   ~override\RACE4.2da~
+
+
+//Chain Lightning
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CHAIN_LIGHTNING[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CHAIN_LIGHTNING~	RET	spell_res	END
+
+APPEND ~RACE4.2da~ ~CHAIN_LIGHTNING %spell_res% 3~
+
+END
+
+//Flesh to Stone
+
+	ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_FLESH_TO_STONE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+	LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_FLESH_TO_STONE~	RET	spell_res	END
+
+	APPEND ~RACE4.2da~ ~FLESH_TO_STONE %spell_res% 3~
+
+	END
+
+//Whirlwind
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_WHIRLWIND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_WHIRLWIND~	RET	spell_res	END
+
+APPEND ~RACE4.2da~ ~WHIRLWIND %spell_res% 3~
+
+END ELSE BEGIN
+
+ADD_PROJECTILE ~IHateUndead\Spl\Whirlwind\WHIRLW.PRO~
+
+ADD_SPELL ~IHateUndead\Spl\Whirlwind\SPPR617.spl~ 1 6 CLERIC_WHIRLWIND
+SAY NAME1 @813 SAY NAME2 @813 SAY UNIDENTIFIED_DESC @814 SAY DESC @814
+TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
+TEXT_SPRINT	 $res_of_label(~CLERIC_WHIRLWIND~) ~%spell_res%~
+WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
+LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
+LPF ALTER_SPELL_HEADER INT_VAR projectile = %WHIRLW% END
+LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	 END
+LPF ALTER_EFFECT 	   INT_VAR match_opcode = 139 match_parameter1 = 35568 parameter1 = EVAL "%RA_Stunned%"      END
+
+COPY ~IHateUndead\Spl\Whirlwind\SPPR617B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead\Spl\Whirlwind\SPPR617C.BAM~	~override\%spell_res%C.BAM~
+
+APPEND ~RACE4.2da~ ~WHIRLWIND %spell_res% 3~
+
+END
+
+COPY_EXISTING ~RACE4.2da~ override
+PRETTY_PRINT_2DA
+
+//Not summon animals.
+
+COPY_EXISTING_REGEXP ~^.+\.cre$~ override	// CRE files first
+		TO_UPPER  SOURCE_RES
+		READ_BYTE 0x271  general
+		PATCH_MATCH general WITH 2 BEGIN
+			SET $ra_enforcer_ban_cre(~%SOURCE_RES%~) = 1
+			END
+			DEFAULT
+		END
+	BUT_ONLY
+DEFINE_ACTION_FUNCTION RA_ENFORCER_2DA_BAN STR_VAR file = ~~ RET_ARRAY ra_enforcer_ban_2da BEGIN
+	OUTER_SET $ra_enforcer_ban_2da(~?~) = 0  // dummy entry, to insure returned array is not empty
+	COPY_EXISTING ~%file%.2da~ override
+		TO_UPPER  SOURCE_RES
+		COUNT_2DA_COLS cols
+		READ_2DA_ENTRIES_NOW ~READ~ cols
+		FOR (i = 0; i < READ; ++i) BEGIN
+			READ_2DA_ENTRY_FORMER ~READ~ i 1 cre	TO_UPPER cre
+			PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_cre(~%cre%~) BEGIN
+				SET $ra_enforcer_ban_2da(~%SOURCE_RES%~) = 1
+				SET i = READ
+			END
+		END
+	BUT_ONLY IF_EXISTS
+END
+ACTION_FOR_EACH file IN ~MONSUM01~ ~MONSUM02~ ~MONSUM03~ ~ANISUM01~ ~ANISUM02~ BEGIN
+	LAF RA_ENFORCER_2DA_BAN STR_VAR file RET_ARRAY ra_enforcer_ban_2da END // default 2da files next
+END
+COPY_EXISTING ~SMTABLES.2DA~	override	//	op331 2da files
+	COUNT_2DA_COLS cols
+	READ_2DA_ENTRIES_NOW ~READOP331~ cols
+	FOR (i = 1; i < READOP331; ++i) BEGIN
+		READ_2DA_ENTRY_FORMER ~READOP331~ i 1 file	TO_UPPER file
+		TEXT_SPRINT $READOP331(~%i%~ ~1~) ~%file%~
+		INNER_ACTION	BEGIN
+			LAF RA_ENFORCER_2DA_BAN STR_VAR file RET_ARRAY ra_enforcer_ban_2da END // default 2da files next
+		END
+	END
+BUT_ONLY IF_EXISTS
+	
+COPY_EXISTING_REGEXP ~^.+\.eff$~ override	// EFF files next
+	TO_UPPER  SOURCE_RES
+	READ_LONG 0x10 opcode
+	READ_ASCII 0x30 resource TO_UPPER resource
+	PATCH_MATCH opcode WITH
+		67 WHEN VARIABLE_IS_SET $ra_enforcer_ban_cre(~%resource%~) BEGIN // Uses specified cre file
+			SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+		END
+		127 331 WHEN FILE_EXISTS_IN_GAME ~%resource%.2da~ BEGIN // Uses specified 2da file
+			PATCH_IF !VARIABLE_IS_SET $ra_enforcer_ban_2da(~%resource%~) BEGIN
+				INNER_ACTION BEGIN
+					LAF RA_ENFORCER_2DA_BAN STR_VAR file RET_ARRAY ra_enforcer_ban_2da END
+				END
+			END
+			PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_2da(~%resource%~) BEGIN
+				SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+			END
+		END
+		127 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+			READ_LONG 0x20 param2
+			PATCH_MATCH param2 WITH
+				0 5 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM01~) BEGIN
+					SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				1 6 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM02~) BEGIN
+					SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				2 7 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM03~) BEGIN
+					SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				3 8 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~ANISUM01~) BEGIN
+					SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				4 9 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~ANISUM02~) BEGIN
+					SET $ra_enforcer_ban_eff(~%SOURCE_RES%~) = 1
+				END
+				DEFAULT
+			END
+		END
+		DEFAULT
+	END
+BUT_ONLY // Scan through EFFs for offending effect
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override // SPL files next
+	TO_UPPER  SOURCE_RES
+	SET	ab_size = 0x28
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
+			PATCH_MATCH opcode WITH
+				177 WHEN VARIABLE_IS_SET $ra_enforcer_ban_eff(~%resource%~) BEGIN
+					SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				67 WHEN VARIABLE_IS_SET $ra_enforcer_ban_cre(~%resource%~) BEGIN // Uses specified cre file
+					SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				127 331 WHEN FILE_EXISTS_IN_GAME ~%resource%.2da~ BEGIN // Uses specified 2da file
+					PATCH_IF !VARIABLE_IS_SET $ra_enforcer_ban_2da(~%resource%~) BEGIN
+						INNER_ACTION BEGIN
+							LAF RA_ENFORCER_2DA_BAN STR_VAR file RET_ARRAY ra_enforcer_ban_2da END
+						END
+					END
+					PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_2da(~%resource%~) BEGIN
+						SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				127 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2
+					PATCH_MATCH param2 WITH
+						0 5 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM01~) BEGIN
+							SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						1 6 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM02~) BEGIN
+							SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						2 7 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM03~) BEGIN
+							SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						3 8 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~ANISUM01~) BEGIN
+							SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						4 9 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~ANISUM02~) BEGIN
+							SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						DEFAULT
+					END
+				END
+				331 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op331
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2 ++param2
+// The value in the array is 1 higher than used in the effect because the 2da table has a header row that get's counted.
+					TEXT_SPRINT file $READOP331(~%param2%~ ~1~)
+					PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_2da(~%file%~)	BEGIN
+						SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				DEFAULT
+			END
+		END
+	END
+BUT_ONLY  // Scan through spells for offending opcodes and EFF references
+COPY_EXISTING_REGEXP ~^.+\.spl$~ override
+	TO_UPPER  SOURCE_RES
+	SET	ab_size = 0x28
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
+			PATCH_MATCH opcode WITH
+				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_enforcer_ban_spl(~%resource%~) BEGIN
+					SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				DEFAULT
+			END
+		END
+	END
+	PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_spl(~%SOURCE_RES%~) BEGIN
+		PATCH_IF	(BYTE_AT 0x1c = 1) OR	(BYTE_AT 0x1c = 2) BEGIN // wizard or priest spell
+			PATCH_IF	BYTE_AT 0x34 > 0 AND BYTE_AT 0x34 < 10 BEGIN // valid spell level
+				PATCH_IF LONG_AT NAME1 > 0 AND LONG_AT NAME1 < NEXT_STRREF BEGIN // valid name
+					PATCH_IF LONG_AT UNIDENTIFIED_DESC > 0 AND LONG_AT UNIDENTIFIED_DESC < NEXT_STRREF BEGIN // valid description
+						TEXT_SPRINT resource ~%SOURCE_RES%~
+						READ_STRREF NAME1 name
+						PATCH_PRINT ~%SOURCE_RES% : %name%~
+						INNER_ACTION	BEGIN
+							COPY_EXISTING ~RACEF.spl~ override
+								LPF ADD_SPELL_EFFECT INT_VAR opcode = 172 target = 1 timing = 4 duration = 1 STR_VAR resource	END
+							BUT_ONLY
+						END
+					END
+				END
+			END
+		END
+	END
+BUT_ONLY  // One more pass to catch spells casting offending spells, and add spells to removal spell.
+COPY_EXISTING_REGEXP ~^.+\.itm$~ override // ITM files last
+	TO_UPPER  SOURCE_RES
+	SET	ab_size = 0x38
+	READ_LONG 0x64 ab_off
+	READ_SHORT 0x68 ab_num
+	READ_LONG 0x6a fx_off
+	FOR (i = 0; i < ab_num; ++i) BEGIN
+		READ_SHORT (ab_off + i * ab_size + 0x1e) fx_num
+		READ_SHORT (ab_off + i * ab_size + 0x20) fx_idx
+		FOR (j = 0; j < fx_num; ++j) BEGIN
+			READ_SHORT	(fx_off + (fx_idx + j) * 0x30)	opcode
+			READ_ASCII	(fx_off + (fx_idx + j) * 0x30 + 0x14)	resource TO_UPPER resource
+			PATCH_MATCH opcode WITH
+				177 WHEN VARIABLE_IS_SET $ra_enforcer_ban_eff(~%resource%~) BEGIN
+					SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				146 148 232 326 333 WHEN VARIABLE_IS_SET $ra_enforcer_ban_spl(~%resource%~) BEGIN
+					SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				67 WHEN VARIABLE_IS_SET $ra_enforcer_ban_cre(~%resource%~) BEGIN // Uses specified cre file
+					SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+					SET j = fx_num SET i = ab_num
+				END
+				127 331 WHEN FILE_EXISTS_IN_GAME ~%resource%.2da~ BEGIN // Uses specified 2da file
+					PATCH_IF !VARIABLE_IS_SET $ra_enforcer_ban_2da(~%resource%~) BEGIN
+						INNER_ACTION BEGIN
+							LAF RA_ENFORCER_2DA_BAN STR_VAR file RET_ARRAY ra_enforcer_ban_2da END
+						END
+					END
+					PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_2da(~%resource%~) BEGIN
+						SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				127 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2
+					PATCH_MATCH param2 WITH
+						0 5 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM01~) BEGIN
+							SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						1 6 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM02~) BEGIN
+							SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						2 7 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~MONSUM03~) BEGIN
+							SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						3 8 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~ANISUM01~) BEGIN
+							SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						4 9 WHEN VARIABLE_IS_SET $ra_enforcer_ban_2da(~ANISUM02~) BEGIN
+							SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+							SET j = fx_num SET i = ab_num
+						END
+						DEFAULT
+					END
+				END
+				331 WHEN ~%resource%~ STRING_EQUAL ~~	BEGIN  // Uses default 2da files for op127
+					READ_SHORT	(fx_off + (fx_idx + j) * 0x30 + 0x8) param2 ++param2
+// The value in the array is 1 higher than used in the effect because the 2da table has a header row that get's counted.
+					TEXT_SPRINT file $READOP331(~%param2%~ ~1~)
+					PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_2da(~%file%~)	BEGIN
+						SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) = 1
+						SET j = fx_num SET i = ab_num
+					END
+				END
+				DEFAULT
+			END
+		END
+	END
+	PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) BEGIN
+		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 9 parameter1 = (RAHUCE + 0x4000) END
+		READ_STRREF NAME1 name
+		READ_STRREF NAME2 name2
+		PATCH_PRINT ~%SOURCE_RES% : %name% : %name2%~
+	END
+BUT_ONLY  // Scan through items for offending opcodes, EFF, and SPL references 
 
 //EoF

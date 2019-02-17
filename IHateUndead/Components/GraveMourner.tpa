@@ -1,6 +1,6 @@
 ADD_KIT ~RAHUGM~
     ~RAHUGM 1 1 1 1 1 1 1 1~
-    ~RAHUGM 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAHUGM 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAHUGM 3 12 3 13 3 17~
 	~RAHUGM 0 0 0 0 0 0~
 	~RAHUGM 3 12 3 13 3 17~
@@ -19,7 +19,7 @@ ADD_KIT ~RAHUGM~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUGM~
-		clascolr = ~6 220 169 242 236~
+		clascolr = ~63 62 66 43 64~
 END
 
 COPY_EXISTING ~LUBa0.2da~ ~override\LURAHUGM.2da~
@@ -40,6 +40,7 @@ LPF ADD_ABILITIES    INT_VAR abil = 1 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 9 STR_VAR insert_point = 0 resource = ~RAGMF1~ END
 
 COPY ~IHateUndead\Spl\RAGMF1.spl~  override	SAY NAME1 @714
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@715) END
 
 COPY ~IHateUndead\Spl\RAGM1.bam~ override
 

@@ -19,7 +19,7 @@ ADD_KIT ~RAHUDS~
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUDS~		
-		clascolr = ~28 30 63 65 21~
+		clascolr = ~28 30 110 65 21~
 		clsrcreq = ~1 0 0 0 0 0 0~
 		hpclass = ~HPROG~
 END

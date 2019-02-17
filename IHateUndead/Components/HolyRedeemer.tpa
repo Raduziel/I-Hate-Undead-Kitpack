@@ -50,16 +50,14 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 141
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 3 STR_VAR insert_point = 6  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 3 STR_VAR insert_point = 7  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 3 STR_VAR insert_point = 8  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 175 parameter2 = 4  special = 3 STR_VAR insert_point = 9  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4   parameter2 = 3  special = 3 STR_VAR insert_point = 10 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 121 parameter2 = 4  special = 3 STR_VAR insert_point = 11 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 139 parameter2 = 4  special = 3 STR_VAR insert_point = 12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 141 parameter2 = 4  special = 3 STR_VAR insert_point = 13 END 
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 3 STR_VAR insert_point = 14 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 3 STR_VAR insert_point = 15 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 3 STR_VAR insert_point = 16 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 175 parameter2 = 4  special = 3 STR_VAR insert_point = 17 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                  parameter2 = 32             STR_VAR insert_point = 18 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4   parameter2 = 3  special = 3 STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 121 parameter2 = 4  special = 3 STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 139 parameter2 = 4  special = 3 STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 141 parameter2 = 4  special = 3 STR_VAR insert_point = 12 END 
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 153 parameter2 = 4  special = 3 STR_VAR insert_point = 13 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 157 parameter2 = 4  special = 3 STR_VAR insert_point = 14 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 159 parameter2 = 4  special = 3 STR_VAR insert_point = 15 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                  parameter2 = 32             STR_VAR insert_point = 16 END
 
 COPY ~IHateUndead\Spl\RAHR1.spl~  override	SAY NAME1 @204	SAY UNIDENTIFIED_DESC @205
 
