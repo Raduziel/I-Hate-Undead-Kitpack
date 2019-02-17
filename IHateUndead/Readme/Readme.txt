@@ -22,15 +22,15 @@ None
 
 
 
-4) Using the Undead Slayer with TnB's component "Revised Specialists"
+4) Using the Deathslayer with TnB's component "Revised Specialists"
 
 4.a) Enable the Console Commands;
 
 4.b) Create a Good-alignment Necromancer with at least 16 CON;
 
-4.c) While in the game, select only the Necromancer, leave the cursor on it and hit Ctrl + Space;
+4.c) While in the game, select only the Necromancer, leave the cursor over him/her and hit Ctrl + Space;
 
-4.d) Type: C:Eval('AddKit(RAHUUS)') and hit Enter. Enjoy.
+4.d) Type: C:Eval('AddKit(RAHUDS)') and hit Enter. Enjoy.
 
 
 
