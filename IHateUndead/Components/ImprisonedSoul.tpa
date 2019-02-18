@@ -1,14 +1,14 @@
 ADD_KIT ~RAHUIS~
     ~RAHUIS 0 1 0 0 1 0 0 1~
     ~RAHUIS 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-	~RAHUIS 3 3 3 9 3 9~
+	~RAHUIS 3 3 12 12 3 12~
 	~RAHUIS 0 0 0 0 0 0~
-	~RAHUIS 99 99 99 99 99 99~
-    ~RAHUIS 99 99 99 99 99 99~
-	~RAHUIS 1 1 1 1 1 1 1 1 1~
+	~RAHUIS 3 3 12 12 3 12~
+    ~RAHUIS 3 3 12 12 3 12~
+	~RAHUIS 0 1 0 0 1 0 0 1 0~
 	~RAHUIS 0 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUIS.2da~
-	~K_S_H  K_S_E  K_S_HE~
+	~K_S_H~
 	~0x00000000 19~
 	~So0~
 	~WAROBE2 * * * RING40 RING39 CLCK05 BOOT04 AMUL21 BRAC15 * * * * * * * * * STAF11~
@@ -22,31 +22,114 @@ LAF fl#add_kit_ee
 		clascolr = ~220 118 119 164 220~
 END
 
+CREATE spl ~RAISF~
+
+COPY_EXISTING ~RAISF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 28  target = 2 timing = 9 parameter1 = 100                               STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 85  target = 2 timing = 9 parameter1 = 100                               STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 timing = 9                   parameter2 = 25              STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                   parameter2 = 216             STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 142 target = 2 timing = 9                   parameter2 = 90              STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                   parameter2 = 53              STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain1%~                STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain2%~ 	           STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain3%~ 	           STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain4%~ 	           STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain5%~ 	           STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 31  target = 2 timing = 9 parameter1 = ~-100~                            STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 346 target = 2 timing = 9 parameter1 = ~-2~                  special = 7 STR_VAR insert_point = 12 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 1               STR_VAR insert_point = 13 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 2               STR_VAR insert_point = 14 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 4               STR_VAR insert_point = 15 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 8               STR_VAR insert_point = 16 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 16              STR_VAR insert_point = 17 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 32              STR_VAR insert_point = 18 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 64              STR_VAR insert_point = 19 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 128             STR_VAR insert_point = 20 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 156             STR_VAR insert_point = 21 END
+
+//Chill Touch
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CHILL_TOUCH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CHILL_TOUCH~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS1.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Ghoul Touch
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_GHOUL_TOUCH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_GHOUL_TOUCH~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS2.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Vampiric Touch
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_VAMPIRC_TOUCH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_VAMPIRIC_TOUCH~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS3.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
 //Lich Touch
 
-ACTION_IF !FILE_CONTAINS_EVALUATED(~SPELL.IDS~ ~[ %TAB%]WIZARD_LICH_TOUCH[ %TAB%%WNL%$]~) BEGIN
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LICH_TOUCH[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LICH_TOUCH~	RET	spell_res	END
 
-ADD_SPELL ~IHateUndead/Spl/SPWI626.SPL~ 2 6 WIZARD_LICH_TOUCH
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS4.spl~
+LPM ~SPELL_TO_INNATE~
+
+END ELSE BEGIN
+
+ADD_SPELL ~IHateUndead\Spl\LichTouch\SPWI626.SPL~ 2 6 WIZARD_LICH_TOUCH
 SAY NAME1 @1104 SAY NAME2 @1104 SAY UNIDENTIFIED_DESC @1105 SAY DESC @1105
 TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
 WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
 LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
 LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
 
-COPY ~IHateUndead/Spl/SPWI626B.BAM~	~override\%spell_res%B.BAM~
-COPY ~IHateUndead/Spl/SPWI626C.BAM~	~override\%spell_res%C.BAM~
+COPY ~IHateUndead\Spl\LichTouch\SPWI626B.BAM~	~override\%spell_res%B.BAM~
+COPY ~IHateUndead\Spl\LichTouch\SPWI626C.BAM~	~override\%spell_res%C.BAM~
 
-COPY ~IHateUndead/Itm/ILTOUCH.BAM~	~override~
-COPY ~IHateUndead/Itm/LTOUCH.ITM~	~override~
+COPY ~IHateUndead\Spl\LichTouch\ILTOUCH.BAM~	~override~
+COPY ~IHateUndead\Spl\LichTouch\LTOUCH.ITM~	    ~override~
 SAY NAME1 @1104 SAY NAME2 @1104
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%" END
 
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS4.spl~
+LPM ~SPELL_TO_INNATE~
+
 END
 
-COPY_EXISTING ~SPPR413.spl~ ~override\RABinFE.spl~
-LPM I_HATE_UNDEAD_FEATURES
+//Energy Drain
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_ENERGY_DRAIN[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ENERGY_DRAIN~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS5.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//Wail of the Banshee
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_WAIL_OF_THE_BANSHEE[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_WAIL_OF_THE_BANSHEE~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override\RAIS6.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
 
 //EoF
