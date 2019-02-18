@@ -549,7 +549,7 @@ CURSES
 
 It is not possible to stack Curses. Every time a Curse is selected, the Dreadful Witch takes 1d3 points of magic damage and additional damage for every round that she sustains the Shamanic Dance (the amount depends on the effect).
 
-The target can make a Saving Throw vs. Death with a -1 penalty for every six levels of the Dreadful Witch to avoid the effects.
+The target can make a Saving Throw vs. Death with a -1 penalty for every six levels of the Dreadful Witch to avoid the effects. Once a Curse lands, it will affects its target for at least 3 rounds.
 
 The following Curses can be cast:
 
@@ -563,7 +563,7 @@ The following Curses can be cast:
 
 - Level 11 (Emptiness) Enemies becomes feebleminded. Costs 2 points of damage per round to sustain.
 
-- Level 13 (Agony) Enemies feel an unbearable pain. Costs 3 points of damage per round to sustain.
+- Level 13 (Agony) Enemies feel unbearable pain. Costs 3 points of damage per round to sustain.
 
 - Level 15 (Servitude) Enemies are charmed. Costs 3 point of damage per round to sustain.
 
@@ -592,17 +592,29 @@ Disadvantages:
  * ================= */
 @1101 = ~imprisoned soul~
 @1102 = ~Imprisoned Soul~
-@1103 = ~IMPRISONED SOUL: Imprisoned Souls are someone that was supposed to be dead. At the moment of <PRO_HISHER> departure something went wrong, and <PRO_HISHER> spirit was called back into <PRO_HISHER> body. An Imprisoned Soul is neither dead, alive or undead, but something else: a hollow being that simply exists. Some call this state a blessing, others call it a curse. Either way, the existence of the Imprisoned Soul gives <PRO_HISHER> the ability to mimic some of the features of an undead, but in another hand, an Imprisoned Soul is especially vulnerable to Necromancy, due to <PRO_HISHER> nature.
+@1103 = ~IMPRISONED SOUL: An Imprisoned Soul is someone who was supposed to be dead but at the moment of <PRO_HISHER> departure something went wrong and <PRO_HISHER> spirit got trapped into the body. Legends says that this happens when the process to become a lich goes wrong, but no scholar was able to confirm or deny it. As all the documented Imprisoned Souls are human and only humans can become necromancers, that theory trends to be accepted. What is known is that an Imprisoned Soul is neither dead, alive or undead, but something else: a hollow being that simply exists. Due to <PRO_HISHER> nature an Imprisoned Soul is especially vulnerable to Necromancy and to magical energy.
+
+Pre-Requisites: CON 12, WIS 12, CHA 12.
+Dual-Class: None.
+Alignment: Lawful Neutral, True Neutral, Chaotic Neutral.
+Weapons: As a regular sorcerer.
+Armors: As a regular sorcerer.
  
 Advantages:
- 
-- Immune to Level Drain.
-- Automatically receives the following spells: Chill Touch, Ghoul Touch, Vampiric Touch, Spirit Armor, Animate Dead, Lich Touch and Control Undead. 
+
+- Immune to Cold damage and Level Drain.
+- May cast Chill Touch once per day as a special ability, starting level 1.
+- May cast Ghoul Touch once per day as a special ability, starting level 3.
+- May cast Vampiric Touch once per day as a special ability, starting level 5.
+- May cast Lich Touch once per day as a special ability, starting level 11.
+- May cast Energy Drain once per day as a special ability, starting level 17.
+- May cast Wail of the Banshee once per day as a special ability, starting level 23.  
  
 Disadvantages:
- 
+
 - Suffers a -2 penalty on Saving Throws against Necromancy spells.
-- Has 100% vulnerability versus magical damage.~
+- Has 100% vulnerability versus magical damage.
+- May cast one fewer spell per level per day.~
 @1104 = ~Lich Touch~
 @1105 = ~Lich Touch
 (Necromancy)
