@@ -533,44 +533,59 @@ Disadvantages:
 
 Obviously, only females can be Dreadful Witches. Males who try to seize this kind of power tends to die very quickly.
 
+Pre-Requisites: CON 12, WIS 12.
+Dual-Class: None.
+Alignment: Neutral Evil.
+Weapons: As a regular shaman.
+Armors: As a regular shaman.
+
 Advantages:
 
-- May use Curses instead of the Shamanic Dance. Gains new and more curses as shown below. 
+- May cast Animate Dead once per day as a special ability, starting at level 5.
+- May cast Cacofiend once per day as a special ability, starting at level 15.
+- Shamanic Dance bestows special curses instead of summoning spirits. 
 
 CURSES
 
-It is possible to stack different curses, but never two of the same curses over the same target. Every time a curse is cast the Dreadful Witch takes 1d4 point of magic damage. The target can make a save versus death with -1 penalty for every four levels of the Dreadful Witch to avoid the effects (maximum of -5 at level 20). All the effects last for 1 turn.
+It is not possible to stack Curses. Every time a Curse is selected, the Dreadful Witch takes 1d3 points of magic damage and additional damage for every round that she sustains the Shamanic Dance (the amount depends on the effect).
+
+The target can make a Saving Throw vs. Death with a -1 penalty for every six levels of the Dreadful Witch to avoid the effects.
 
 The following Curses can be cast:
 
-* Misfortune: Target takes a -2 penalty in Luck. Gains a use at levels: 1, 2, 5, 7, and 18.
+- Level  1 (Misfortune) Enemies take a -2 penalty to Luck. Dreadful Witch takes 1 point of damage per round to sustain.
 
-* Terror: Target flees in panic. Gains a use at levels: 3, 4, 6, 8, and 18.
+- Level  3 (Rage) Enemies go berserker. Costs 1 point of damage per round to sustain.
 
-* Rage: Target goes berserker, attacking friend or foe alike. Gains a use at levels: 1, 2, 5, 7, and 18.
+- Level  5 (Terror) Enemies flee in panic. Costs 1 point of damage per round to sustain.
 
-* Madness: Target goes confuse, random walking, attacking or doing nothing. Gains a use at levels 7, 8, 9, 13, and 19.
+- Level  7 (Madness) Enemies get confused. Costs 2 points of damage per round to sustain.
 
-* Void: Target becomes feebleminded. Gains a use at levels 10, 11, 12, and 14.
+- Level 11 (Emptiness) Enemies becomes feebleminded. Costs 2 points of damage per round to sustain.
 
-* Agony: Target feels an unbearable pain, taking 50% penalty to movement and attack rate and a -4 penalty in damage, Thac0 and Armor Class. Gains a use at levels 13, 15, 16, and 17.
+- Level 13 (Agony) Enemies feel an unbearable pain. Costs 3 points of damage per round to sustain.
 
-* Destruction: Target dies. Gains a use at levels 18, 19, and 20.
+- Level 15 (Servitude) Enemies are charmed. Costs 3 point of damage per round to sustain.
 
 Disadvantages:
 
-- May cast one less spell per level per day.
-- Alignment restricted to Neutral Evil.
-- Hit Die: d6.
-~
+- May cast one fewer spell per level per day.
+- Hit Die: d6.~
 @1004 = ~Curse of Misfortune~
-@1005 = ~Curse of Terror~
+@1005 = ~Enemies take a -2 penalty to Luck. Dreadful Witch takes 1 point of damage per round to sustain.~
 @1006 = ~Curse of Rage~
-@1007 = ~Curse of Madness~
-@1008 = ~Curse of Void~
-@1009 = ~Curse of Agony~
-@1010 = ~Curse of Destruction~
-@1011 = ~Pain~
+@1007 = ~Enemies go berserker. Costs 1 point of damage per round to sustain.~
+@1008 = ~Curse of Terror~
+@1009 = ~Enemies flee in panic. Costs 1 point of damage per round to sustain.~
+@1010 = ~Curse of Madness~
+@1011 = ~Enemies get confused. Costs 2 points of damage per round to sustain.~
+@1012 = ~Curse of Emptiness~
+@1013 = ~Enemies becomes feebleminded. Costs 2 points of damage per round to sustain.~
+@1014 = ~Curse of Agony~
+@1015 = ~Enemies feel an unbearable pain. Costs 3 points of damage per round to sustain.~
+@1016 = ~Curse of Servitude~
+@1017 = ~Enemies are charmed. Costs 3 point of damage per round to sustain.~
+@1018 = ~Pain~
 
 /* ================= *
  *  IMPRISONED SOUL  *
