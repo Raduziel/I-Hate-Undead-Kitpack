@@ -3,8 +3,8 @@ ADD_KIT ~RAHUDW~
     ~RAHUDW 0 1 1 1 1 0 1 1 0 0 0 1 0 0 0 1 0 1 1 0 0 0 1 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAHUDW 3 3 12 3 12 3~
 	~RAHUDW 0 0 0 0 0 0~
-	~RAHUDW 99 99 99 99 99 99~
-    ~RAHUDW 99 99 99 99 99 99~
+	~RAHUDW 3 3 12 3 12 3~
+    ~RAHUDW 3 3 12 3 12 3~
 	~RAHUDW 0 0 0 0 0 1 0 0 0~
 	~RAHUDW 0 0 0 0 0 0~
 	~IHateUndead\Tables\RAHUDW.2da~
@@ -20,7 +20,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUDW~
 		hpclass = ~HPRAHUDW~
-		clascolr = ~220 7 41 164 220~
+		clascolr = ~220 199 204 190 187~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
@@ -29,45 +29,364 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 END
 
-COPY "IHateUndead\Spl\RAWIFE.spl" override
+CREATE spl ~RADWF~
 
-COPY "IHateUndead\Spl\RACUMI.spl" override	SAY NAME1 @1004	SAY UNIDENTIFIED_DESC @1004
+COPY_EXISTING ~RADWF.spl~ override
+LPF ADD_ABILITIES	 INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 55  target = 1 timing = 4 duration = 60 parameter1 = 1    parameter2 = 7  STR_VAR insert_point = 0  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 1  STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 2  STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 4  STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 8  STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 16 STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 32 STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 64 STR_VAR insert_point = 7  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 8  resource = SPPR150  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 9  resource = SPPR250  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 10 resource = SPPR350  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 11 resource = SPPR450  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 12 resource = SPPR550  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 13 resource = SPPR650  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 14 resource = SPPR750  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 1                                                 STR_VAR insert_point = 15 resource = ~RADW11~ END
 
-COPY "IHateUndead\Spl\RACUTE.spl" override	SAY NAME1 @1005	SAY UNIDENTIFIED_DESC @1005
+//Spells to Change the Dancing Effects
 
-COPY "IHateUndead\Spl\RACURA.spl" override	SAY NAME1 @1006	SAY UNIDENTIFIED_DESC @1006
+CREATE spl ~RADW1~
 
-COPY "IHateUndead\Spl\RACUMA.spl" override	SAY NAME1 @1007	SAY UNIDENTIFIED_DESC @1007
+COPY ~IHateUndead\Spl\RADW1.bam~ override
 
-COPY "IHateUndead\Spl\RACUVO.spl" override	SAY NAME1 @1008	SAY UNIDENTIFIED_DESC @1008
+COPY_EXISTING ~RADW1.spl~ override 
+SAY NAME1 @1004 SAY NAME2 @1004 SAY UNIDENTIFIED_DESC @1005 SAY DESC @1005
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 1                                    STR_VAR icon = ~RADW1~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW11~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
 
-COPY "IHateUndead\Spl\RACUAG.bam" override
+CREATE spl ~RADW2~
 
-LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1011) STR_VAR bam_file = RACUAG RET icon END
-COPY "IHateUndead\Spl\RACUAG.spl" override	SAY NAME1 @1009	SAY UNIDENTIFIED_DESC @1009
-LPF ALTER_EFFECT INT_VAR match_opcode = 142 match_parameter2 = 1 parameter2 = icon END
+COPY ~IHateUndead\Spl\RADW2.bam~ override
 
-COPY "IHateUndead\Spl\RACUDE.spl" override	SAY NAME1 @1010	SAY UNIDENTIFIED_DESC @1010
+COPY_EXISTING ~RADW2.spl~ override 
+SAY NAME1 @1006 SAY NAME2 @1006 SAY UNIDENTIFIED_DESC @1007 SAY DESC @1007
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 3                                    STR_VAR icon = ~RADW2~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW21~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
 
-COPY "IHateUndead\Tables\HPRAHUDW.2da" override
+CREATE spl ~RADW3~
 
-ACTION_FOR_EACH file IN ~RADWAG~ ~RADWDE~ ~RADWMA~ ~RADWMI~ ~RADWRA~ ~RADWTE~ ~RADWVO~ BEGIN
-  COPY ~IHateUndead\Bam\DreadfulWitch\%file%.bam~ ~override~
-    LPF UPDATE_PVRZ_INDICES
-    RET
-      original_base_index
-      new_base_index
-    END
+COPY ~IHateUndead\Spl\RADW3.bam~ override
 
-  ACTION_IF (original_base_index >= 0 AND new_base_index >= 0) BEGIN
-    LAF INSTALL_PVRZ
-    INT_VAR
-      original_base_index
-      new_base_index
-    STR_VAR
-      source_file = EVAL ~IHateUndead\Bam\DreadfulWitch\MOS%original_base_index%.pvrz~
-    END
-  END
+COPY_EXISTING ~RADW3.spl~ override 
+SAY NAME1 @1008 SAY NAME2 @1008 SAY UNIDENTIFIED_DESC @1009 SAY DESC @1009
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 5                                    STR_VAR icon = ~RADW3~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW31~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
+
+CREATE spl ~RADW4~
+
+COPY ~IHateUndead\Spl\RADW4.bam~ override
+
+COPY_EXISTING ~RADW4.spl~ override 
+SAY NAME1 @1010 SAY NAME2 @1010 SAY UNIDENTIFIED_DESC @1011 SAY DESC @1011
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 7                                    STR_VAR icon = ~RADW4~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW41~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
+
+CREATE spl ~RADW5~
+
+COPY ~IHateUndead\Spl\RADW5.bam~ override
+
+COPY_EXISTING ~RADW5.spl~ override 
+SAY NAME1 @1012 SAY NAME2 @1012 SAY UNIDENTIFIED_DESC @1013 SAY DESC @1013
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 11                                   STR_VAR icon = ~RADW5~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW51~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
+
+CREATE spl ~RADW6~
+
+COPY ~IHateUndead\Spl\RADW6.bam~  override
+
+COPY ~IHateUndead\Spl\RADW61.bam~ override
+
+COPY_EXISTING ~RADW6.spl~ override 
+SAY NAME1 @1014 SAY NAME2 @1014 SAY UNIDENTIFIED_DESC @1015 SAY DESC @1015
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 13                                   STR_VAR icon = ~RADW6~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW61~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
+
+CREATE spl ~RADW7~
+
+COPY ~IHateUndead\Spl\RADW7.bam~ override
+
+COPY_EXISTING ~RADW7.spl~ override 
+SAY NAME1 @1016 SAY NAME2 @1016 SAY UNIDENTIFIED_DESC @1017 SAY DESC @1017
+WRITE_ASCII 0x10 ~EFF_P06~
+WRITE_SHORT 0x1c 4
+WRITE_LONG  0x34 1
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 15                                   STR_VAR icon = ~RADW7~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW71~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF AT_WILL END
+
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]CLERIC_ANIMATE_DEAD[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ANIMATE_DEAD~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RADW8.spl~
+LPM ~SPELL_TO_INNATE~
+
 END
+
+ACTION_IF	FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_CACOFIEND[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+LAF 	RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CACOFIEND~	RET	spell_res	END
+
+COPY_EXISTING	~%spell_res%.spl~	~override/RADW9.spl~
+LPM ~SPELL_TO_INNATE~
+
+END
+
+//The spell itself
+
+COPY ~IHateUndead\Spl\RADW11.spl~
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 22  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+
+COPY ~IHateUndead\Spl\RADW21.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Berserk%" END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 4; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 3; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 3   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+COPY ~IHateUndead\Spl\RADW31.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Panic%" END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 6; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 5; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 24  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+COPY ~IHateUndead\Spl\RADW41.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Confused%" END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 8; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 7; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 128 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+COPY ~IHateUndead\Spl\RADW51.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Feebleminded%" END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 12; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 11; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 76  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+LAF cd_new_portrait_icon INT_VAR string = RESOLVE_STR_REF(@1018) STR_VAR bam_file = RADW61 RET icon END
+COPY ~IHateUndead\Spl\RADW61.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter2 = 1 match_opcode = 142 parameter2 = icon END
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@1018) END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 0   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 40  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 54  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 60  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 73  match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+COPY ~IHateUndead\Spl\RADW71.spl~
+LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = EVAL "%RA_Dominated%" END
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 16; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 15; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 8   match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 241 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 139 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 142 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 321 match_savebonus = 0 savebonus = ((-1 * i)/6) END
+	END
+
+COPY ~IHateUndead\Tables\HPRAHUDW.2da~ override
 
 //EoF
