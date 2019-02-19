@@ -35,6 +35,14 @@ PRETTY_PRINT_2DA
 
 CREATE spl ~RADWF~
 
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRIT_WARD~ 	    RET	spell_1 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_WRITHING_FOG~ 	    RET	spell_2 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRITUAL_CLARITY~ RET	spell_3 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRIT_FIRE~ 	    RET	spell_4 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_RECALL_SPIRIT~	    RET	spell_5 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_SPIRITUAL_LOCK~    RET	spell_6 = spell_res	END
+LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~CLERIC_ETHER_GATE~ 	    RET	spell_7 = spell_res	END
+
 COPY_EXISTING ~RADWF.spl~ override
 LPF ADD_ABILITIES	 INT_VAR abil = 1 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 55  target = 1 timing = 4 duration = 60 parameter1 = 1    parameter2 = 7  STR_VAR insert_point = 0  END
@@ -45,14 +53,14 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               pa
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 16 STR_VAR insert_point = 5  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 32 STR_VAR insert_point = 6  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 62  target = 2 timing = 9               parameter1 = ~-1~ parameter2 = 64 STR_VAR insert_point = 7  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 8  resource = SPPR150  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 9  resource = SPPR250  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 10 resource = SPPR350  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 11 resource = SPPR450  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 12 resource = SPPR550  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 13 resource = SPPR650  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 14 resource = SPPR750  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 1                                                 STR_VAR insert_point = 15 resource = ~RADW11~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 8  resource = EVAL ~%spell_1%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 9  resource = EVAL ~%spell_2%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 10 resource = EVAL ~%spell_3%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 11 resource = EVAL ~%spell_4%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 12 resource = EVAL ~%spell_5%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 13 resource = EVAL ~%spell_6%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 14 resource = EVAL ~%spell_7%~  END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 1                                                 STR_VAR insert_point = 15 resource = ~RADW11~     END
 
 //Spells to Change the Dancing Effects
 
