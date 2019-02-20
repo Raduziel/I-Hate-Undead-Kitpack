@@ -37,40 +37,60 @@ LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 144 target = 2 timing = 9    
 LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 2  END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 23  target = 2 timing = 9                                             STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 296 target = 2 timing = 9                                             STR_VAR insert_point = 2 resource = ~SPMINDAT~ END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 23              STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 24              STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 78              STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 106             STR_VAR insert_point = 6  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 109             STR_VAR insert_point = 7  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 175             STR_VAR insert_point = 8  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 185             STR_VAR insert_point = 9  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 216             STR_VAR insert_point = 10 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 19              STR_VAR insert_point = 11 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 37              STR_VAR insert_point = 12 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 90              STR_VAR insert_point = 13 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 161 target = 2 timing = 9                                             STR_VAR insert_point = 14 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 7               STR_VAR insert_point = 15 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 13              STR_VAR insert_point = 16 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 36              STR_VAR insert_point = 17 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 53              STR_VAR insert_point = 18 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 126             STR_VAR insert_point = 19 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Panic%~              STR_VAR insert_point = 20 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_MoralFail%~          STR_VAR insert_point = 21 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~           STR_VAR insert_point = 22 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~        STR_VAR insert_point = 23 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain1%~             STR_VAR insert_point = 24 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain2%~ 	         STR_VAR insert_point = 25 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain3%~ 	         STR_VAR insert_point = 26 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain4%~ 	         STR_VAR insert_point = 27 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain5%~ 	         STR_VAR insert_point = 28 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Held%~ 	             STR_VAR insert_point = 29 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Paralyzed%~          STR_VAR insert_point = 30 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 321 target = 2 timing = 9                                             STR_VAR insert_point = 0 resource = ~RAUPF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 33  target = 2 timing = 9 parameter1 = 2                              STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 321 target = 2 timing = 9                                             STR_VAR insert_point = 0 resource = ~RAUPF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 33  target = 2 timing = 9 parameter1 = 3                              STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 321 target = 2 timing = 9                                             STR_VAR insert_point = 0 resource = ~RAUPF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 33  target = 2 timing = 9 parameter1 = 4                              STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 321 target = 2 timing = 9                                             STR_VAR insert_point = 0 resource = ~RAUPF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 23  target = 2 timing = 9                                             STR_VAR insert_point = 5  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 33  target = 2 timing = 9 parameter1 = 5                              STR_VAR insert_point = 6  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 296 target = 2 timing = 9                                             STR_VAR insert_point = 7 resource = ~SPMINDAT~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 23              STR_VAR insert_point = 8  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 24              STR_VAR insert_point = 9  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 78              STR_VAR insert_point = 10 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 106             STR_VAR insert_point = 11 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 109             STR_VAR insert_point = 12 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 175             STR_VAR insert_point = 13 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 185             STR_VAR insert_point = 14 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 101 target = 2 timing = 9                parameter2 = 216             STR_VAR insert_point = 15 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 19              STR_VAR insert_point = 16 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 37              STR_VAR insert_point = 17 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 142 target = 2 timing = 9                parameter2 = 90              STR_VAR insert_point = 18 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 161 target = 2 timing = 9                                             STR_VAR insert_point = 19 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 7               STR_VAR insert_point = 20 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 13              STR_VAR insert_point = 21 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 36              STR_VAR insert_point = 22 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 53              STR_VAR insert_point = 23 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 169 target = 2 timing = 9                parameter2 = 126             STR_VAR insert_point = 24 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Panic%~              STR_VAR insert_point = 25 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_MoralFail%~          STR_VAR insert_point = 26 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~           STR_VAR insert_point = 27 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~        STR_VAR insert_point = 28 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain1%~             STR_VAR insert_point = 29 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain2%~ 	         STR_VAR insert_point = 30 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain3%~ 	         STR_VAR insert_point = 31 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain4%~ 	         STR_VAR insert_point = 32 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain5%~ 	         STR_VAR insert_point = 33 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Held%~ 	             STR_VAR insert_point = 34 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Paralyzed%~          STR_VAR insert_point = 35 END
 
 COPY ~IHateUndead\Spl\RAUP1.spl~  override SAY NAME1 @107	SAY UNIDENTIFIED_DESC @108
 
