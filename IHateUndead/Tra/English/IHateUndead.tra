@@ -97,6 +97,34 @@ The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the eff
 - Demons and Devils: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or banned for 1 round/level.
 
 - Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.~
+@206 = ~HOLY REDEEMER (F/C): Being a Holy Redeemer goes beyond being ordained by some Church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Holy Redeemer, but this hard path is more usual within the clergy of Torm. They are efficient soldiers against the more common weapons of profane clergy: undead and fiends. Regardless of under which banner they fight, the Holy Redeemer is a force to be feared by necromancers and unholy priests.
+
+Pre-Requisites: WIS 9, CHA 12
+Dual-Class: Fighter.
+Alignment: Lawful Good or Lawful Neutral.
+Weapons: As a regular cleric.
+Armors: As a regular cleric.
+
+Advantages:
+
+- May use Redeem once per day as a special ability, starting at level 1. Gains an additional use every 5 levels.
+- +3 bonus to hit and damage rolls against undead creatures and fiends.
+- Uses Turn Undead as a priest two levels higher.
+
+REDEEM:
+
+The Holy Redeemer pleads to <PRO_HISHER> deity and touches a creature. The effects are as follow:
+
+- Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or is destroyed.
+
+- Fiends: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or is banned for 1 round/level.
+
+- Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.
+
+Disadvantages:
+
+- May not create undead, resurrect the fallen or summon fiends.
+- Can't be resurrected.~
 
 /* ================== *
  *    DEATHSLAYER     *
@@ -106,7 +134,7 @@ The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the eff
 @303 = ~DEATHSLAYER: The Deathslayer is a necromancer that devotes <PRO_HISHER> life to the destruction of the undead, striving always to rid the living world of their abominable existence. By mastering the Forbidden Art, this wizard gains a greater understanding of these creatures which are neither fully living nor entirely dead. The Deathslayer's militant opposition to all forms of undead frequently places <PRO_HIMHER> in direct conflict with other necromancers who delight in creating zombies, skeletons, ghouls and other undying monstrosities.
 
 Pre-Requisites: CON 16, INT 9, WIS 16.
-Dual-Class: Cleric.
+Dual-Class: Fighter.
 Alignment: Lawful Good, Neutral Good or Chaotic Good.
 Weapons: As a regular necromancer.
 Armors: As a regular necromancer.
@@ -147,6 +175,37 @@ The Deathslayer sacrifices <PRO_HISHER> own life force to enhance <PRO_HISHER> p
 
 The effects are non-cumulative and last until the Deathslayer is healed or one hour has passed. While this effect is active, the Deathslayer can't be affected by any mean of non-natural regeneration. If the damage taken due to Soul Sacrifice is higher than the Deathslayer's current hit points <PRO_HESHE> will be killed.~
 @306 = ~Spellcaster level increased by 3~
+@307 = ~DEATHSLAYER (F/M): The Deathslayer is a necromancer that devotes <PRO_HISHER> life to the destruction of the undead, striving always to rid the living world of their abominable existence. By mastering the Forbidden Art, this wizard gains a greater understanding of these creatures which are neither fully living nor entirely dead. The Deathslayer's militant opposition to all forms of undead frequently places <PRO_HIMHER> in direct conflict with other necromancers who delight in creating zombies, skeletons, ghouls and other undying monstrosities.
+
+Pre-Requisites: CON 16, INT 9, WIS 16.
+Dual-Class: Fighter.
+Alignment: Lawful Good, Neutral Good or Chaotic Good.
+Weapons: As a regular necromancer.
+Armors: As a regular necromancer.
+
+Advantages:
+
+- May use Soul Sacrifice once per day as a special ability, starting at level 1. Gains another use every six levels.
+- Does not take a 15% penalty when scribing scrolls from other schools.
+- Hit Die: d6.
+
+SOUL SACRIFICE:
+
+The Deathslayer sacrifices <PRO_HISHER> own life force to enhance <PRO_HISHER> power. Using this ability the Deathslayer loses 25% of <PRO_HISHER> maximum Hit Points and gains the following:
+
+- +3 to caster level.
+
+- -2 bonus to casting time.
+
+- -2 bonus to <PRO_HISHER> Saving Throw vs. Spell and Death.
+
+The effects are non-cumulative and last until the Deathslayer is healed or one hour has passed. While this effect is active, the Deathslayer can't be affected by any mean of non-natural regeneration. If the damage taken due to Soul Sacrifice is higher than the Deathslayer's current hit points <PRO_HESHE> will be killed.
+
+Disadvantages:
+
+- Has the same spells' restriction as any other Necromancer.
+- Does not gain a 15% bonus when scribing Necromancy scrolls.
+- Does not give enemies a -2 Saving Throw penalty against Necromancy spells.~
 
 /* =================== *
  *    UNDEAD HUNTER    *
@@ -281,6 +340,33 @@ Disadvantages:
 @505 = ~"When things go bad stay low and get out quickly". That's the first commandment a Death Tricker will learn while being trained. When this ability is used <PRO_HESHE> tricks the undead to see <PRO_HIMHER> as one of their own, being completely ignored by them. While disguised, the Death Tricker can't use items, spells or attack. The disguise lasts for 1 turn and may not work against intelligent undead.~
 @506 = ~Holy Trap~
 @507 = ~Mostly used to cover <PRO_HESHE> way out of a tomb or den, this trap is a mix of acid and holy water. Any enemy that triggers the trap receives 3d8 points of acid damage and undead receives further 3d8 points of magic damage due to the holy water (no save for both effects). It is said that this trap's name is a bad taste joke, but no Tricker ever confirmed or denied it.~
+@508 = ~DEATH TRICKER (M/T): Sometimes seen as heroes, many other times as fools, these thieves make a living by entering places that most people would run away from. Often hired to retrieve artifacts and family heirlooms, the Death Tricker is an expert in evading the undead, breaking into their lair and, first and foremost, getting out alive.
+
+Pre-Requisites: DEX 9, INT 12.
+Dual-Class: Mage.
+Alignment: Neutral Good, Chaotic Good, True Neutral, Chaotic Neutral.
+Weapons: As a regular thief.
+Armors: As a regular thief.
+
+Advantages:
+
+- Backstab may stun undead creatures (Duration: 1 round, Saving Throw vs. Death with a -2 penalty negates).
+- +10% to Find Traps and Move Silently.
+- May use Trick Death once per day as a special ability, starting at level 1. Gains an additional use every 10 levels.
+- May use Holy Trap once per day as a special ability, starting at level 2. Gains an additional use every 6 levels.
+
+TRICK DEATH:
+
+"When things go bad stay low and get out quickly". That's the first commandment a Death Tricker will learn while being trained. When this ability is used <PRO_HESHE> tricks the undead to see <PRO_HIMHER> as one of their own, being completely ignored by them. While disguised, the Death Tricker can't use items, spells or attack. The disguise lasts for 1 turn and may not work against intelligent undead.
+
+HOLY TRAP:
+
+Mostly used to cover <PRO_HISHER> way out of a tomb or den, this trap is a mix of acid and holy water. Any enemy that triggers the trap receives 3d8 points of acid damage and undead receives further 3d8 points of magic damage due to the holy water (no save for both effects). It is said that this trap's name is a bad taste joke, but no Death Tricker ever confirmed or denied it.
+
+Disadvantages:
+
+- May only distribute 20 skill points per level among thieving skills.
+- May not use Pick Pockets.~
 
 /* ==================== *
  *   BURIAL DEFENDER    *
@@ -512,6 +598,35 @@ This spell creates a small whirlwind within the caster's sight. The whirlwind wi
 - Flesh to Stone
 
 - Whirlwind~
+@823 = ~CIRCLE ENFORCER (F/D): The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animals for aid. As a keeper of the natural order, this druid is specially devoted to defeating unnatural beings having special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
+
+Pre-Requisites: WIS 12, CHA 15.
+Dual-Class: Fighter.
+Alignment: True Neutral.
+Weapons: As a regular druid.
+Armors: As a regular druid.
+
+Advantages:
+
+- +2 bonus to AC, hit and damage rolls against constructs, fiends, lycanthrope and undead creatures.
+- May evoke Nature's Wrath, starting at level 5. Gains improved uses at levels 7, 9 and 11.
+
+NATURE'S WRATH
+
+This special ability allows the Circle Enforcer to use one of the following spells of each level once per day.
+
+I) Fireball, Icelance, Lightning Bolt.
+
+II) Ice Storm, Smashing Wave, Static Charge.
+
+III) Cone of Cold, Spire Stones, Sunfire.
+
+IV) Chain Lightning, Flesh to Stone, Whirlwind. 
+
+Disadvantages:
+
+- May not summon animals to <PRO_HISHER> aid.
+- Cannot Shapeshift.~
 
 /* ================= *
  *    PALLID MASK    *
