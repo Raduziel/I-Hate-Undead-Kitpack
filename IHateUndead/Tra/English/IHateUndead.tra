@@ -106,7 +106,7 @@ The Spirit Redeemer pleads to <PRO_HISHER> deity and touches a creature, the eff
 @303 = ~DEATHSLAYER: The Deathslayer is a necromancer that devotes <PRO_HISHER> life to the destruction of the undead, striving always to rid the living world of their abominable existence. By mastering the Forbidden Art, this wizard gains a greater understanding of these creatures which are neither fully living nor entirely dead. The Deathslayer's militant opposition to all forms of undead frequently places <PRO_HIMHER> in direct conflict with other necromancers who delight in creating zombies, skeletons, ghouls and other undying monstrosities.
 
 Pre-Requisites: CON 16, INT 9, WIS 16.
-Dual-Class: Fighter, Cleric.
+Dual-Class: Cleric.
 Alignment: Lawful Good, Neutral Good or Chaotic Good.
 Weapons: As a regular necromancer.
 Armors: As a regular necromancer.
@@ -153,12 +153,6 @@ The effects are non-cumulative and last until the Deathslayer is healed or one h
  * =================== */
 @401 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
 
-Pre-Requisites: STR 12, CON 9, WIS 13, CHA 17.
-Dual-Class: None.
-Alignment: Lawful Good.
-Weapons: As a regular paladin.
-Armors: As a regular paladin.
-
 Advantages:
 
 - May create a Holy Sword once per day for one hour (starting at level 5).
@@ -174,12 +168,6 @@ Disadvantages:
 
 - May not use Lay On Hands ability.~
 @402 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
-
-Pre-Requisites: STR 12, CON 9, WIS 13, CHA 17.
-Dual-Class: None.
-Alignment: Lawful Good.
-Weapons: Any.
-Armors: Any.
 
 Advantages:
 
@@ -219,6 +207,43 @@ Weight: 0
 
 Only usable by:
 Undead Hunter~
+@405 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
+
+Sphere Access: All, Healing, Protection, Sun, Combat.
+
+Advantages:
+
+- May create a Holy Sword once per day for one hour (starting at level 5).
+- May Turn Undead as a priest of the same level (starting at level 3).
+- +3 bonus to hit and damage rolls against undead creatures.
+- Immune to hold and level drain.
+
+HOLY SWORD:
+
+Starting at level five, the Undead Hunter may materialize this holy weapon once per day for one hour. The Undead Hunter always uses this blade as a specialist and while wields it <PRO_HESHE>'s under the effect of Bless.
+
+Disadvantages:
+
+- May not use Lay On Hands ability.~
+@406 = ~UNDEAD HUNTER: This holy avenger has honed <PRO_HISHER> abilities toward the destruction of the undead and other unnatural creatures and is immune to many of their most devastating abilities.
+
+Sphere Access: All, Healing, Protection, Sun, Combat.
+
+Advantages:
+
+- May create a Holy Sword once per day for one hour, starting at level 5.
+- May Turn Undead as a priest of the same level, starting at level 3.
+- +3 bonus to hit and damage rolls against undead creatures.
+- Immune to hold and level drain.
+
+HOLY SWORD:
+
+Starting at level five, the Undead Hunter may materialize this holy weapon once per day for one hour. The Undead Hunter always uses this blade as a specialist and while wields it <PRO_HESHE>'s under the effect of Bless.
+
+Disadvantages:
+
+- May not use Lay On Hands ability.
+- May not use Cure Disease ability.~
 
 /* ==================== *
  *     DEATH TRICKER    *
@@ -592,7 +617,7 @@ Disadvantages:
  * ================= */
 @1101 = ~imprisoned soul~
 @1102 = ~Imprisoned Soul~
-@1103 = ~IMPRISONED SOUL: An Imprisoned Soul is someone who was supposed to be dead but at the moment of <PRO_HISHER> departure something went wrong and <PRO_HISHER> spirit got trapped into the body. Legends says that this happens when the process to become a lich goes wrong, but no scholar was able to confirm or deny it. As all the documented Imprisoned Souls are human and only humans can become necromancers, that theory trends to be accepted. What is known is that an Imprisoned Soul is neither dead, alive or undead, but something else: a hollow being that simply exists. Due to <PRO_HISHER> nature an Imprisoned Soul is especially vulnerable to Necromancy and to magical energy.
+@1103 = ~IMPRISONED SOUL: An Imprisoned Soul is someone who was supposed to be dead but at the moment of <PRO_HISHER> departure something went wrong and <PRO_HISHER> spirit got trapped into the body. Legends say that this happens when the process to become a lich goes wrong, but no scholar was able to confirm or deny it. As all the documented Imprisoned Souls are human and only humans can become necromancers, that theory tends to be accepted. What is known is that an Imprisoned Soul is neither dead, alive or undead, but something else: a hollow being that simply exists. Due to <PRO_HISHER> nature, an Imprisoned Soul is especially vulnerable to Necromancy and to magical energy.
 
 Pre-Requisites: CON 12, WIS 12, CHA 12.
 Dual-Class: None.
