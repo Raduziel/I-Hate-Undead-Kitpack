@@ -1,6 +1,6 @@
 ADD_KIT ~RAHUHR~
     ~RAHUHR 0 0 1 1 0 1 0 0~
-    ~RAHUHR 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+    ~RAHUHR 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
 	~RAHUHR 3 3 3 3 9 12~
 	~RAHUHR 0 0 0 0 0 0~
 	~RAHUHR 3 3 3 3 9 12~
@@ -148,6 +148,67 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 			  opcode = 319
 			  target = 1
 			  parameter1 = (RAHUHR + 0x4000)
+			  parameter2 = 9
+			  timing = 2
+		  END
+		END
+		DEFAULT
+	END
+BUT_ONLY
+                                               
+/*Multiclass Fighter*/						
+					 
+COPY_EXISTING ~RAHUHR.2da~ ~override/RAHUHRF.2da~
+					 
+ADD_KIT ~RAHUHRF~
+    ~RAHUHRF 0 0 1 1 0 1 0 0~
+    ~RAHUHRF 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 2 2 0 0 2 2 2 0 0 0 0 2 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUHRF 3 3 3 3 9 12~
+	~RAHUHRF 0 0 0 0 0 0~
+	~RAHUHRF 3 3 3 3 9 12~
+    ~RAHUHRF 3 3 3 3 9 12~
+	~RAHUHRF 1 1 0 0 0 0 0 0 0~
+	~RAHUHRF 0 0 0 0 0 0~
+	~override\RAHUHRF.2da~
+	~K_FC_H  K_FC_D  K_FC_G  K_FC_E  K_FC_HE  K_FC_HL  K_FC_HO~
+	~0x00000000 8~
+	~RAHUHR~
+	~PLAT12 SHLD25 HELM16 * RING22 RING31 CLCK05 BOOT04 AMUL27 BRAC10 * * * * * * * BLUN25 HAMM09 STAF10~
+	SAY @201
+	SAY @202
+	SAY @203
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHUHRF~		
+		clascolr = ~14 28 0 30 6~
+		clswpbon = ~1 0 3~
+		clsrcreq = ~1 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHUHRF~
+      kit_clab = ~RAHUHRF~
+      base_class = ~P~
+	  mc_dir = ~IHateUndead\Lib\Multiclass~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUHRF~ clabfile = ~RAHUHRF~ END
+
+END
+
+COPY_EXISTING_REGEXP ~.*\.itm~ override
+	READ_BYTE 0x31 proficiency
+	PATCH_MATCH proficiency WITH 
+		89 90 91 92 93 94 95 96 98 99 103 104 105 106  BEGIN
+		  LPF ADD_ITEM_EQEFFECT
+			INT_VAR
+			  opcode = 319
+			  target = 1
+			  parameter1 = (RAHUHRF + 0x4000)
 			  parameter2 = 9
 			  timing = 2
 		  END
@@ -445,6 +506,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override // ITM files last
 	END
 	PATCH_IF VARIABLE_IS_SET $ra_redeemer_ban_itm(~%SOURCE_RES%~) BEGIN
 		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 9 parameter1 = (RAHUHR + 0x4000) END
+		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 9 parameter1 = (RAHUHRF + 0x4000) END
 		READ_STRREF NAME1 name
 		READ_STRREF NAME2 name2
 		PATCH_PRINT ~%SOURCE_RES% : %name% : %name2%~

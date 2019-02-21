@@ -6,7 +6,7 @@ ADD_KIT ~RAHUDS~
 	~RAHUDS 3 3 16 9 16 3~
     ~RAHUDS 3 3 16 9 16 3~
 	~RAHUDS 1 0 0 1 0 0 1 0 0~
-	~RAHUDS 1 1 0 0 0 0~
+	~RAHUDS 0 1 0 0 0 0~
 	~IHateUndead\Tables\RAHUDS.2da~
 	~K_M_H~
 	~0x00001000 1~
