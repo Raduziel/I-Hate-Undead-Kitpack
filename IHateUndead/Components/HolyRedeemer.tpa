@@ -158,7 +158,14 @@ BUT_ONLY
                                                
 /*Multiclass Fighter*/						
 					 
-COPY_EXISTING ~RAHUHR.2da~ ~override/RAHUHRF.2da~
+COPY_EXISTING ~RAHUHR.2da~ ~override\RAHUHRF.2da~
+
+COPY_EXISTING ~LUFC0.2da~ ~override\LURAHRF.2da~
+SET_2DA_ENTRY 18 1 9 ~*         ~
+SET_2DA_ENTRY 18 4 9 ~*         ~
+SET_2DA_ENTRY 18 5 9 ~*         ~
+SET_2DA_ENTRY 18 6 9 ~*         ~
+PRETTY_PRINT_2DA
 					 
 ADD_KIT ~RAHUHRF~
     ~RAHUHRF 0 0 1 1 0 1 0 0~
@@ -170,20 +177,20 @@ ADD_KIT ~RAHUHRF~
 	~RAHUHRF 1 1 0 0 0 0 0 0 0~
 	~RAHUHRF 0 0 0 0 0 0~
 	~override\RAHUHRF.2da~
-	~K_FC_H  K_FC_D  K_FC_G  K_FC_E  K_FC_HE  K_FC_HL  K_FC_HO~
+	~K_FC_D  K_FC_G  K_FC_E  K_FC_HE  K_FC_HL  K_FC_HO~
 	~0x00000000 8~
-	~RAHUHR~
+	~RAHRF~
 	~PLAT12 SHLD25 HELM16 * RING22 RING31 CLCK05 BOOT04 AMUL27 BRAC10 * * * * * * * BLUN25 HAMM09 STAF10~
 	SAY @201
 	SAY @202
-	SAY @203
+	SAY @206
 
 LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUHRF~		
 		clascolr = ~14 28 0 30 6~
 		clswpbon = ~1 0 3~
-		clsrcreq = ~1 1 1 1 1 1 1~
+		clsrcreq = ~0 1 1 1 1 1 1~
 END
 
 LAF qd_multiclass
@@ -196,7 +203,7 @@ END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
-	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUHRF~ clabfile = ~RAHUHRF~ END
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUHR~ clabfile = ~RAHUHRF~ END
 
 END
 

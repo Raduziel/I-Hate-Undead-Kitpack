@@ -6,7 +6,7 @@ ADD_KIT ~RAHUDT~
 	~RAHUDT 3 9 3 12 3 3~
     ~RAHUDT 3 9 3 12 3 3~
 	~RAHUDT 0 1 0 1 1 0 1 1 0~
-	~RAHUDT 1 1 1 0 0 0~
+	~RAHUDT 0 0 1 0 0 0~
 	~IHateUndead\Tables\RAHUDT.2da~
 	~K_T_H	K_T_D  K_T_G  K_T_E  K_T_HE  K_T_HL  K_T_HO~
 	~0x00000000 4~
@@ -57,5 +57,45 @@ COPY ~IHateUndead\Spl\RADT2.bam~  override
 COPY ~IHateUndead\Spl\RADT2.eff~  override
 
 COPY ~IHateUndead\Spl\RADT21.spl~ override
+
+/*Multiclass Mage*/
+
+COPY_EXISTING ~RAHUDT.2da~ ~override\RAHUDTM.2da~
+	
+ADD_KIT ~RAHUDTM~
+    ~RAHUDTM 1 1 1 1 1 0 0 0~
+    ~RAHUDTM 0 1 0 0 1 0 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 1 0 1 1 1 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUDTM 3 9 3 12 3 3~
+	~RAHUDTM 0 0 0 0 0 0~
+	~RAHUDTM 3 9 3 12 3 3~
+    ~RAHUDTM 3 9 3 12 3 3~
+	~RAHUDTM 0 1 0 1 1 0 1 1 0~
+	~RAHUDTM 0 0 0 0 0 0~
+	~override\RAHUDTM.2da~
+	~K_MT_D  K_MT_G  K_MT_E  K_MT_HE  K_MT_HL  K_MT_HO~
+	~0x00000000 13~
+	~MT0~
+	~LEAT19 * * * WA2RING RING39 CLCK03 BOOT07 AMUL27 BRAC16 * * * * * * * DAGG11 BOW15 STAF08~
+	SAY @501
+	SAY @502
+	SAY @508
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHUDTM~
+		clsrcreq = ~0 1 1 1 1 1 1~
+		thiefskl = ~40 20~
+		clascolr = ~6 107 113 242 135~
+		clasiskl = ~0 0 10 10 0 0 0~
+		thiefscl = ~0 100 100 100 100 100 100 0~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHUDTM~
+      kit_clab = ~RAHUDTM~
+      base_class = ~T~
+	  mc_dir = ~IHateUndead\Lib\Multiclass~
+END
 	
 //EoF

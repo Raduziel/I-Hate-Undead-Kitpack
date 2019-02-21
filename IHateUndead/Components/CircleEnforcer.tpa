@@ -396,6 +396,60 @@ END
 COPY_EXISTING ~RACE4.2da~ override
 PRETTY_PRINT_2DA
 
+/*Multiclass Fighter*/
+
+COPY_EXISTING ~RAHUCE.2da~ ~override\RAHUCEF.2da~
+
+COPY_EXISTING ~LUDr0.2da~ ~override\LURACEF.2da~
+SET_2DA_ENTRY 21 1 9 ~*         ~
+SET_2DA_ENTRY 21 4 9 ~*         ~
+SET_2DA_ENTRY 21 5 9 ~*         ~
+SET_2DA_ENTRY 21 6 9 ~*         ~
+SET_2DA_ENTRY 22 1 9 ~*         ~
+SET_2DA_ENTRY 22 4 9 ~*         ~
+SET_2DA_ENTRY 22 5 9 ~*         ~
+SET_2DA_ENTRY 22 6 9 ~*         ~
+PRETTY_PRINT_2DA
+
+ADD_KIT ~RAHUCEF~
+    ~RAHUCEF 1 0 1 1 0 0 0 1~
+    ~RAHUCEF 0 0 0 0 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 0 1 0 0 0 1 1 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUCEF 3 3 3 3 12 15~
+	~RAHUCEF 0 0 0 0 0 0~
+	~RAHUCEF 3 3 3 3 12 15~
+    ~RAHUCEF 3 3 3 3 12 15~
+	~RAHUCEF 0 0 0 0 1 0 0 0 0~
+	~RAHUCEF 0 0 0 0 0 0~
+	~override\RAHUCEF.2da~
+	~K_FD_D   K_FD_G   K_FD_E   K_FD_HE   K_FD_HL   K_FD_HO~
+	~0x00000000 11~
+	~RACEF~
+	~LEAT19 * * * RING28 RING29 CLCK05 BOOT04 AMUL27 BRAC07 * * * * * * * WASTAFF WASLING *~
+	SAY @801
+	SAY @802
+	SAY @823
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHUCEF~		
+		clascolr = ~15 20 146 162 7~
+		clsrcreq = ~0 1 1 1 1 1 1~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHUCEF~
+      kit_clab = ~RAHUCEF~
+      base_class = ~D~
+	  mc_dir = ~IHateUndead\Lib\Multiclass~
+END
+
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUCE~ clabfile = ~RAHUCEF~ END
+
+END
+
 //Not summon animals.
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ override	// CRE files first
@@ -668,6 +722,7 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override // ITM files last
 	END
 	PATCH_IF VARIABLE_IS_SET $ra_enforcer_ban_itm(~%SOURCE_RES%~) BEGIN
 		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 9 parameter1 = (RAHUCE + 0x4000) END
+		LPF ADD_ITEM_EQEFFECT INT_VAR opcode = 319 target = 1 parameter2 = 9 parameter1 = (RAHUCEF + 0x4000) END
 		READ_STRREF NAME1 name
 		READ_STRREF NAME2 name2
 		PATCH_PRINT ~%SOURCE_RES% : %name% : %name2%~
