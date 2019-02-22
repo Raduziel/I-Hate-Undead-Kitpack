@@ -74,4 +74,42 @@ END
 END
 BUT_ONLY
 
+/*Multiclass Fighter*/
+
+COPY_EXISTING ~RAHUDS.2da~ ~override\RAHUDSF~
+
+ADD_KIT ~RAHUDSF~
+    ~RAHUDSF 1 0 1 1 0 0 0 0~
+    ~RAHUDSF 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+	~RAHUDSF 3 3 16 9 16 3~
+	~RAHUDSF 0 0 0 0 0 0~
+	~RAHUDSF 3 3 16 9 16 3~
+    ~RAHUDSF 3 3 16 9 16 3~
+	~RAHUDSF 1 0 0 1 0 0 1 0 0~
+	~RAHUDSF 0 0 0 0 0 0~
+	~override\RAHUDSF.2da~
+	~K_FM_H~
+	~0x00001000 1~
+	~Ma0~
+	~CLCK12 * * * RING09 RING39 CLCK02 BOOT01 AMUL21 BRAC03 * * * * * * * * * STAF11~
+	SAY @301
+	SAY @302
+	SAY @307
+
+LAF fl#add_kit_ee
+	STR_VAR
+		kit_name = ~RAHUDS~		
+		clascolr = ~28 30 110 65 21~
+		clsrcreq = ~1 0 0 0 0 0 0~
+		hpclass = ~HPFT~
+END
+
+LAF qd_multiclass
+  STR_VAR 
+      kit_name = ~RAHUDSF~
+      kit_clab = ~RAHUDSF~
+      base_class = ~M~
+	  mc_dir = ~IHateUndead\Lib\Multiclass~
+END
+
 //EoF
