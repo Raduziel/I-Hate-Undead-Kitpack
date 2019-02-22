@@ -117,6 +117,7 @@ INCLUDE ~IHateUndead/Components/CircleEnforcer.tpa~
 //__________________________________________________________________________________
 
 BEGIN @9
+REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAHUCE.2da~)) ~~
 INCLUDE ~IHateUndead/Components/JaheiraCircleEnforcer.tpa~
 
 //__________________________________________________________________________________
