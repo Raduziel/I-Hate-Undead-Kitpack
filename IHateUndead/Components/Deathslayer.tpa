@@ -89,8 +89,8 @@ ADD_KIT ~RAHUDSF~
 	~RAHUDSF 0 0 0 0 0 0~
 	~override\RAHUDSF.2da~
 	~K_FM_H~
-	~0x00001000 1~
-	~Ma0~
+	~0x00001000 7~
+	~FM0~
 	~CLCK12 * * * RING09 RING39 CLCK02 BOOT01 AMUL21 BRAC03 * * * * * * * * * STAF11~
 	SAY @301
 	SAY @302
@@ -98,7 +98,7 @@ ADD_KIT ~RAHUDSF~
 
 LAF fl#add_kit_ee
 	STR_VAR
-		kit_name = ~RAHUDS~		
+		kit_name = ~RAHUDSF~		
 		clascolr = ~28 30 110 65 21~
 		clsrcreq = ~1 0 0 0 0 0 0~
 		hpclass = ~HPFT~
