@@ -58,6 +58,14 @@ COPY ~IHateUndead\Spl\RADT2.eff~  override
 
 COPY ~IHateUndead\Spl\RADT21.spl~ override
 
+ACTION_IF GAME_IS ~iwdee~ BEGIN
+
+COPY_EXISTING ~RAHUDT.2da~ override
+SET_2DA_ENTRY 1 7 50 ~AP_#EVASION~
+PRETTY_PRINT_2DA
+
+END
+
 /*Multiclass Mage*/
 
 COPY_EXISTING ~RAHUDT.2da~ ~override\RAHUDTM.2da~
