@@ -754,23 +754,23 @@ This ability allows the Imprisoned Soul to drain and absorb the negative energy 
 
 DEATH TOUCH
 
-The Imprisoned Soul connects <PRO_HIMHER>self with the Negative Material Plane and emulates the effect of an undead's touch. Being alive, however, makes impossible to control what undead will be emulated. There's a 20% for each of the following effects:
+The Imprisoned Soul connects <PRO_HIMHER>self with the Negative Material Plane and emulates the effect of an undead's touch. Being alive, however, makes impossible to control what undead will be emulated. There's a 20% chance for each of the following effects:
 
 - Shadow Touch: 1d4+1 damage, plus draining two points of Strength (no Saving Throw allowed).
 
 - Ghast Touch:  1d8 damage, plus paralyze for 5 rounds (Saving Throw vs. Paralysis negates).
 
-- Mummy Touch:  1d12 damage, plus disease (blindness and 1 damage per round during 5 rounds - Saving Throw vs. Death negates both effects).
+- Mummy Touch:  1d12 damage, plus disease (blindness and 1 damage per round during 5 rounds - Saving Throw vs. Death negate both effects).
 
 - Ghost Touch: No damage, slow and fear for 5 rounds (no Saving Throw allowed).
 
 - Vampire Touch: 1d6 + 4 damage, plus draining one level (no Saving Throw allowed).
 
-All effects bypasses Magic Resistance and have absolutely no effect on undead creatures.
+All effects bypass Magic Resistance and have absolutely no effect on undead creatures.
 
 EMPTY VESSEL
 
-The Imprisoned Soul may disconnect <PRO_HISHER> soul from <PRO_HISHER> body for a brief moment (1 turn). While in this state, the sorcerer gets lethargic, receiving a penalty of 50% to movement rate, however <PRO_HESHE> is able to see the things as they truly are and protect <PRO_HISHER> mind against charm, fear, feeblemind, berserker and confusion.
+The Imprisoned Soul may disconnect <PRO_HISHER> soul from <PRO_HISHER> body for a brief moment (1 turn). While in this state, the sorcerer gets lethargic, receiving a penalty of 50% to movement rate, however, <PRO_HESHE> is able to see the things as they truly are and protect <PRO_HISHER> mind against charm, fear, feeblemind, berserker and confusion.
 
 BEYOND THE VEIL
 
@@ -784,19 +784,19 @@ Disadvantages:
 @1104 = ~Devour Essence~
 @1105 = ~This ability allows the Imprisoned Soul to drain and absorb the negative energy from an undead. The non-living takes 1d4 points of magic damage for every two levels of the Imprisoned Soul (Saving Throw vs. Death for half). If the undead is destroyed in the process, its essence heals the sorcerer by 4 hit points.~
 @1106 = ~Death Touch~
-@1107 = ~The Imprisoned Soul connects <PRO_HIMHER>self with the Negative Material Plane and emulates the effect of an undead's touch. Being alive, however, makes impossible to control what undead will be emulated. There's a 20% for each of the following effects:
+@1107 = ~The Imprisoned Soul connects <PRO_HIMHER>self with the Negative Material Plane and emulates the effect of an undead's touch. Being alive, however, makes impossible to control what undead will be emulated. There's a 20% chance for each of the following effects:
 
 - Shadow Touch: 1d4+1 damage, plus draining two points of Strength.
 
 - Ghast Touch:  1d8 damage, plus paralyze for 5 rounds (Saving Throw vs. Paralysis negates).
 
-- Mummy Touch:  1d12 damage, plus disease (1 damage per round during 5 rounds - Saving Throw vs. Death negates).
+- Mummy Touch:  1d12 damage, plus disease (blindness and 1 damage per round during 5 rounds - Saving Throw vs. Death negate both effects).
 
 - Ghost Touch: No damage, slow and fear for 5 rounds (no Saving Throw allowed).
 
 - Vampire Touch: 1d6 + 4 damage, plus draining one level.
 
-AlL effects bypasses Magic Resistance and have absolutely no effect on undead creatures.~
+AlL effects bypass Magic Resistance and have absolutely no effect on undead creatures.~
 @1108 = ~Shadow Touch~
 @1109 = ~Strength Drained~
 @1110 = ~Ghast Touch~
@@ -804,7 +804,7 @@ AlL effects bypasses Magic Resistance and have absolutely no effect on undead cr
 @1112 = ~Ghost Touch~
 @1113 = ~Vampire Touch~
 @1114 = ~Empty Vessel~
-@1115 = ~The Imprisoned Soul may disconnect <PRO_HISHER> soul from <PRO_HISHER> body for a brief moment (1 turn). While in this state, the sorcerer gets lethargic, receiving a penalty of 50% to movement rate, however <PRO_HESHE> is able to see the things as they truly are and protect <PRO_HISHER> mind against charm, fear, feeblemind, berserker and confusion.~
+@1115 = ~The Imprisoned Soul may disconnect <PRO_HISHER> soul from <PRO_HISHER> body for a brief moment (1 turn). While in this state, the sorcerer gets lethargic, receiving a penalty of 50% to movement rate, however, <PRO_HESHE> is able to see the things as they truly are and protect <PRO_HISHER> mind against charm, fear, feeblemind, berserker and confusion.~
 @1116 = ~Beyond the Veil~
 @1117 = ~The Imprisoned Soul deepens <PRO_HISHER> connections with the Negative Material Plane, existing in both planes at once. During the next 3 turns, the sorcerer is immune to non-magical weapons, can't be attacked by undead creatures and gains a +3 bonus to caster level and casting time. The downside is that <PRO_HESHE> gets even more vulnerable to magic damage (another 50% penalty) and Necromancy (another -1 penalty for Saving Throw).~
 
