@@ -24,34 +24,6 @@ END
 
 CREATE spl ~RAISF~
 
-ACTION_IF	!FILE_CONTAINS_EVALUATED	(~SPELL.IDS~	~[ %TAB%]WIZARD_LICH_TOUCH[ %TAB%%WNL%%LNL%%MNL%$]~) BEGIN
-
-ADD_SPELL ~IHateUndead\Spl\LichTouch\SPWI626.SPL~ 2 6 WIZARD_LICH_TOUCH
-SAY NAME1 @1104 SAY NAME2 @1104 SAY UNIDENTIFIED_DESC @1105 SAY DESC @1105
-TEXT_SPRINT	spell_res	~%DEST_RES%~	TO_UPPER	spell_res
-WRITE_ASCIIE	0x3a ~%spell_res%C~	#8
-LPF	ALTER_SPELL_HEADER STR_VAR icon = EVAL ~%spell_res%B~	END
-LPF	ALTER_EFFECT	   STR_VAR silent = 1 match_resource = EVAL ~%SOURCE_RES%~	  resource = EVAL ~%spell_res%~	    END
-
-COPY ~IHateUndead\Spl\LichTouch\SPWI626B.BAM~	~override\%spell_res%B.BAM~
-COPY ~IHateUndead\Spl\LichTouch\SPWI626C.BAM~	~override\%spell_res%C.BAM~
-
-COPY ~IHateUndead\Spl\LichTouch\ILTOUCH.BAM~	~override~
-COPY ~IHateUndead\Spl\LichTouch\LTOUCH.ITM~	    ~override~
-SAY NAME1 @1104 SAY NAME2 @1104
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35606 parameter1 = EVAL "%RA_Held%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35542 parameter1 = EVAL "%RA_Paralyzed%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 35484 parameter1 = EVAL "%RA_Panic%" END
-LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 20568 parameter1 = EVAL "%RA_MoralFail%" END
-
-END
-
-LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_CHILL_TOUCH~ 	    RET	spell_1 = spell_res	END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_GHOUL_TOUCH~ 	    RET	spell_2 = spell_res	END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_VAMPIRIC_TOUCH~    RET	spell_3 = spell_res	END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_LICH_TOUCH~ 	    RET	spell_4 = spell_res	END
-LAF RES_NUM_OF_SPELL_NAME STR_VAR	spell_name = ~WIZARD_ENERGY_DRAIN~	    RET	spell_5 = spell_res	END
-
 COPY_EXISTING ~RAISF.spl~ override
 LPF ADD_ABILITIES	 INT_VAR abil = 1 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 28  target = 2 timing = 9 parameter1 = 100                               STR_VAR insert_point = 0  END
@@ -76,10 +48,117 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 64              STR_VAR insert_point = 19 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 128             STR_VAR insert_point = 20 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 156             STR_VAR insert_point = 21 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                STR_VAR insert_point = 22 resource = EVAL ~%spell_1%~  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                STR_VAR insert_point = 23 resource = EVAL ~%spell_2%~  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                STR_VAR insert_point = 24 resource = EVAL ~%spell_3%~  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                STR_VAR insert_point = 25 resource = EVAL ~%spell_4%~  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                STR_VAR insert_point = 26 resource = EVAL ~%spell_5%~  END
+
+COPY ~IHateUndead\Spl\RAIS1.spl~ override
+SAY NAME1 @1104 SAY NAME2 @1104 SAY UNIDENTIFIED_DESC @1105 SAY DESC @1105
+	READ_LONG	0x64	ab_off
+	READ_SHORT	0x68	ab_num
+	READ_LONG	0x6a	fx_off
+	READ_ASCII	ab_off	ability (0x28)
+	READ_SHORT	(ab_off + 0x1e) fx_num
+	READ_SHORT	(ab_off + 0x20) fx_idx
+	READ_ASCII	(fx_off + fx_idx * 0x30) effects (fx_num * 0x30)
+	FOR (i = 2; i < 51; ++i)	BEGIN
+		INSERT_BYTES	(ab_off + ab_num * 0x28) 0x28	SET	fx_off += 0x28
+		WRITE_ASCIIE	(ab_off + ab_num * 0x28) ~%ability%~ (0x28)
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x10)	i
+		WRITE_SHORT	(ab_off + ab_num * 0x28 + 0x20)	(fx_idx + fx_num)
+		INSERT_BYTES	(fx_off + fx_idx * 0x30) (fx_num * 0x30)
+		WRITE_ASCIIE	(fx_off + fx_idx * 0x30) ~%effects%~ (fx_num * 0x30)
+		SET	fx_idx += fx_num
+		SET	ab_num += 1
+	END
+	WRITE_SHORT	0x68	ab_num
+	WRITE_LONG	0x6a	fx_off
+	FOR (i = 1; i < 51; ++i)	BEGIN
+		LPF	ALTER_EFFECT INT_VAR header = (i - 1) match_opcode = 12  match_dicenumber = 1 dicenumber = ((1 + i)/2) END
+	END
+
+COPY ~IHateUndead\Spl\RAIS1.bam~ override
+
+COPY ~IHateUndead\Spl\RAIS11.spl~ override
+
+COPY ~IHateUndead\Spl\RAIS2.spl~ override
+SAY NAME1 @1106 SAY NAME2 @1106 SAY UNIDENTIFIED_DESC @1107 SAY DESC @1107
+
+COPY ~IHateUndead\Spl\RAIS2.bam~ override
+
+COPY ~IHateUndead\Spl\RAIS21.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@1108) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = RESOLVE_STR_REF (@1109) END
+
+COPY ~IHateUndead\Spl\RAIS22.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@1110) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = EVAL "%RA_Paralyzed%" END
+
+COPY ~IHateUndead\Spl\RAIS23.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@1111) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = EVAL "%RA_Blinded%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 3 parameter1 = EVAL "%RA_FoulDisease%" END
+
+COPY ~IHateUndead\Spl\RAIS24.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@1112) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 3 parameter1 = EVAL "%RA_Slowed%" END
+
+COPY ~IHateUndead\Spl\RAIS25.spl~ override
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@1113) END
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 2 parameter1 = EVAL "%RA_Drain1%" END
+
+ACTION_FOR_EACH label IN
+	~CLERIC_LESSER_RESTORATION~
+	~CLERIC_HEAL~
+	~CLERIC_RESTORATION~
+	~CLERIC_RAISE_DEAD~
+	~CLERIC_RECALL_SPIRIT~
+	~CLERIC_RESURRECTION~
+	~CLERIC_MIST_OF_ELDATH~
+	~CLERIC_MASS_RAISE_DEAD~
+BEGIN
+  ACTION_IF FILE_CONTAINS_EVALUATED	(~SPELL.IDS~ ~[ %TAB%]%label%[ %TAB%%WNL%%LNL%%MNL%$]~)	BEGIN
+    LAF RES_NUM_OF_SPELL_NAME STR_VAR spell_name = EVAL ~%label%~ RET	spell_res	END
+    ACTION_IF FILE_EXISTS_IN_GAME ~%spell_res%.spl~ BEGIN
+      COPY_EXISTING ~%spell_res%.spl~ override
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS21~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS22~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS23~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS24~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS25~ END
+	  BUT_ONLY
+    END
+  END
+END
+
+      COPY_EXISTING ~SPJA01.spl~ override
+        LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS21~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS22~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS23~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS24~ END
+		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS25~ END
+	  BUT_ONLY
+
+COPY ~IHateUndead\Spl\RAIS3.spl~ override
+SAY NAME1 @1114 SAY NAME2 @1114 SAY UNIDENTIFIED_DESC @1115 SAY DESC @1115
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Panic%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_MoralFail%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Charmed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 4 parameter1 = EVAL "%RA_DireCharmed%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 5 parameter1 = EVAL "%RA_Berserk%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 6 parameter1 = EVAL "%RA_Dominated%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EVAL "%RA_Feebleminded%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_RigidThink%" END
+LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 9 parameter1 = EVAL "%RA_Confused%" END
+
+COPY ~IHateUndead\Spl\RAIS3.bam~ override
+
+COPY ~IHateUndead\Spl\RAIS3.eff~ override
+
+COPY ~IHateUndead\Spl\RAIS31.spl~ override
+
+COPY ~IHateUndead\Spl\RAIS4.spl~ override
+SAY NAME1 @1116 SAY NAME2 @1116 SAY UNIDENTIFIED_DESC @1117 SAY DESC @1117
+LPF ALTER_EFFECT INT_VAR match_opcode = 139 match_parameter1 = 1 parameter1 = RESOLVE_STR_REF (@306) END
+
+COPY ~IHateUndead\Spl\RAIS4.bam~ override
 
 //EoF
