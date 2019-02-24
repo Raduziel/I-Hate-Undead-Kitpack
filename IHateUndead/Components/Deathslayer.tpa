@@ -76,7 +76,7 @@ BUT_ONLY
 
 /*Multiclass Fighter*/
 
-COPY_EXISTING ~RAHUDS.2da~ ~override\RAHUDSF~
+COPY_EXISTING ~RAHUDS.2da~ ~override\RAHUDSF.2da~
 
 ADD_KIT ~RAHUDSF~
     ~RAHUDSF 1 0 1 1 0 0 0 0~
