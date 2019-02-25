@@ -125,6 +125,68 @@ Disadvantages:
 
 - May not create undead, resurrect the fallen or summon fiends.
 - Can't be resurrected.~
+@207 = ~HOLY REDEEMER: Being a Holy Redeemer goes beyond being ordained by some Church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Holy Redeemer, but this hard path is more usual within the clergy of Torm. They are efficient soldiers against the more common weapons of profane clergy: undead and fiends. Regardless of under which banner they fight, the Holy Redeemer is a force to be feared by necromancers and unholy priests.
+
+Pre-Requisites: WIS 9, CHA 12
+Dual-Class: Fighter.
+Alignment: Lawful Good or Lawful Neutral.
+Weapons: As a regular cleric.
+Armors: As a regular cleric.
+
+Major: All, Protection, Sun, Combat, Creation, Fire.
+Minor: Healing, Moon, Divination, Vocal.
+
+Advantages:
+
+- May use Redeem once per day as a special ability, starting at level 1. Gains an additional use every 5 levels.
+- +3 bonus to hit and damage rolls against undead creatures and fiends.
+- Uses Turn Undead as a priest two levels higher.
+
+REDEEM:
+
+The Holy Redeemer pleads to <PRO_HISHER> deity and touches a creature. The effects are as follow:
+
+- Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or is destroyed.
+
+- Fiends: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or is banned for 1 round/level.
+
+- Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.
+
+Disadvantages:
+
+- May not create undead, resurrect the fallen or summon fiends.
+- Can't be resurrected.~
+@208 = ~HOLY REDEEMER (F/C): Being a Holy Redeemer goes beyond being ordained by some Church. It requires a lifetime of devotion, sacrifice and courage. Clerics of many faiths may become a Holy Redeemer, but this hard path is more usual within the clergy of Torm. They are efficient soldiers against the more common weapons of profane clergy: undead and fiends. Regardless of under which banner they fight, the Holy Redeemer is a force to be feared by necromancers and unholy priests.
+
+Pre-Requisites: WIS 9, CHA 12
+Dual-Class: Fighter.
+Alignment: Lawful Good or Lawful Neutral.
+Weapons: As a regular cleric.
+Armors: As a regular cleric.
+
+Major: All, Protection, Sun, Combat, Creation, Fire.
+Minor: Healing, Moon, Divination, Vocal.
+
+Advantages:
+
+- May use Redeem once per day as a special ability, starting at level 1. Gains an additional use every 5 levels.
+- +3 bonus to hit and damage rolls against undead creatures and fiends.
+- Uses Turn Undead as a priest two levels higher.
+
+REDEEM:
+
+The Holy Redeemer pleads to <PRO_HISHER> deity and touches a creature. The effects are as follow:
+
+- Undead: 1d8 magic damage for every three levels of the Redeemer. Save vs. Death with a -4 penalty or is destroyed.
+
+- Fiends: 1d6 magic damage for every three levels of the Redeemer. Save vs. Death with a -2 penalty or is banned for 1 round/level.
+
+- Other Evil Alignment Creatures: 1d4 magic damage for every three levels of the Redeemer. Save vs. Death or becomes feebleminded for 1 round/level.
+
+Disadvantages:
+
+- May not create undead, resurrect the fallen or summon fiends.
+- Can't be resurrected.~
 
 /* ================== *
  *    DEATHSLAYER     *
@@ -627,6 +689,70 @@ Disadvantages:
 
 - May not summon animals to <PRO_HISHER> aid.
 - Cannot Shapeshift.~
+@824 = ~CIRCLE ENFORCER: The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animals for aid. As a keeper of the natural order, this druid is specially devoted to defeating unnatural beings having special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
+
+Pre-Requisites: WIS 12, CHA 15.
+Dual-Class: Fighter.
+Alignment: True Neutral.
+Weapons: As a regular druid.
+Armors: As a regular druid.
+
+Major: All, Protection, Combat, Air, Water, Earth, Fire.
+Minor: Healing, Sun, Creation.
+
+Advantages:
+
+- +2 bonus to AC, hit and damage rolls against constructs, fiends, lycanthrope and undead creatures.
+- May evoke Nature's Wrath, starting at level 5. Gains improved uses at levels 7, 9 and 11.
+
+NATURE'S WRATH
+
+This special ability allows the Circle Enforcer to use one of the following spells of each level once per day.
+
+I) Fireball, Icelance, Lightning Bolt.
+
+II) Ice Storm, Smashing Wave, Static Charge.
+
+III) Cone of Cold, Spike Stones, Sunfire.
+
+IV) Chain Lightning, Flesh to Stone, Whirlwind. 
+
+Disadvantages:
+
+- May not summon animals to <PRO_HISHER> aid.
+- Cannot Shapeshift.~
+@825 = ~CIRCLE ENFORCER (F/D): The Circle Enforcer is a druid appointed by those above <PRO_HIMHER> in the Circle to be its defender. To fulfill <PRO_HISHER> duty, the Circle Enforcer learns particular ways of using Nature's weapons against its defilers. Because of <PRO_HISHER> responsibilities, it is forbidden to <PRO_HIMHER> to call animals for aid. As a keeper of the natural order, this druid is specially devoted to defeating unnatural beings having special training to do so. Circle Enforcer will not get along with Lost Druids, probably fighting them to the death.
+
+Pre-Requisites: WIS 12, CHA 15.
+Dual-Class: Fighter.
+Alignment: True Neutral.
+Weapons: As a regular druid.
+Armors: As a regular druid.
+
+Major: All, Protection, Combat, Air, Water, Earth, Fire.
+Minor: Healing, Sun, Creation.
+
+Advantages:
+
+- +2 bonus to AC, hit and damage rolls against constructs, fiends, lycanthrope and undead creatures.
+- May evoke Nature's Wrath, starting at level 5. Gains improved uses at levels 7, 9 and 11.
+
+NATURE'S WRATH
+
+This special ability allows the Circle Enforcer to use one of the following spells of each level once per day.
+
+I) Fireball, Icelance, Lightning Bolt.
+
+II) Ice Storm, Smashing Wave, Static Charge.
+
+III) Cone of Cold, Spike Stones, Sunfire.
+
+IV) Chain Lightning, Flesh to Stone, Whirlwind. 
+
+Disadvantages:
+
+- May not summon animals to <PRO_HISHER> aid.
+- Cannot Shapeshift.~
 
 /* ================= *
  *    PALLID MASK    *
@@ -726,6 +852,51 @@ Disadvantages:
 @1016 = ~Curse of Servitude~
 @1017 = ~Enemies are charmed. Costs 3 point of damage per round to sustain.~
 @1018 = ~Pain~
+@1019 = ~DREADFUL WITCH: Some women decide to live on her own terms and retreat into deep forests where they commune with Nature and learn the dark secrets that land upholds. The ones who choose to pursue this source of power end up learning dread ways to cast terrible curses upon other beings. The women who master this Dark Art are called Dreadful Witches by those who are lucky enough to survive an unfortunate meeting with one of them.
+
+Obviously, only females can be Dreadful Witches. Males who try to seize this kind of power tends to die very quickly.
+
+Pre-Requisites: CON 12, WIS 12.
+Dual-Class: None.
+Alignment: Neutral Evil.
+Weapons: As a regular shaman.
+Armors: As a regular shaman.
+
+Major: All, Necromantic, Suffering, Plant, Darkness, Summoning, Earth.
+Minor: Healing, Animal, Thought.
+
+Advantages:
+
+- May cast Animate Dead once per day as a special ability, starting at level 5.
+- May cast Cacofiend once per day as a special ability, starting at level 15.
+- Shamanic Dance bestows special curses instead of summoning spirits. 
+
+CURSES
+
+It is not possible to stack Curses. Every time a Curse is selected, the Dreadful Witch takes 1d3 points of magic damage and additional damage for every round that she sustains the Shamanic Dance (the amount depends on the effect).
+
+The target can make a Saving Throw vs. Death with a -1 penalty for every six levels of the Dreadful Witch to avoid the effects. Once a Curse lands, it will affects its target for at least 3 rounds.
+
+The following Curses can be cast:
+
+- Level  1 (Misfortune) Enemies take a -2 penalty to Luck. Dreadful Witch takes 1 point of damage per round to sustain.
+
+- Level  3 (Rage) Enemies go berserker. Costs 1 point of damage per round to sustain.
+
+- Level  5 (Terror) Enemies flee in panic. Costs 1 point of damage per round to sustain.
+
+- Level  7 (Madness) Enemies get confused. Costs 2 points of damage per round to sustain.
+
+- Level 11 (Emptiness) Enemies becomes feebleminded. Costs 2 points of damage per round to sustain.
+
+- Level 13 (Agony) Enemies feel unbearable pain. Costs 3 points of damage per round to sustain.
+
+- Level 15 (Servitude) Enemies are charmed. Costs 3 point of damage per round to sustain.
+
+Disadvantages:
+
+- May cast one fewer spell per level per day.
+- Hit Die: d6.~
 
 /* ================= *
  *  IMPRISONED SOUL  *

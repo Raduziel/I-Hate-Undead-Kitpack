@@ -727,6 +727,56 @@ COPY_EXISTING_REGEXP ~^.+\.itm$~ override // ITM files last
 		READ_STRREF NAME2 name2
 		PATCH_PRINT ~%SOURCE_RES% : %name% : %name2%~
 	END
-BUT_ONLY  // Scan through items for offending opcodes, EFF, and SPL references 
+BUT_ONLY  // Scan through items for offending opcodes, EFF, and SPL references
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~RASPHERE.marker~) BEGIN
+
+ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
+  COPY_EXISTING ~clastext.2da~ ~override~
+	COUNT_2DA_COLS cols
+	READ_2DA_ENTRIES_NOW rows cols
+	FOR (row = 1; row < rows; ++row) BEGIN
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~
+	  PATCH_IF (~%text%~ STRING_EQUAL_CASE ~RAHUCE~) BEGIN
+	    SET_2DA_ENTRY %row% 4 cols RESOLVE_STR_REF (@824)
+	  END 
+	  PATCH_IF (~%text%~ STRING_EQUAL_CASE ~RAHUCEF~) BEGIN
+	    SET_2DA_ENTRY %row% 4 cols RESOLVE_STR_REF (@825)
+	  END	
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~sodcltxt.2da~) BEGIN
+  COPY_EXISTING ~sodcltxt.2da~ ~override~
+	COUNT_2DA_COLS cols
+	READ_2DA_ENTRIES_NOW rows cols
+	FOR (row = 1; row < rows; ++row) BEGIN
+	  READ_2DA_ENTRY_FORMER rows row 0 ~text~
+	  PATCH_IF (~%text%~ STRING_EQUAL_CASE ~RAHUCE~) BEGIN
+	    SET_2DA_ENTRY %row% 4 cols RESOLVE_STR_REF (@824)
+	  END 
+	  PATCH_IF (~%text%~ STRING_EQUAL_CASE ~RAHUCEF~) BEGIN
+	    SET_2DA_ENTRY %row% 4 cols RESOLVE_STR_REF (@825)
+	  END
+	END
+  BUT_ONLY
+END
+ACTION_IF (FILE_EXISTS_IN_GAME ~kitlist.2da~) BEGIN
+  COPY_EXISTING ~kitlist.2da~ ~override~
+    COUNT_2DA_COLS cols
+	READ_2DA_ENTRIES_NOW rows cols
+	FOR (row = 1; row < rows; ++row) BEGIN
+	  READ_2DA_ENTRY_FORMER rows row 1 ~text~
+	  PATCH_IF (~%text%~ STRING_EQUAL_CASE ~RAHUCE~) BEGIN
+	    SET_2DA_ENTRY %row% 4 cols RESOLVE_STR_REF (@824)
+	  END 
+	  PATCH_IF (~%text%~ STRING_EQUAL_CASE ~RAHUCEF~) BEGIN
+	    SET_2DA_ENTRY %row% 4 cols RESOLVE_STR_REF (@825)
+	  END
+	END
+  BUT_ONLY
+END
+
+END
 
 //EoF
