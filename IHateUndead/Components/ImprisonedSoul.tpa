@@ -137,8 +137,15 @@ END
 		LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 resist_dispel = 2 STR_VAR resource = ~RAIS25~ END
 	  BUT_ONLY
 
+	  
 COPY ~IHateUndead\Spl\RAIS3.spl~ override
 SAY NAME1 @1114 SAY NAME2 @1114 SAY UNIDENTIFIED_DESC @1115 SAY DESC @1115
+
+COPY ~IHateUndead\Spl\RAIS3.bam~ override
+
+COPY ~IHateUndead\Spl\RAIS3.eff~ override
+	  
+COPY ~IHateUndead\Spl\RAIS31.spl~ override
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 1 parameter1 = EVAL "%RA_Panic%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 2 parameter1 = EVAL "%RA_MoralFail%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 3 parameter1 = EVAL "%RA_Charmed%" END
@@ -149,11 +156,9 @@ LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 7 parameter1 = EV
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 8 parameter1 = EVAL "%RA_RigidThink%" END
 LPF ALTER_EFFECT INT_VAR match_opcode = 267 match_parameter1 = 9 parameter1 = EVAL "%RA_Confused%" END
 
-COPY ~IHateUndead\Spl\RAIS3.bam~ override
+COPY ~IHateUndead\Spl\RAIS32.spl~ override
 
-COPY ~IHateUndead\Spl\RAIS3.eff~ override
-
-COPY ~IHateUndead\Spl\RAIS31.spl~ override
+COPY ~IHateUndead\Spl\RAIS3A.spl~ override
 
 COPY ~IHateUndead\Spl\RAIS4.spl~ override
 SAY NAME1 @1116 SAY NAME2 @1116 SAY UNIDENTIFIED_DESC @1117 SAY DESC @1117
