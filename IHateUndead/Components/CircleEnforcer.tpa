@@ -78,69 +78,34 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 159
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 
 COPY_EXISTING ~RACEF2.spl~ override
-LPF ADD_ABILITIES	   INT_VAR abil = 4 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1 min_level = 15 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 18 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 21 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 24 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 11  target = 2 timing = 9                                       STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 101 target = 2 timing = 9                parameter2 = 25        STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 142 target = 2 timing = 9                parameter2 = 30        STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 6  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 173 target = 2 timing = 9   parameter1 = 100                    STR_VAR insert_point = 7  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poison%~     STR_VAR insert_point = 8  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poisoned%~   STR_VAR insert_point = 9  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Bleeding%~   STR_VAR insert_point = 10 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 27  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 28  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 29  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 30  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 84  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 85  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 27  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 28  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 29  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 30  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 84  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 3 opcode = 85  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 27  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 28  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 29  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 30  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 84  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 4 opcode = 85  target = 2 timing = 9   parameter1 = 10                     STR_VAR insert_point = 5  END
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 0 resource = ~SPCL611~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 1 resource = ~SPCL612~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 2 resource = ~SPCL613~  END
+
+COPY_EXISTING ~RAHUCE.2da~ override
+SET_2DA_ENTRY 3 15 50 ~AP_SPCL924~
+SET_2DA_ENTRY 3 18 50 ~AP_SPCL925~
+SET_2DA_ENTRY 3 21 50 ~AP_SPCL926~
+SET_2DA_ENTRY 3 24 50 ~AP_SPCL927~
+PRETTY_PRINT_2DA
+
 END
 
 ACTION_IF GAME_IS ~iwdee~ BEGIN
 
 COPY_EXISTING ~RACEF2.spl~ override
-LPF ADD_ABILITIES	   INT_VAR abil = 2 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1   min_level = 9  END
-LPF ALTER_SPELL_HEADER INT_VAR header = 2   min_level = 15 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 11  target = 2 timing = 9                                       STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 240 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 101 target = 2 timing = 9                parameter2 = 25        STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 139 target = 2 timing = 1   parameter1 = 40027                  STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 142 target = 2 timing = 9                parameter2 = 30        STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 6         STR_VAR insert_point = 6  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 169 target = 2 timing = 9                parameter2 = 137       STR_VAR insert_point = 7  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 173 target = 2 timing = 9   parameter1 = 100                    STR_VAR insert_point = 8  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poison%~     STR_VAR insert_point = 9  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Poisoned%~   STR_VAR insert_point = 10 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 267 target = 2 timing = 9   parameter1 = EVAL ~%RA_Bleeding%~   STR_VAR insert_point = 11 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode =  93 target = 2 timing = 9                parameter2 = 1         STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 101 target = 2 timing = 9                parameter2 = 93        STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 139 target = 2 timing = 1   parameter1 = 40026                  STR_VAR insert_point = 2  END
+LPF ADD_ABILITIES	   INT_VAR abil = 1 END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 0 resource = ~SPCL101~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 1 resource = ~SPCL107~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 2 resource = ~SPCL108~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 3 resource = ~SPCL112~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 4 resource = ~SPCL113~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 172 target = 2 timing = 9 STR_VAR insert_point = 5 resource = ~SPCL114~  END
 
 COPY_EXISTING ~RAHUCE.2da~ override
-SET_2DA_ENTRY 2  9 50 ~AP_RACEF2~
-SET_2DA_ENTRY 2 18 50 ~****     ~
-SET_2DA_ENTRY 2 21 50 ~****     ~
-SET_2DA_ENTRY 2 24 50 ~****     ~
+SET_2DA_ENTRY 3  9 50 ~AP_SPCL924~
+SET_2DA_ENTRY 3 15 50 ~AP_SPCL939~
 PRETTY_PRINT_2DA
 
 END
