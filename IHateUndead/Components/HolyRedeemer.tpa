@@ -24,12 +24,6 @@ LAF fl#add_kit_ee
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
-ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
-
-	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUHR~ clabfile = ~RAHUHR~ END
-
-END
-
 COPY_EXISTING ~LUCl0.2da~ ~override\LURAHUHR.2da~
 SET_2DA_ENTRY 8 1 9 ~*         ~
 SET_2DA_ENTRY 8 4 9 ~*         ~
@@ -137,6 +131,10 @@ COPY ~IHateUndead\Spl\RAHR13.spl~ override
 		LPF	ALTER_EFFECT	INT_VAR	header = (i - 1) match_opcode = 12  match_dicenumber = 1 dicenumber = (1+((1 * i)/3)) END
 	END
 
+ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
+
+	LAF RA_SPHERE_COMPAT STR_VAR kitname = ~RAHUHR~ clabfile = ~RAHUHR~ END
+
 //Restriction
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
@@ -155,6 +153,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+END
                                                
 /*Multiclass Fighter*/						
 					 
@@ -189,7 +189,7 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUHRF~		
 		clascolr = ~14 28 0 30 6~
-		clswpbon = ~1 0 3~
+		clswpbon = ~1 0 2~
 		clsrcreq = ~0 1 1 1 1 1 1~
 END
 
@@ -204,8 +204,6 @@ END
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 	LAF RA_SPHERE_COMPAT INT_VAR kitid = %RAHUHRF% classID = 8  STR_VAR kitname = ~RAHUHR~ clabfile = ~RAHUHRF~ END
-
-END
 
 COPY_EXISTING_REGEXP ~.*\.itm~ override
 	READ_BYTE 0x31 proficiency
@@ -223,6 +221,8 @@ COPY_EXISTING_REGEXP ~.*\.itm~ override
 		DEFAULT
 	END
 BUT_ONLY
+
+END
 
 //No use of resurrection, undead creation or demon/devil summoning (by Kjeron).
 
