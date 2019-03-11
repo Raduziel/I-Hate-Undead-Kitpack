@@ -48,6 +48,7 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 64              STR_VAR insert_point = 19 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 128             STR_VAR insert_point = 20 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 42  target = 2 timing = 9 parameter1 = ~-1~ parameter2 = 156             STR_VAR insert_point = 21 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 342 target = 2 timing = 9                   parameter2 = 1               STR_VAR insert_point = 22 END
 
 COPY ~IHateUndead\Spl\RAIS1.spl~ override
 SAY NAME1 @1104 SAY NAME2 @1104 SAY UNIDENTIFIED_DESC @1105 SAY DESC @1105
