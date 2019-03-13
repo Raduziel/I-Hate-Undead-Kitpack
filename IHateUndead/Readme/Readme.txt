@@ -12,7 +12,7 @@ This mod works for IWDEE, BGEE, BG2EE and EET. Anyone who wishes to convert this
 
 I Hate Undead Kitpack should be installed after any items mods, Deities of Faerûn and Spells Revision.
 
-I Hate Undead Kitpack should be installed before any mod that alters the proficiency system.
+I Hate Undead Kitpack should be installed before Improved Shamanic Dance.
 
 
 
