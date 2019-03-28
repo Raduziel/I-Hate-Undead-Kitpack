@@ -60,7 +60,7 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                 
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 12 resource = EVAL ~%spell_5%~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 13 resource = EVAL ~%spell_6%~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 14 resource = EVAL ~%spell_7%~  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 1                                                 STR_VAR insert_point = 15 resource = ~RADW11~     END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 1                                                 STR_VAR insert_point = 15 resource = ~RADW11~          END
 
 //Spells to Change the Dancing Effects
 
@@ -74,9 +74,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 1                                    STR_VAR icon = ~RADW1~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW11~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 1                                           STR_VAR icon = ~RADW1~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW11~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 CREATE spl ~RADW2~
@@ -89,9 +89,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 3                                    STR_VAR icon = ~RADW2~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW21~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 3                                           STR_VAR icon = ~RADW2~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW21~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 CREATE spl ~RADW3~
@@ -104,9 +104,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 5                                    STR_VAR icon = ~RADW3~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW31~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 5                                           STR_VAR icon = ~RADW3~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW31~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 CREATE spl ~RADW4~
@@ -119,9 +119,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 7                                    STR_VAR icon = ~RADW4~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW41~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 7                                           STR_VAR icon = ~RADW4~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW41~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 CREATE spl ~RADW5~
@@ -134,9 +134,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 11                                   STR_VAR icon = ~RADW5~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW51~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 11                                          STR_VAR icon = ~RADW5~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW51~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 CREATE spl ~RADW6~
@@ -151,9 +151,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 13                                   STR_VAR icon = ~RADW6~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW61~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 13                                          STR_VAR icon = ~RADW6~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW61~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 CREATE spl ~RADW7~
@@ -166,9 +166,9 @@ WRITE_ASCII 0x10 ~EFF_P06~
 WRITE_SHORT 0x1c 4
 WRITE_LONG  0x34 1
 LPF ADD_ABILITIES	   INT_VAR abil = 1 END
-LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 15                                   STR_VAR icon = ~RADW7~  END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                       STR_VAR insert_point = 0 resource = ~RADW71~ END
-LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 4194304 dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
+LPF ALTER_SPELL_HEADER INT_VAR header = 1    target = 7 min_level = 15                                          STR_VAR icon = ~RADW7~  END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode = 251  target = 2 timing = 1                                              STR_VAR insert_point = 0 resource = ~RADW71~ END
+LPF ADD_SPELL_EFFECT   INT_VAR opcode =  12  target = 2 parameter2 = 0 + (64 << 16) dicenumber = 1 dicesize = 3 STR_VAR insert_point = 1                     END
 LPF AT_WILL END
 
 
