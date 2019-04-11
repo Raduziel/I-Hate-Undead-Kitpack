@@ -1,6 +1,6 @@
 BACKUP ~IHateUndead/Backup~
 SUPPORT ~Raduziel https://forums.beamdog.com/discussion/65700/kit-pack-i-hate-undead-iwd-eet-bgee-bg2ee~
-VERSION ~3.1~
+VERSION ~3.2~
 
 ALWAYS
 
@@ -20,6 +20,10 @@ LANGUAGE ~English~
 		 ~IHateUndead/Tra/English~
 		 ~IHateUndead/Tra/English/Setup.tra~
 		 ~IHateUndead/Tra/English/IHateUndead.tra~
+LANGUAGE ~Francais (traduction: Gwendolyne)~
+         ~French~
+		 ~IHateUndead/Tra/French/Setup.tra~
+		 ~IHateUndead/Tra/French/IHateUndead.tra~		 
 LANGUAGE ~Russkiy (Perevod: Saigon1983)~
          ~Russian~
 		 ~IHateUndead/Tra/Russian/Setup.tra~
