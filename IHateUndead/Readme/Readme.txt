@@ -10,9 +10,9 @@ This mod works for IWDEE, BGEE, BG2EE and EET. Anyone who wishes to convert this
 2) Installing Order
 
 
-I Hate Undead Kitpack should be installed after any items mods and Spells Revision.
+I Hate Undead Kitpack should be installed after any items mods, Deities of Faerûn and Spells Revision.
 
-I Hate Undead Kitpack should be installed before Improved Shamanic Dance and Deities of Faerûn.
+I Hate Undead Kitpack should be installed before Improved Shamanic Dance.
 
 
 
