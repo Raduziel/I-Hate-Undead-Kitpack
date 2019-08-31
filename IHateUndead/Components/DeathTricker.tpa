@@ -5,7 +5,7 @@ ADD_KIT ~RAHUDT~
 	~RAHUDT 0 0 0 0 0 0~
 	~RAHUDT 3 9 3 12 3 3~
     ~RAHUDT 3 9 3 12 3 3~
-	~RAHUDT 0 1 0 1 1 0 1 1 0~
+	~RAHUDT 0 0 0 1 1 0 1 1 0~
 	~RAHUDT 0 0 1 0 0 0~
 	~IHateUndead\Tables\RAHUDT.2da~
 	~K_T_H	K_T_D  K_T_G  K_T_E  K_T_HE  K_T_HL  K_T_HO~
@@ -77,7 +77,7 @@ ADD_KIT ~RAHUDTM~
 	~RAHUDTM 0 0 0 0 0 0~
 	~RAHUDTM 3 9 3 12 3 3~
     ~RAHUDTM 3 9 3 12 3 3~
-	~RAHUDTM 0 1 0 1 1 0 1 1 0~
+	~RAHUDTM 0 0 0 1 1 0 1 1 0~
 	~RAHUDTM 0 0 0 0 0 0~
 	~override\RAHUDTM.2da~
 	~K_MT_D  K_MT_G  K_MT_E  K_MT_HE  K_MT_HL  K_MT_HO~
