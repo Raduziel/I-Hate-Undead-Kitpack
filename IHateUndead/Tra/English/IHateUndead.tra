@@ -951,7 +951,7 @@ Disadvantages:
 @1106 = ~Death Touch~
 @1107 = ~The Imprisoned Soul connects <PRO_HIMHER>self with the Negative Material Plane and emulates the effect of an undead's touch. Being alive, however, makes impossible to control what undead will be emulated. There's a 20% chance for each of the following effects:
 
-- Shadow Touch: 1d4+1 damage, plus draining two points of Strength.
+- Shadow Touch: 1d4+1 damage, plus draining two points of Strength (no Saving Throw allowed).
 
 - Ghast Touch:  1d8 damage, plus paralyze for 5 rounds (Saving Throw vs. Paralysis negates).
 
@@ -959,9 +959,9 @@ Disadvantages:
 
 - Ghost Touch: No damage, slow and fear for 5 rounds (no Saving Throw allowed).
 
-- Vampire Touch: 1d6 + 4 damage, plus draining one level.
+- Vampire Touch: 1d6 + 4 damage, plus draining one level (no Saving Throw allowed).
 
-AlL effects bypass Magic Resistance and have absolutely no effect on undead creatures.~
+All effects bypass Magic Resistance and have absolutely no effect on undead creatures.~
 @1108 = ~Shadow Touch~
 @1109 = ~Strength Drained~
 @1110 = ~Ghast Touch~
