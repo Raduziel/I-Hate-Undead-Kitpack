@@ -105,14 +105,19 @@ SET_2DA_ENTRY 4 5 40 ~GA_RAUH1~
 PRETTY_PRINT_2DA
 BUT_ONLY
 
-CREATE spl ~RAHRF~
+CREATE spl ~RAUHF~
 
-COPY_EXISTING ~RAHRF.spl~ override
+COPY_EXISTING ~RAUHF.spl~ override
 LPF ADD_ABILITIES	   INT_VAR abil = 2 END
 LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 323 target = 2 timing = 9 parameter1 = 2                             STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 3 STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 3 STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 321 target = 2 timing = 9                                               STR_VAR insert_point = 0 resource = ~RAUHF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 3 STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 3 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 321 target = 2 timing = 9                                               STR_VAR insert_point = 0 resource = ~RAUHF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 178 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 3 STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 179 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 3 STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 323 target = 2 timing = 9 parameter1 = 2                                STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                             STR_VAR insert_point = 4 resource = ~RAUHF~ END
 
 COPY ~IHateUndead\Spl\RAUH1.spl~ override SAY NAME1 @403	SAY UNIDENTIFIED_DESC @404
 

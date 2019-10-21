@@ -28,13 +28,15 @@ CREATE spl ~RAPMF~
 
 COPY_EXISTING ~RAPMF.spl~ override
 LPF ADD_ABILITIES	 INT_VAR abil = 1 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 2 STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 2 STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 202  parameter2 = 5  special = 2 STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 202  parameter2 = 5  special = 2 STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                   parameter2 = 32             STR_VAR insert_point = 6 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 9                                               STR_VAR insert_point = 0 resource = ~RAPMF~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 2 STR_VAR insert_point = 1 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 2 STR_VAR insert_point = 2 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 202  parameter2 = 5  special = 2 STR_VAR insert_point = 3 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 202  parameter2 = 5  special = 2 STR_VAR insert_point = 4 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 5 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 6 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                   parameter2 = 32             STR_VAR insert_point = 7 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                             STR_VAR insert_point = 8 resource = ~RAPMF~ END
 
 //Hold Undead
 

@@ -27,21 +27,23 @@ CREATE spl ~RABDF~
 
 COPY_EXISTING ~RABDF.spl~ override
 LPF ADD_ABILITIES	 INT_VAR abil = 1 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 23             STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 24             STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 78             STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 106            STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                parameter2 = 7              STR_VAR insert_point = 4  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                parameter2 = 36             STR_VAR insert_point = 5  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 176 target = 2 timing = 9 parameter1 = 2 parameter2 = 0              STR_VAR insert_point = 6  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 5 STR_VAR insert_point = 7  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 5 STR_VAR insert_point = 8  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 190 target = 2 timing = 9 parameter1 = 2                             STR_VAR insert_point = 9  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Panic%~             STR_VAR insert_point = 10 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_MoralFail%~         STR_VAR insert_point = 11 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~          STR_VAR insert_point = 12 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~       STR_VAR insert_point = 13 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 296 target = 2 timing = 9                                            STR_VAR insert_point = 14 resource = ~CDHORROR~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 9                                            STR_VAR insert_point = 0  resource = ~RABDF~    END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 23             STR_VAR insert_point = 1                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 24             STR_VAR insert_point = 2                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 78             STR_VAR insert_point = 3                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                parameter2 = 106            STR_VAR insert_point = 4                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                parameter2 = 7              STR_VAR insert_point = 5                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 169 target = 2 timing = 9                parameter2 = 36             STR_VAR insert_point = 6                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 176 target = 2 timing = 9 parameter1 = 2 parameter2 = 0              STR_VAR insert_point = 7                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 5 STR_VAR insert_point = 8                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3  special = 5 STR_VAR insert_point = 9                        END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 190 target = 2 timing = 9 parameter1 = 2                             STR_VAR insert_point = 10                       END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Panic%~             STR_VAR insert_point = 11                       END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_MoralFail%~         STR_VAR insert_point = 12 					   END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~          STR_VAR insert_point = 13  					   END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~       STR_VAR insert_point = 14                       END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 296 target = 2 timing = 9                                            STR_VAR insert_point = 15 resource = ~CDHORROR~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                          STR_VAR insert_point = 16 resource = ~RABDF~    END
 
 COPY ~IHateUndead\Spl\RABD1.spl~  override SAY NAME1 @604	SAY UNIDENTIFIED_DESC @605
 

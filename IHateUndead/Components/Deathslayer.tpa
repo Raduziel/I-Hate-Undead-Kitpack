@@ -28,7 +28,9 @@ CREATE spl ~RADSF~
 
 COPY_EXISTING ~RADSF.spl~ override
 LPF ADD_ABILITIES	 INT_VAR abil = 1 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 346 target = 2 timing = 9 parameter1 = 2 special = 7 END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 9                            STR_VAR insert_point = 0 resource = ~RADSF~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 346 target = 2 timing = 9 parameter1 = 2 special = 7 STR_VAR insert_point = 1                    END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~          STR_VAR insert_point = 2 resource = ~RADSF~ END
 
 COPY ~IHateUndead\Spl\RADS1.spl~ override	SAY NAME1 @304	SAY UNIDENTIFIED_DESC @305
 LPF ALTER_SPELL_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@306)   END

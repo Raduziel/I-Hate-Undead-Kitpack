@@ -37,7 +37,9 @@ CREATE spl ~RAGMF~
 
 COPY_EXISTING ~RAGMF.spl~ override
 LPF ADD_ABILITIES    INT_VAR abil = 1 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 9 STR_VAR insert_point = 0 resource = ~RAGMF1~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 321 target = 2 timing = 9                   STR_VAR insert_point = 0 resource = ~RAGMF~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 9                   STR_VAR insert_point = 1 resource = ~RAGMF1~ END
+LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~ STR_VAR insert_point = 2 resource = ~RAGMF~  END
 
 COPY ~IHateUndead\Spl\RAGMF1.spl~  override	SAY NAME1 @714
 LPF ALTER_EFFECT INT_VAR match_parameter1 = 1 match_opcode = 139 parameter1 = RESOLVE_STR_REF (@715) END

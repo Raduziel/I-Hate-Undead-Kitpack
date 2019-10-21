@@ -32,11 +32,12 @@ LPF ALTER_SPELL_HEADER INT_VAR header = 2 min_level = 5  END
 LPF ALTER_SPELL_HEADER INT_VAR header = 3 min_level = 10 END
 LPF ALTER_SPELL_HEADER INT_VAR header = 4 min_level = 15 END
 LPF ALTER_SPELL_HEADER INT_VAR header = 5 min_level = 20 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 0  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 1  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 2  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 321 target = 2 timing = 9                                             STR_VAR insert_point = 0 resource = ~RAUPF~ END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 33  target = 2 timing = 9 parameter1 = 1                              STR_VAR insert_point = 1  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 2  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 178 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 3  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 179 target = 2 timing = 9 parameter1 = 4 parameter2 = 3   special = 2 STR_VAR insert_point = 4  END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 1 opcode = 219 target = 2 timing = 9 parameter1 = 4 parameter2 = 3               STR_VAR insert_point = 5  END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 321 target = 2 timing = 9                                             STR_VAR insert_point = 0 resource = ~RAUPF~ END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 33  target = 2 timing = 9 parameter1 = 2                              STR_VAR insert_point = 1  END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 144 target = 2 timing = 9                parameter2 = 2               STR_VAR insert_point = 2  END
@@ -91,6 +92,7 @@ LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 par
 LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain5%~ 	         STR_VAR insert_point = 33 END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Held%~ 	             STR_VAR insert_point = 34 END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Paralyzed%~          STR_VAR insert_point = 35 END
+LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                           STR_VAR insert_point = 36 resource = ~RAUPF~ END
 
 COPY ~IHateUndead\Spl\RAUP1.spl~  override SAY NAME1 @107	SAY UNIDENTIFIED_DESC @108
 
