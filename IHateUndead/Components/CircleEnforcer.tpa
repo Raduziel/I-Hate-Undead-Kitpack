@@ -406,7 +406,6 @@ LAF qd_multiclass
       kit_name = ~RAHUCEF~
       kit_clab = ~RAHUCEF~
       base_class = ~D~
-	  mc_dir = ~IHateUndead\Lib\Multiclass~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
@@ -415,7 +414,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN
 
 END
 
-//Not summon animals.
+//No animal summon
 
 COPY_EXISTING_REGEXP ~^.+\.cre$~ override	// CRE files first
 		TO_UPPER  SOURCE_RES

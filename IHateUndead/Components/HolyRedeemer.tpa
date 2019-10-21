@@ -20,7 +20,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUHR~		
 		clascolr = ~14 28 0 30 6~
-		clswpbon = ~0 0 3~
 		clsrcreq = ~1 1 1 1 1 1 1~
 END
 
@@ -189,7 +188,6 @@ LAF fl#add_kit_ee
 	STR_VAR
 		kit_name = ~RAHUHRF~		
 		clascolr = ~14 28 0 30 6~
-		clswpbon = ~1 0 2~
 		clsrcreq = ~0 1 1 1 1 1 1~
 END
 
@@ -198,7 +196,6 @@ LAF qd_multiclass
       kit_name = ~RAHUHRF~
       kit_clab = ~RAHUHRF~
       base_class = ~P~
-	  mc_dir = ~IHateUndead\Lib\Multiclass~
 END
 
 ACTION_IF FILE_EXISTS_IN_GAME ~RASPHERE.marker~ BEGIN

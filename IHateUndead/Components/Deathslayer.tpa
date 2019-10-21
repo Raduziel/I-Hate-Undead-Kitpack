@@ -109,7 +109,6 @@ LAF qd_multiclass
       kit_name = ~RAHUDSF~
       kit_clab = ~RAHUDSF~
       base_class = ~M~
-	  mc_dir = ~IHateUndead\Lib\Multiclass~
 END
 
 //EoF
