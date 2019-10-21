@@ -1,6 +1,6 @@
 BACKUP ~IHateUndead/Backup~
 SUPPORT ~Raduziel www.twitter.com/raduziel~
-VERSION ~3.4~
+VERSION ~3.5~
 
 ALWAYS
 
@@ -8,7 +8,7 @@ ALWAYS
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_Variables.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/Macros.tpa~
 	INCLUDE ~%MOD_FOLDER%/Lib/RA_SPHERE_COMPAT.tpa~
-	INCLUDE ~%MOD_FOLDER%/Lib/Multiclass/qd_multiclass.tpa~
+	INCLUDE ~%MOD_FOLDER%/Lib/qd_multiclass.tpa~
    
 END
 
