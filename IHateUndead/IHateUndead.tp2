@@ -1,6 +1,6 @@
 BACKUP ~IHateUndead/Backup~
 SUPPORT ~Raduziel https://www.gibberlings3.net/forums/topic/30786-kit-pack-i-hate-undead-bgee-bg2ee-iwdee-and-eet/~
-VERSION ~3.8.1~
+VERSION ~3.8.2~
 
 ALWAYS
 
@@ -36,7 +36,7 @@ LANGUAGE ~Russkiy (Perevod: Saigon1983)~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @1
+BEGIN @1 LABEL ~IHateUndead-UndeadPredator~
 INCLUDE ~IHateUndead/Components/UndeadPredator.tpa~
 
 //__________________________________________________________________________________
@@ -46,7 +46,7 @@ INCLUDE ~IHateUndead/Components/UndeadPredator.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @2
+BEGIN @2 LABEL ~IHateUndead-HolyRedeemer~
 INCLUDE ~IHateUndead/Components/HolyRedeemer.tpa~
 
 //__________________________________________________________________________________
@@ -56,7 +56,7 @@ INCLUDE ~IHateUndead/Components/HolyRedeemer.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @3
+BEGIN @3 LABEL ~IHateUndead-Deathslayer~
 INCLUDE ~IHateUndead/Components/Deathslayer.tpa~
 
 //__________________________________________________________________________________
@@ -66,7 +66,7 @@ INCLUDE ~IHateUndead/Components/Deathslayer.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @4
+BEGIN @4 LABEL ~IHateUndead-UndeadHunterRevision~
 INCLUDE ~IHateUndead/Components/UndeadHunterRevision.tpa~
 
 //__________________________________________________________________________________
@@ -76,7 +76,7 @@ INCLUDE ~IHateUndead/Components/UndeadHunterRevision.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @5
+BEGIN @5 LABEL ~IHateUndead-Deathtricker~
 INCLUDE ~IHateUndead/Components/DeathTricker.tpa~
 
 //__________________________________________________________________________________
@@ -86,7 +86,7 @@ INCLUDE ~IHateUndead/Components/DeathTricker.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @6
+BEGIN @6 LABEL ~IHateUndead-BurialDefender~
 INCLUDE ~IHateUndead/Components/BurialDefender.tpa~
 
 //__________________________________________________________________________________
@@ -96,7 +96,7 @@ INCLUDE ~IHateUndead/Components/BurialDefender.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @7
+BEGIN @7 LABEL ~IHateUndead-GraveMourner~
 INCLUDE ~IHateUndead/Components/GraveMourner.tpa~
 
 //__________________________________________________________________________________
@@ -106,7 +106,7 @@ INCLUDE ~IHateUndead/Components/GraveMourner.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @8
+BEGIN @8 LABEL ~IHateUndead-CircleEnforcer~
 INCLUDE ~IHateUndead/Components/CircleEnforcer.tpa~
 
 //__________________________________________________________________________________
@@ -116,7 +116,7 @@ INCLUDE ~IHateUndead/Components/CircleEnforcer.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @9
+BEGIN @9 LABEL ~DeitiesOfFaerun-CircleOfEnforcer-Jaheira~
 REQUIRE_PREDICATE ((GAME_IS ~bgee bg2ee eet~) AND (FILE_EXISTS_IN_GAME ~RAHUCE.2da~)) ~~
 INCLUDE ~IHateUndead/Components/JaheiraCircleEnforcer.tpa~
 
@@ -127,7 +127,7 @@ INCLUDE ~IHateUndead/Components/JaheiraCircleEnforcer.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @10
+BEGIN @10 LABEL ~IHateUndead-PallidMask~
 INCLUDE ~IHateUndead/Components/PallidMask.tpa~
 
 //__________________________________________________________________________________
@@ -137,7 +137,7 @@ INCLUDE ~IHateUndead/Components/PallidMask.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @11
+BEGIN @11 LABEL ~IHateUndead-DreadfulWitch~
 INCLUDE ~IHateUndead/Components/DreadfulWitch.tpa~
 
 //__________________________________________________________________________________
@@ -147,5 +147,5 @@ INCLUDE ~IHateUndead/Components/DreadfulWitch.tpa~
 //__________________________________________________________________________________
 //__________________________________________________________________________________
 
-BEGIN @12
+BEGIN @12 LABEL ~IHateUndead-ImprisonedSoul~
 INCLUDE ~IHateUndead/Components/ImprisonedSoul.tpa~
