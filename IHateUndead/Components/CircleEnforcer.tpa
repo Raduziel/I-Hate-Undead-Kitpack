@@ -74,7 +74,6 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 144
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 153 parameter2 = 4              STR_VAR insert_point = 25 					  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 157 parameter2 = 4              STR_VAR insert_point = 26 					  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 219 target = 2 timing = 9 parameter1 = 159 parameter2 = 4              STR_VAR insert_point = 27 					  END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                            STR_VAR insert_point = 28 resource = ~RACEF~ END
 
 ACTION_IF !GAME_IS ~iwdee~ BEGIN
 

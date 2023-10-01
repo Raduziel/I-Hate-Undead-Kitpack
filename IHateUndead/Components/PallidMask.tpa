@@ -36,7 +36,6 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 202
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 178 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 5 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 179 target = 2 timing = 9 parameter1 = 204  parameter2 = 5  special = 2 STR_VAR insert_point = 6 END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 101 target = 2 timing = 9                   parameter2 = 32             STR_VAR insert_point = 7 END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                             STR_VAR insert_point = 8 resource = ~RAPMF~ END
 
 //Hold Undead
 

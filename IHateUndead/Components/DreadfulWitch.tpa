@@ -62,7 +62,6 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                 
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 14 resource = EVAL ~%spell_6%~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 171 target = 2 timing = 9                                                 STR_VAR insert_point = 15 resource = EVAL ~%spell_7%~  END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 251 target = 2 timing = 1                                                 STR_VAR insert_point = 16 resource = ~RADW11~          END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                               STR_VAR insert_point = 17 resource = ~RADWF~           END
 
 //Spells to Change the Dancing Effects
 

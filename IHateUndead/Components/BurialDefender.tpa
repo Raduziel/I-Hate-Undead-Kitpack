@@ -43,7 +43,6 @@ LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVA
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Diseased%~          STR_VAR insert_point = 13  					   END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_FoulDisease%~       STR_VAR insert_point = 14                       END
 LPF ADD_SPELL_EFFECT INT_VAR opcode = 296 target = 2 timing = 9                                            STR_VAR insert_point = 15 resource = ~CDHORROR~ END
-LPF ADD_SPELL_EFFECT INT_VAR opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                          STR_VAR insert_point = 16 resource = ~RABDF~    END
 
 COPY ~IHateUndead\Spl\RABD1.spl~  override SAY NAME1 @604	SAY UNIDENTIFIED_DESC @605
 

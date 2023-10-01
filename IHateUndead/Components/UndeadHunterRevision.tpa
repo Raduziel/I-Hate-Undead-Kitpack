@@ -117,7 +117,6 @@ LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 321 target = 2 timing = 9    
 LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 178 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 3 STR_VAR insert_point = 1  END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 179 target = 2 timing = 9 parameter1 = 4    parameter2 = 3  special = 3 STR_VAR insert_point = 2  END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 323 target = 2 timing = 9 parameter1 = 2                                STR_VAR insert_point = 3  END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 2 opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                             STR_VAR insert_point = 4 resource = ~RAUHF~ END
 
 COPY ~IHateUndead\Spl\RAUH1.spl~ override SAY NAME1 @403	SAY UNIDENTIFIED_DESC @404
 

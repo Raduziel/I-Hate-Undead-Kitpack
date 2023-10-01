@@ -92,7 +92,6 @@ LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 par
 LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Drain5%~ 	         STR_VAR insert_point = 33 END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Held%~ 	             STR_VAR insert_point = 34 END
 LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 267 target = 2 timing = 9 parameter1 = EVAL ~%RA_Paralyzed%~          STR_VAR insert_point = 35 END
-LPF ADD_SPELL_EFFECT   INT_VAR header = 5 opcode = 206 target = 2 timing = 9 parameter1 = ~-1~                           STR_VAR insert_point = 36 resource = ~RAUPF~ END
 
 COPY ~IHateUndead\Spl\RAUP1.spl~  override SAY NAME1 @107	SAY UNIDENTIFIED_DESC @108
 
@@ -249,7 +248,11 @@ ACTION_IF (FILE_EXISTS_IN_GAME ~clastext.2da~) BEGIN
 					SET patch_mixed = RESOLVE_STR_REF ((AT %GW_kits_1%))
 					SET patch_fallen = 1
 					SET patch_fallen_notice = ~-1~
-					SPRINT patch_clastext ~FALLEN_%GW_kit_name% %kit_classid% %kit_kitid% %patch_lower% %kit_desc% %patch_mixed% %kit_bio% %patch_fallen% %kit_briefdesc% %patch_fallen_notice%~
+                    PATCH_IF (cols < 10) BEGIN
+						SPRINT patch_clastext ~FALLEN_%GW_kit_name% %kit_classid% %kit_kitid% %patch_lower% %kit_desc% %patch_mixed% %kit_bio% %patch_fallen% %kit_briefdesc%~
+					END ELSE BEGIN
+						SPRINT patch_clastext ~FALLEN_%GW_kit_name% %kit_classid% %kit_kitid% %patch_lower% %kit_desc% %patch_mixed% %kit_bio% %patch_fallen% %kit_briefdesc% %patch_fallen_notice%~
+					END
 					i = kittable
 					INNER_ACTION BEGIN APPEND clastext.2da ~%patch_clastext%~ UNLESS ~FALLEN_%GW_kit_name%~ END
 				END
